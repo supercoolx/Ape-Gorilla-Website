@@ -16,7 +16,7 @@ const HomeRoadmap = () => {
   const [roadmap] = useState<RoadmapInterface[]>([
     {
       title: "WELCOME TO THE CLUB!",
-      text: "The Ape Gorilla Club gives the holder a lifetime value NFT, with customized Gorilla’s being the unique art pieces of 11,337 3D NFTs, giving you also the 3D model to be used and imported in future games and metaverses. This NFT will grant all holders access to the “Ape Gorilla Club”, rewards, business investment opportunities, and NFT gamification utilities.",
+      text: "The Ape Gorilla Club gives the holder a lifetime value NFT, with customized Gorilla’s being the unique art pieces of 11,337 3D NFTs, giving you also the 3D model to be used and imported in future games and metaverses. This NFT will grant all holders access to the “Ape Gorilla Club”, rewards, business investment opportunities, and participate in mastermind and networking events. We'll also build a 3D FPS Game and in parallel build an MMORPG with the community. ",
     },
     {
       title: "$6M+ TOTAL GIVEAWAYS",
@@ -24,7 +24,7 @@ const HomeRoadmap = () => {
     },
     {
       title: "COMMUNITY",
-      text: "Ape Gorilla Kick-Off networking meetings will be organized worldwide locations in Europe, Asia, the Caribbean, and North & South America exclusively held for Ape Gorilla NFT holders. The events will be dedicated to community networking and masterminds to learn about Web3.0 online business opportunities, education on crypto, NFT’s, DeFi, and blockchain technology, supported by influential leading speakers in the crypto and NFT space.",
+      text: "Ape Gorilla Kick-Off networking meetings will be organized worldwide locations in Europe, Asia, the Caribbean, and North & South America exclusively held for Ape Gorilla NFT holders. The events will be dedicated to community networking and masterminds to learn about Web3.0 online business opportunities, education on crypto, NFT’s, DeFi, and blockchain technology, supported by influential leading speakers in the crypto and NFT space. All of our future roadmaps, requires jobs, so we will allow our community to apply to them using their skillsets.",
     },
     {
       title: "META GORILLA",

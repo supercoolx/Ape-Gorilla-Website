@@ -35,8 +35,8 @@ const HomeTop = () => {
               </div>
               <div className="w-full flex justify-center xl:justify-start">
                 <div className="w-[600px] max-w-full text-14 text-center xl:text-left sm:text-16 md:text-18 text-white-60">
-                  Our mission is to empower our community in educational growth, business and networking opportunities,
-                  play to earn games, test everyone&apos;s boundaries and create a community mindset around a Happiness
+                  Our mission is to empower our community in educational growth, business and networking opportunities, business grants of $5,000 and upto $100,000 to every NFT holder,
+                  Importable 3D files into metaverse and NFT Games, test everyone&apos;s boundaries and create a community mindset around a Happiness
                   Index, modeled by the Kingdom of Bhutan.
                 </div>
               </div>
