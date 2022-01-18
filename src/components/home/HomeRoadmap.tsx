@@ -16,7 +16,7 @@ const HomeRoadmap = () => {
   const [roadmap] = useState<RoadmapInterface[]>([
     {
       title: "WELCOME TO THE CLUB!",
-      text: "The Ape Gorilla Club gives the holder a lifetime value NFT, with customized Gorilla’s being the unique art pieces of 11,337 3D NFTs, giving you also the 3D model to be used and imported in future games and metaverses. This NFT will grant all holders access to the “Ape Gorilla Club”, rewards, business investment opportunities, and participate in mastermind and networking events. We'll also build a 3D FPS Game and in parallel build an MMORPG with the community. ",
+      text: "The Ape Gorilla Club gives the holder a lifetime value NFT, with customized Gorilla’s being the unique art pieces of 11,337 3D NFTs, giving you also the 3D model to be used and imported in future games and metaverses. This NFT will grant all holders access to the “Ape Gorilla Club”, rewards, business investment opportunities, and participate in future networking events, mastermind and meetup parties. Ape Gorilla will also acquire Physical and Virtual Bars/Restaurants/Villas accessible to Ape Gorilla NFT holders. We'll also build a 3D FPS Game and in parallel build an MMORPG with the community. ",
     },
     {
       title: "$6M+ TOTAL GIVEAWAYS",
@@ -32,7 +32,7 @@ const HomeRoadmap = () => {
     },
     {
       title: "EVOLUTION",
-      text: "700 ETH is reserved for our official partners of the people of the Kingdom of Bhutan. Over $3,000,000 in USD is reserved to give-away angel investments to business proposals made by Ape Gorilla NFT holders. The minimum angel investment is $5,000 and up to $100,000 for each and any business proposal that falls under the criteria of helping other people, or changing people's lives. We will have a dedicated auditing team to ensure the business proposals are legit.",
+      text: "We will launch the Royal Gorilla NFT Collection, which can only be minted by Ape Gorilla holders. We will launch Gorilla Build, This will be Software as Service to easily build Website, Sales Funnels, Email Marketing via drag-and-drop functionalities. This will serve as a utility to empower the community to create and build online businesses easily, and at cost price for NFT holders.",
     },
     {
       title: "MERCH",
@@ -112,9 +112,10 @@ const HomeRoadmap = () => {
                   ROADMAP
                 </div>
                 <div className="text-green-60 text-14 sm:text-16 md:text-18 text-left">
-                  Our mission is to empower our community in educational growth, business and networking opportunities,
-                  play to earn games, test our boundaries and create a community mindset around a Happiness Index,
-                  modeled by the Kingdom of Bhutan.
+                  Welcome to our Roadmap! Theres a lot to take in, but theres even more unannounced partnerships we have in store
+                  for our NFT holders and community we build. The partnerhsips, high networth and high network individuals at the
+                  Ape Gorilla mastermind and networking events are beyond any regular, or standard expectations. Well also have big
+                  name celebrities and influencers too.
                 </div>
               </div>
             </div>
