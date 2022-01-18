@@ -1,0 +1,22 @@
+@font-face {
+  font-family: AzoSans;
+  src: url("../../fonts/azo-sans-uber.ttf");
+}
+
+@font-face {
+  font-family: Agrandir;
+  src: url("../../fonts/agrandir-grandheavy.otf");
+}
+
+@font-face {
+  font-family: Momentum;
+  src: url("../../fonts/momentum.otf");
+}
+
+* {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+.font-azo {
+  font-family: "AzoSans", Arial, Helvetica, sans-serif;
+}

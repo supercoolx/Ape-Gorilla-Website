@@ -1,0 +1,96 @@
+html {
+  scroll-behavior: smooth;
+}
+
+:root,
+html,
+body {
+  @apply bg-white;
+}
+
+*,
+*::after,
+*::before {
+  -webkit-user-drag: none;
+  -webkit-app-region: no-drag;
+  font-family: "Causten", Arial, Helvetica, sans-serif;
+
+  @apply text-16;
+  @apply select-none;
+}
+
+th,
+td {
+  @apply p-5;
+  @apply text-left;
+}
+
+td:last-child {
+  @apply text-center;
+}
+
+input,
+input:focus {
+  background-color: transparent !important;
+
+  @apply bg-transparent;
+  @apply outline-none;
+}
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+textarea,
+textarea:focus {
+  @apply bg-transparent;
+  @apply outline-none;
+}
+
+button,
+button:focus,
+*:focus {
+  @apply outline-none;
+}
+
+.flow {
+  @apply grid-flow-col-dense;
+}
+
+.perspective {
+  -webkit-perspective: 800px;
+  perspective: 800px;
+
+  @apply absolute;
+  @apply top-0;
+  @apply left-0;
+}
+
+.showcase {
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+  transform: rotateX(10deg) rotateY(-20deg) rotateZ(0deg) translateZ(100px);
+}
+
+.paused:hover {
+  animation-play-state: paused;
+}
+
+::-webkit-scrollbar {
+  @apply w-0;
+  @apply h-0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

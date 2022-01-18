@@ -1,0 +1,22 @@
+:root,
+.dark {
+  --color-black: #fff;
+  --color-white: #000;
+  --color-white-5: "rgba(0, 0, 0, .05)";
+  --color-white-10: "rgba(0, 0, 0, .1)";
+  --color-white-60: "rgba(0, 0, 0, .6)";
+  --color-grey-4: "rgba(255, 255, 255, 0.04)";
+  --color-grey-10: "rgba(255, 255, 255, 0.1)";
+  --color-grey-50: "rgba(255, 255, 255, 0.5)";
+}
+
+.light {
+  --color-black: #000;
+  --color-white: #fff;
+  --color-white-5: "rgba(255, 255, 255, .05)";
+  --color-white-10: "rgba(255, 255, 255, .1)";
+  --color-white-60: "rgba(255, 255, 255, .6)";
+  --color-grey-4: "rgba(0, 0, 0, 0.04)";
+  --color-grey-10: "#00000029";
+  --color-grey-50: "rgba(0, 0, 0, 0.5)";
+}
