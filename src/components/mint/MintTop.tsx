@@ -16,7 +16,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
 
   const [minted, setMinted] = useState(0)
   const [total] = useState(1337)
-  const [price] = useState(0.38)
+  const [price] = useState(0.58)
 
   const [count, setCount] = useState(1)
   const [max] = useState(333)
@@ -80,7 +80,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
     const state = await contract.methods.saleState().call()
 
     if (state === "1") {
-      const url = "https://gnomesclub.github.io/whitelist.json"
+      const url = "https://apegorilla.github.io/whitelist.json"
 
       const json = await fetch(url)
         .then((res: any) => res.json())
@@ -114,8 +114,12 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
     const r = sign["r"]
     const s = sign["s"]
     const v = sign["v"]
-
     const mint_fee = await contract.methods.mintCost().call()
+    const balance = await contract.methods.balanceOf(address).call()
+    if (Math.floor(balance) + Math.floor(count) > 3) {
+      toast.error('Maximum of 3 Mints per Address')
+      return
+    }
 
     const gas = await contract.methods
       .presaleMint(count, v, r, s)
@@ -147,6 +151,12 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
 
   const onPublicSale = async () => {
     const mint_fee = await contract.methods.mintCost().call()
+    const balance = await contract.methods.balanceOf(address).call()
+    if (Math.floor(balance) + Math.floor(count) > 3) {
+      toast.error('Maximum of 3 Mints per Address')
+      return
+    }
+
     const gas = await contract.methods
       .publicSaleMint(count)
       .estimateGas({ from: address, value: mint_fee * count })
