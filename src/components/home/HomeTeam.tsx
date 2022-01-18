@@ -2,11 +2,14 @@ import ApeAndre from "assets/img/team/ape_andre.png"
 import ApeAttila from "assets/img/team/ape_attila.jpg"
 import ApeCasper from "assets/img/team/ape_casper.png"
 import ApeDavid from "assets/img/team/ape_david.jpg"
+import ApeEnrique from "assets/img/team/ape_enrique.png"
 import ApeFrank from "assets/img/team/ape_frank.png"
 import ApeLeon from "assets/img/team/ape_leon.jpg"
 import ApeLeona from "assets/img/team/ape_leona.jpg"
 import ApeMaestro from "assets/img/team/ape_maestro.png"
 import ApeMatthew from "assets/img/team/ape_matthew.png"
+import ApeMilton from "assets/img/team/ape_milton.png"
+import ApeOmar from "assets/img/team/ape_omar.png"
 import ApeSilvan from "assets/img/team/ape_silvan.jpg"
 import ApeWill from "assets/img/team/ape_will.jpg"
 import { SocialType } from "libs/enums"
@@ -79,6 +82,24 @@ const HomeTeam = () => {
       title: "Marketing Strategists",
       avatar: ApeMatthew,
       socials: [{ type: SocialType.Linkedin, link: "https://www.linkedin.com/in/matthew-read-0154b011b/" }],
+    },
+    {
+      name: "Enrique Martinez",
+      title: "Grandfather Master Blockchains Expert Consultant",
+      avatar: ApeEnrique,
+      socials: [{ type: SocialType.Linkedin, link: "https://www.linkedin.com/in/enrique-martinez-b9903314/" }],
+    },
+    {
+      name: "Omar Talovic",
+      title: "UI/UX Designer",
+      avatar: ApeOmar,
+      socials: [{ type: SocialType.Linkedin, link: "https://www.linkedin.com/in/otalovic/" }],
+    },
+    {
+      name: "Jack Milton",
+      title: "PR Manager",
+      avatar: ApeMilton,
+      socials: [{ type: SocialType.Linkedin, link: "https://www.linkedin.com/in/jackmiltons/" }],
     },
     {
       name: "Casper Sanders",
