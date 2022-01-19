@@ -36,7 +36,7 @@ const HomeTop = () => {
               <div className="w-full flex justify-center xl:justify-start">
                 <div className="w-[600px] max-w-full text-14 text-center xl:text-left sm:text-16 md:text-18 text-white-60">
                   Our mission is to empower our community in educational growth, business and networking opportunities. We are also offering business grant application credit for all NFT holders to receive grants of $5,000 and upto $100,000.
-                  Each Ape Gorilla NFT are importable 3D files into metaverses and NFT Games, making us even more unique. This community is built to test everyone&apos;s boundaries and create a community mindset around a Happiness Index, modeled by the Kingdom of Bhutan.
+                  Each Ape Gorilla NFT holder will have access to their own 3d character in our Games, making us even more unique. This community is built to test everyone&apos;s boundaries and create a community mindset around a Happiness Index, modeled by the Kingdom of Bhutan.
                 </div>
               </div>
               <div className="w-full grid grid-cols-1 gap-16 mb-20 sm:mb-30">
