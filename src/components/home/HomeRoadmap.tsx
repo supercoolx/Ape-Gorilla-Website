@@ -16,7 +16,7 @@ const HomeRoadmap = () => {
   const [roadmap] = useState<RoadmapInterface[]>([
     {
       title: "WELCOME TO THE CLUB!",
-      text: "The Ape Gorilla Club gives the holder a lifetime value NFT, with customized Gorilla’s being the unique art pieces of 11,337 3D NFTs, giving you also the 3D model to be used and imported in future games and metaverses. This NFT will grant all holders access to the “Ape Gorilla Club”, rewards, business investment opportunities, and participate in future networking events, mastermind and meetup parties. Ape Gorilla will also acquire Physical and Virtual Bars/Restaurants/Villas accessible to Ape Gorilla NFT holders. We'll also build a 3D FPS Game and in parallel build an MMORPG with the community. ",
+      text: "The Ape Gorilla Club gives the holder a lifetime value NFT, with customized Gorilla’s being the unique art pieces of 11,337 3D NFTs, giving you also the 3D model to be used in future games and metaverses. This NFT will grant all holders access to the “Ape Gorilla Club”, rewards, business investment opportunities, and participate in future networking events, mastermind and meetup parties. Ape Gorilla will also acquire Physical and Virtual Bars/Restaurants/Villas accessible to Ape Gorilla NFT holders. We'll also build a 3D FPS Game and in parallel build an MMORPG with the community. ",
     },
     {
       title: "$6M+ TOTAL GIVEAWAYS",
