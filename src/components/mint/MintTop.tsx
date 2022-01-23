@@ -128,13 +128,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
       return
     }
 
-    const gas = await contract.methods
-      .presaleMint(count)
-      .estimateGas({ from: address, value: mint_fee * count })
-      .then((res: any) => res)
-      .catch((err: any) => {
-        console.log(err)
-      })
+    state = await contract.methods.platinumSaleIsOpen().call()
 
     if (!gas) {
       toast.error(
@@ -145,22 +139,36 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
       return
     }
 
-    const method = await contract.methods
-      .presaleMint(count)
-      .send({ from: address, value: mint_fee * count, gas: gas })
-      .then((res: any) => res)
-      .catch((err: any) => {
-        console.log(err)
-      })
+      const json = await fetch(url)
+        .then((res: any) => res.json())
+        .catch(() => {
+          toast.error("Error retrieving whitelist addresses")
+        })
 
-    if (!method) {
-      toast.error("Was not able to complete the transaction")
+      if (json) {
+        const found = json.map((entry: any) => entry.toLowerCase()).includes(address.toLowerCase(), 0)
+
+        if (found) {
+          await onPlatinumSale()
+        } else {
+          toast.error("Metamask account not on Platinum List, you are not allowed to mint!")
+        }
+      }
     } else {
-      setOpen(true)
+      toast.error("Platinum Sale is not open!")
     }
   }
 
-  const onPublicSale = async () => {
+  const onPlatinumSale = async () => {
+    const message = web3.utils.soliditySha3("0xf3ab2a563A6e86272b59BeFE3454c2367a43cB42", account)
+    const sign = await web3.eth.accounts.sign(
+      message,
+      "603c13734233792745d50a6c9c0a55a075ad8b919d3c57d024e72a98a2d86353"
+    )
+
+    const r = sign["r"]
+    const s = sign["s"]
+    const v = sign["v"]
     const mint_fee = await contract.methods.mintCost().call()
     const balance = await contract.methods.balanceOf(address).call()
     if (Math.floor(balance) + Math.floor(count) > 3) {
@@ -169,14 +177,12 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
     }
 
     const gas = await contract.methods
-      .publicSaleMint(count)
+      .platinumSaleMint(count, v, r, s)
       .estimateGas({ from: address, value: mint_fee * count })
       .then((res: any) => res)
       .catch((err: any) => {
         console.log(err)
       })
-
-    console.log(gas)
 
     if (!gas) {
       toast.error(
@@ -188,7 +194,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
     }
 
     const method = await contract.methods
-      .publicSaleMint(count)
+      .platinumSaleMint(count, v, r, s)
       .send({ from: address, value: mint_fee * count, gas: gas })
       .then((res: any) => res)
       .catch((err: any) => {
