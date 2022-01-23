@@ -16,7 +16,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
 
   const [minted, setMinted] = useState(0)
   const [total] = useState(1337)
-  const [price] = useState(0.58)
+  const [price] = useState(0.38)
 
   const [count, setCount] = useState(1)
   const [max] = useState(333)
@@ -124,12 +124,12 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
     const mint_fee = await contract.methods.mintCost().call()
     const balance = await contract.methods.balanceOf(address).call()
     if (Math.floor(balance) + Math.floor(count) > 3) {
-      toast.error('Maximum of 3 Mints per Address')
+      toast.error("Maximum of 3 Mints per Address")
       return
     }
 
     const gas = await contract.methods
-      .presaleMint(count, v, r, s)
+      .presaleMint(count)
       .estimateGas({ from: address, value: mint_fee * count })
       .then((res: any) => res)
       .catch((err: any) => {
@@ -146,7 +146,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
     }
 
     const method = await contract.methods
-      .presaleMint(count, v, r, s)
+      .presaleMint(count)
       .send({ from: address, value: mint_fee * count, gas: gas })
       .then((res: any) => res)
       .catch((err: any) => {
@@ -164,7 +164,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
     const mint_fee = await contract.methods.mintCost().call()
     const balance = await contract.methods.balanceOf(address).call()
     if (Math.floor(balance) + Math.floor(count) > 3) {
-      toast.error('Maximum of 3 Mints per Address')
+      toast.error("Maximum of 3 Mints per Address")
       return
     }
 

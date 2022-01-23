@@ -2,19 +2,6 @@ export const loadContract = async (ethereum: any) => {
   return await new ethereum.Contract(
     [
       {
-        inputs: [
-          {
-            internalType: "uint256",
-            name: "number",
-            type: "uint256"
-          }
-        ],
-        name: "addTokensPlatinumSale",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function"
-      },
-      {
         inputs: [],
         stateMutability: "nonpayable",
         type: "constructor"
@@ -70,57 +57,6 @@ export const loadContract = async (ethereum: any) => {
         type: "event"
       },
       {
-        inputs: [
-          {
-            internalType: "address",
-            name: "to",
-            type: "address"
-          },
-          {
-            internalType: "uint256",
-            name: "tokenId",
-            type: "uint256"
-          }
-        ],
-        name: "approve",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function"
-      },
-      {
-        inputs: [],
-        name: "burnUnmintedTokens",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function"
-      },
-      {
-        inputs: [
-          {
-            internalType: "string",
-            name: "baseURI_",
-            type: "string"
-          }
-        ],
-        name: "changeBaseURI",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function"
-      },
-      {
-        inputs: [
-          {
-            internalType: "address",
-            name: "_dummy",
-            type: "address"
-          }
-        ],
-        name: "changeDummy",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function"
-      },
-      {
         anonymous: false,
         inputs: [
           {
@@ -138,185 +74,6 @@ export const loadContract = async (ethereum: any) => {
         ],
         name: "OwnershipTransferred",
         type: "event"
-      },
-      {
-        inputs: [
-          {
-            internalType: "uint256",
-            name: "number",
-            type: "uint256"
-          },
-          {
-            internalType: "uint8",
-            name: "_v",
-            type: "uint8"
-          },
-          {
-            internalType: "bytes32",
-            name: "_r",
-            type: "bytes32"
-          },
-          {
-            internalType: "bytes32",
-            name: "_s",
-            type: "bytes32"
-          }
-        ],
-        name: "platinumSaleMint",
-        outputs: [],
-        stateMutability: "payable",
-        type: "function"
-      },
-      {
-        inputs: [
-          {
-            internalType: "uint256",
-            name: "number",
-            type: "uint256"
-          },
-          {
-            internalType: "uint8",
-            name: "_v",
-            type: "uint8"
-          },
-          {
-            internalType: "bytes32",
-            name: "_r",
-            type: "bytes32"
-          },
-          {
-            internalType: "bytes32",
-            name: "_s",
-            type: "bytes32"
-          }
-        ],
-        name: "presaleMint",
-        outputs: [],
-        stateMutability: "payable",
-        type: "function"
-      },
-      {
-        inputs: [
-          {
-            internalType: "uint256",
-            name: "number",
-            type: "uint256"
-          }
-        ],
-        name: "publicSaleMint",
-        outputs: [],
-        stateMutability: "payable",
-        type: "function"
-      },
-      {
-        inputs: [],
-        name: "renounceOwnership",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function"
-      },
-      {
-        inputs: [
-          {
-            internalType: "uint256",
-            name: "number",
-            type: "uint256"
-          }
-        ],
-        name: "reservedMint",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function"
-      },
-      {
-        inputs: [
-          {
-            internalType: "address",
-            name: "from",
-            type: "address"
-          },
-          {
-            internalType: "address",
-            name: "to",
-            type: "address"
-          },
-          {
-            internalType: "uint256",
-            name: "tokenId",
-            type: "uint256"
-          }
-        ],
-        name: "safeTransferFrom",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function"
-      },
-      {
-        inputs: [
-          {
-            internalType: "address",
-            name: "from",
-            type: "address"
-          },
-          {
-            internalType: "address",
-            name: "to",
-            type: "address"
-          },
-          {
-            internalType: "uint256",
-            name: "tokenId",
-            type: "uint256"
-          },
-          {
-            internalType: "bytes",
-            name: "_data",
-            type: "bytes"
-          }
-        ],
-        name: "safeTransferFrom",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function"
-      },
-      {
-        inputs: [
-          {
-            internalType: "address",
-            name: "operator",
-            type: "address"
-          },
-          {
-            internalType: "bool",
-            name: "approved",
-            type: "bool"
-          }
-        ],
-        name: "setApprovalForAll",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function"
-      },
-      {
-        inputs: [],
-        name: "switchToPresale",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function"
-      },
-      {
-        inputs: [],
-        name: "switchToPublicSale",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function"
-      },
-      {
-        inputs: [],
-        name: "toggleReveal",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function"
       },
       {
         anonymous: false,
@@ -344,12 +101,33 @@ export const loadContract = async (ethereum: any) => {
         type: "event"
       },
       {
+        inputs: [],
+        name: "accountBalance",
+        outputs: [
+          {
+            internalType: "uint256",
+            name: "",
+            type: "uint256"
+          }
+        ],
+        stateMutability: "view",
+        type: "function"
+      },
+      {
         inputs: [
           {
-            internalType: "address",
-            name: "from",
-            type: "address"
-          },
+            internalType: "uint256",
+            name: "number",
+            type: "uint256"
+          }
+        ],
+        name: "addTokensPlatinumSale",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
+        inputs: [
           {
             internalType: "address",
             name: "to",
@@ -361,57 +139,9 @@ export const loadContract = async (ethereum: any) => {
             type: "uint256"
           }
         ],
-        name: "transferFrom",
+        name: "approve",
         outputs: [],
         stateMutability: "nonpayable",
-        type: "function"
-      },
-      {
-        inputs: [
-          {
-            internalType: "address",
-            name: "newOwner",
-            type: "address"
-          }
-        ],
-        name: "transferOwnership",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function"
-      },
-      {
-        inputs: [],
-        name: "transferToCommunityWallet",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function"
-      },
-      {
-        stateMutability: "payable",
-        type: "fallback"
-      },
-      {
-        inputs: [],
-        name: "withdrawAll",
-        outputs: [],
-        stateMutability: "nonpayable",
-        type: "function"
-      },
-      {
-        stateMutability: "payable",
-        type: "receive"
-      },
-      {
-        inputs: [],
-        name: "accountBalance",
-        outputs: [
-          {
-            internalType: "uint256",
-            name: "",
-            type: "uint256"
-          }
-        ],
-        stateMutability: "view",
         type: "function"
       },
       {
@@ -435,7 +165,40 @@ export const loadContract = async (ethereum: any) => {
       },
       {
         inputs: [],
+        name: "burnUnmintedTokens",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
+        inputs: [
+          {
+            internalType: "string",
+            name: "baseURI_",
+            type: "string"
+          }
+        ],
+        name: "changeBaseURI",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
+        inputs: [],
         name: "communityWallet",
+        outputs: [
+          {
+            internalType: "address",
+            name: "",
+            type: "address"
+          }
+        ],
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        inputs: [],
+        name: "dev",
         outputs: [
           {
             internalType: "address",
@@ -510,11 +273,6 @@ export const loadContract = async (ethereum: any) => {
             internalType: "bytes32",
             name: "_s",
             type: "bytes32"
-          },
-          {
-            internalType: "uint256",
-            name: "id",
-            type: "uint256"
           }
         ],
         name: "isValidAccessMessage",
@@ -588,6 +346,20 @@ export const loadContract = async (ethereum: any) => {
       },
       {
         inputs: [],
+        name: "openPlatinumSale",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
+        inputs: [],
+        name: "openPresale",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
+        inputs: [],
         name: "owner",
         outputs: [
           {
@@ -620,6 +392,60 @@ export const loadContract = async (ethereum: any) => {
       },
       {
         inputs: [],
+        name: "platinumSaleIsOpen",
+        outputs: [
+          {
+            internalType: "bool",
+            name: "",
+            type: "bool"
+          }
+        ],
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        inputs: [
+          {
+            internalType: "uint256",
+            name: "number",
+            type: "uint256"
+          },
+          {
+            internalType: "uint8",
+            name: "_v",
+            type: "uint8"
+          },
+          {
+            internalType: "bytes32",
+            name: "_r",
+            type: "bytes32"
+          },
+          {
+            internalType: "bytes32",
+            name: "_s",
+            type: "bytes32"
+          }
+        ],
+        name: "platinumSaleMint",
+        outputs: [],
+        stateMutability: "payable",
+        type: "function"
+      },
+      {
+        inputs: [
+          {
+            internalType: "uint256",
+            name: "number",
+            type: "uint256"
+          }
+        ],
+        name: "presaleMint",
+        outputs: [],
+        stateMutability: "payable",
+        type: "function"
+      },
+      {
+        inputs: [],
         name: "presalelaunch",
         outputs: [
           {
@@ -629,6 +455,19 @@ export const loadContract = async (ethereum: any) => {
           }
         ],
         stateMutability: "view",
+        type: "function"
+      },
+      {
+        inputs: [
+          {
+            internalType: "uint256",
+            name: "number",
+            type: "uint256"
+          }
+        ],
+        name: "publicSaleMint",
+        outputs: [],
+        stateMutability: "payable",
         type: "function"
       },
       {
@@ -642,6 +481,26 @@ export const loadContract = async (ethereum: any) => {
           }
         ],
         stateMutability: "view",
+        type: "function"
+      },
+      {
+        inputs: [],
+        name: "renounceOwnership",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
+        inputs: [
+          {
+            internalType: "uint256",
+            name: "number",
+            type: "uint256"
+          }
+        ],
+        name: "reservedMint",
+        outputs: [],
+        stateMutability: "nonpayable",
         type: "function"
       },
       {
@@ -671,6 +530,57 @@ export const loadContract = async (ethereum: any) => {
         type: "function"
       },
       {
+        inputs: [
+          {
+            internalType: "address",
+            name: "from",
+            type: "address"
+          },
+          {
+            internalType: "address",
+            name: "to",
+            type: "address"
+          },
+          {
+            internalType: "uint256",
+            name: "tokenId",
+            type: "uint256"
+          }
+        ],
+        name: "safeTransferFrom",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
+        inputs: [
+          {
+            internalType: "address",
+            name: "from",
+            type: "address"
+          },
+          {
+            internalType: "address",
+            name: "to",
+            type: "address"
+          },
+          {
+            internalType: "uint256",
+            name: "tokenId",
+            type: "uint256"
+          },
+          {
+            internalType: "bytes",
+            name: "_data",
+            type: "bytes"
+          }
+        ],
+        name: "safeTransferFrom",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
         inputs: [],
         name: "saleState",
         outputs: [
@@ -684,8 +594,39 @@ export const loadContract = async (ethereum: any) => {
         type: "function"
       },
       {
+        inputs: [
+          {
+            internalType: "address",
+            name: "operator",
+            type: "address"
+          },
+          {
+            internalType: "bool",
+            name: "approved",
+            type: "bool"
+          }
+        ],
+        name: "setApprovalForAll",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
         inputs: [],
         name: "shareholder1",
+        outputs: [
+          {
+            internalType: "address",
+            name: "",
+            type: "address"
+          }
+        ],
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        inputs: [],
+        name: "shareholder10",
         outputs: [
           {
             internalType: "address",
@@ -762,6 +703,45 @@ export const loadContract = async (ethereum: any) => {
         type: "function"
       },
       {
+        inputs: [],
+        name: "shareholder7",
+        outputs: [
+          {
+            internalType: "address",
+            name: "",
+            type: "address"
+          }
+        ],
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        inputs: [],
+        name: "shareholder8",
+        outputs: [
+          {
+            internalType: "address",
+            name: "",
+            type: "address"
+          }
+        ],
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        inputs: [],
+        name: "shareholder9",
+        outputs: [
+          {
+            internalType: "address",
+            name: "",
+            type: "address"
+          }
+        ],
+        stateMutability: "view",
+        type: "function"
+      },
+      {
         inputs: [
           {
             internalType: "bytes4",
@@ -782,6 +762,13 @@ export const loadContract = async (ethereum: any) => {
       },
       {
         inputs: [],
+        name: "switchToPublicSale",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
+        inputs: [],
         name: "symbol",
         outputs: [
           {
@@ -791,6 +778,13 @@ export const loadContract = async (ethereum: any) => {
           }
         ],
         stateMutability: "view",
+        type: "function"
+      },
+      {
+        inputs: [],
+        name: "toggleReveal",
+        outputs: [],
+        stateMutability: "nonpayable",
         type: "function"
       },
       {
@@ -837,6 +831,25 @@ export const loadContract = async (ethereum: any) => {
         type: "function"
       },
       {
+        inputs: [
+          {
+            internalType: "uint256",
+            name: "tokenId_",
+            type: "uint256"
+          }
+        ],
+        name: "tokenURI",
+        outputs: [
+          {
+            internalType: "string",
+            name: "",
+            type: "string"
+          }
+        ],
+        stateMutability: "view",
+        type: "function"
+      },
+      {
         inputs: [],
         name: "tokensLeftPlatinumSale",
         outputs: [
@@ -863,25 +876,6 @@ export const loadContract = async (ethereum: any) => {
         type: "function"
       },
       {
-        inputs: [
-          {
-            internalType: "uint256",
-            name: "tokenId_",
-            type: "uint256"
-          }
-        ],
-        name: "tokenURI",
-        outputs: [
-          {
-            internalType: "string",
-            name: "",
-            type: "string"
-          }
-        ],
-        stateMutability: "view",
-        type: "function"
-      },
-      {
         inputs: [],
         name: "totalSupply",
         outputs: [
@@ -893,8 +887,75 @@ export const loadContract = async (ethereum: any) => {
         ],
         stateMutability: "view",
         type: "function"
+      },
+      {
+        inputs: [
+          {
+            internalType: "address",
+            name: "from",
+            type: "address"
+          },
+          {
+            internalType: "address",
+            name: "to",
+            type: "address"
+          },
+          {
+            internalType: "uint256",
+            name: "tokenId",
+            type: "uint256"
+          }
+        ],
+        name: "transferFrom",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
+        inputs: [
+          {
+            internalType: "address",
+            name: "newOwner",
+            type: "address"
+          }
+        ],
+        name: "transferOwnership",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
+        inputs: [],
+        name: "transferToCommunityWallet",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
+        inputs: [],
+        name: "transfered",
+        outputs: [
+          {
+            internalType: "bool",
+            name: "",
+            type: "bool"
+          }
+        ],
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        inputs: [],
+        name: "withdrawAll",
+        outputs: [],
+        stateMutability: "nonpayable",
+        type: "function"
+      },
+      {
+        stateMutability: "payable",
+        type: "receive"
       }
     ],
-    "0xBBE16255534D78530229Cb0D01DEFD11652A1D84"
+    "0xf3ab2a563A6e86272b59BeFE3454c2367a43cB42"
   )
 }
