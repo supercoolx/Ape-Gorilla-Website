@@ -123,13 +123,12 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
     const s = sign["s"]
     const v = sign["v"]
     const mint_fee = await contract.methods.mintCost().call()
-    const balance = await contract.methods.balanceOf(address).call()
+
     if (Math.floor(balance) + Math.floor(count) > 3) {
       toast.error("Maximum of 3 Mints per Address")
       return
     }
 
-    const balance = await contract.methods.balanceOf(address).call()
     if (Math.floor(balance) + Math.floor(count) > 3) {
       toast.error("Maximum of 3 Mints per Address")
       return
