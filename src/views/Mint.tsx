@@ -49,16 +49,13 @@ const Mint = ({ platinum }: { platinum: boolean }) => {
           <div className="w-full flex justify-center">
             <div className="w-[700px] max-w-full grid grid-cols-1 gap-30">
               <div className="w-full font-azo text-center text-white text-32 sm:text-[42px] md:text-[52px] lg:text-[60px]">
-                $6M+ TOTAL{" "}
+                COMMUNITY{" "}
                 <span className="font-azo text-green-light text-32 sm:text-[42px] md:text-[52px] lg:text-[60px]">
-                  GIVEAWAYS
+                  MASTERMINDS
                 </span>
               </div>
               <div className="w-full text-white-60 text-center text-18">
-                700 ETH is reserved for our official partners of the people of the Kingdom of Bhutan. Over $3,000,000 in
-                USD is reserved to give-away angel investments to business proposals made by Ape Gorilla NFT holders.
-                The minimum angel investment is $5,000 and up to $100,000 for each and any business that helps other
-                people, or changes peoples lives.
+              On a mission to building a community surrounded around helping and empowering each other with access to high-level events, web3.0 training, software, and games.
               </div>
             </div>
           </div>

@@ -7,11 +7,11 @@ import { Link } from "react-router-dom"
 const HomeFaq = () => {
   const [questions] = useState<QuestionInterface[]>([
     {
-      question: "How much is an ApeGorilla NFT?",
+      question: "How much is an Ape Gorilla NFT?",
       answer: (
         <>
           The PRESALE price is 0.22 ETH + gas Fees. The PUBLIC SALES price is 0.58 ETH + gas fees. You can qualify for
-          our Presale on 2/2/2022 here:{" "}
+          our Presale and get on the {" "}
           <Link to={URL.WHITELIST} className="text-green-light text-16">
             whitelist
           </Link>
@@ -20,7 +20,7 @@ const HomeFaq = () => {
       ),
     },
     {
-      question: "Where can I view my ApeGorilla NFTs?",
+      question: "Where can I view my Ape Gorilla NFTs?",
       answer: (
         <>
           After you minted them, you can see them in your Opensea account or on the{" "}
@@ -40,8 +40,8 @@ const HomeFaq = () => {
       ),
     },
     {
-      question: "When will we be able to mint ApeGorilla NFTs?",
-      answer: <>We will be announcing the whitelist and Public sale will be announced soon!</>,
+      question: "When will we be able to mint Ape Gorilla NFTs?",
+      answer: <>We will be announcing the whitelist and Public sale dates soon! The priority is executing the roadmap and serve our community first! </>,
     },
     {
       question: "What can I do with my Ape Gorilla NFT?",

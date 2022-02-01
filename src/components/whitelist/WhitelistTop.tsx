@@ -1,4 +1,3 @@
-import WhitelistTimer from "components/whitelist/WhitelistTimer"
 import { useProps } from "contexts/PropsContext"
 import { SOCIAL } from "libs/constants"
 import { openLink } from "libs/functions"
@@ -25,11 +24,9 @@ const WhitelistTop = ({ handler }: { handler: any }) => {
       {!ready ? (
         <div className="w-full grid grid-cols-1">
           <div className="w-full grid grid-cols-1">
-            <WhitelistTimer />
             <div className="w-full text-white-60 font-regular text-16 sm:text-18 mb-40">
-              Our NFT Community gives the holder a lifetime value token, with customized Gorilla’s being the unique art
-              pieces of 11,337 3D NFT’s named the “Ape Gorilla” project, which will grant all holders to the “Ape
-              Gorilla Club”, and a month after the drop we will launch the “Royal Gorilla” project.
+            On a mission to building a community surrounded around helping and empowering each other with access to high-level events, web3.0 training, software, and games.
+            Join the Ape Gorilla discord channel and join the community to get Whitelisted!
             </div>
             <div className="w-full flex justify-start gap-20">
               <button onClick={(e) => openLink(e, SOCIAL.DISCORD)} className="w-full sm:w-auto relative">
@@ -49,8 +46,7 @@ const WhitelistTop = ({ handler }: { handler: any }) => {
             </div>
             <div className="w-full text-white-60 font-regular text-16 sm:text-18 mb-40">
               The Ape Gorilla Club gives the holder a lifetime value token, with customized Gorilla’s being the unique
-              art pieces of 11,337 3D NFTs. This NFT will grant all holders access to the “Ape Gorilla Club”, daily
-              token rewards, business investment opportunities, and play-to-earn gamification utilities.
+              art pieces of 11,337 3D NFTs. Our mission is to empower our community through multiple avenues including academic education in NFTs, web3.0 and blockchains, Meta Gorilla token rewards, business assistance tool, networking opportunities, as well as opportunity for receiving business or charity grants. Checkout the whitelist for more information, all of the team members are documented!
             </div>
             <div className="w-full grid grid-cols-1 md:grid-cols-[1fr,auto] justify-start gap-20">
               <div className="relative w-full grid grid-cols-[1fr,auto] gap-20 px-28 items-center">

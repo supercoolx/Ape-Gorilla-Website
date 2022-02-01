@@ -2,7 +2,6 @@ import BannerGiant from "assets/img/banner_giant.png"
 import BannerTop from "assets/img/banner_top.png"
 import SpinnerCirc from "assets/img/spinner_circ.png"
 import { ReactComponent as SpinnerText } from "assets/img/spinner_text.svg"
-import HomeTimer from "components/home/HomeTimer"
 import HomeTopSlider from "components/home/HomeTopSlider"
 import { useProps } from "contexts/PropsContext"
 import { SOCIAL, URL } from "libs/constants"
@@ -39,12 +38,6 @@ const HomeTop = () => {
                   mastermind and networking events, brainstorming sessions, and insane parties, all held at amazing locations like beachfront villas, yachts, and mansions. Your Ape Gorilla NFT is your golden ticket to a truly life-changing, real-life community!
                   You have joined an elite community ready to make a real global impact 🌎 🌍 🌏
                 </div>
-              </div>
-              <div className="w-full grid grid-cols-1 gap-16 mb-20 sm:mb-30">
-                <div className="w-full text-white text-24 tracking-widest text-center xl:text-left">
-                  MINTING COUNTDOWN
-                </div>
-                <HomeTimer />
               </div>
               <div className="w-full flex flex-wrap justify-center xl:justify-start gap-20">
                 {ready ? (
@@ -97,7 +90,7 @@ const HomeTop = () => {
                     <span className="text-green-light font-azo text-24 sm:text-36 md:text-[52px] xl:text-[64px]">
                       11,337
                     </span>{" "}
-                    unique Non-Fungible Tokens
+                    Unique Non-Fungible Tokens
                   </div>
                   <div className="w-full text-14 text-center xl:text-left sm:text-16 md:text-18 text-white-60 mb-20 sm:mb-30">
                   Our mission is to empower our community through multiple avenues including academic education in NFTs, web3.0 and blockchains, Meta Gorilla token rewards, business assistance tool, networking opportunities, as well as opportunity for receiving business or charity grants. Checkout the whitelist for more information, all of the team members are documented!
