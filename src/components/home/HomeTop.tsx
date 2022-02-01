@@ -93,7 +93,7 @@ const HomeTop = () => {
                     Unique Non-Fungible Tokens
                   </div>
                   <div className="w-full text-14 text-center xl:text-left sm:text-16 md:text-18 text-white-60 mb-20 sm:mb-30">
-                  Our mission is to empower our community through multiple avenues including academic education in NFTs, web3.0 and blockchains, Meta Gorilla token rewards, business assistance tool, networking opportunities, as well as opportunity for receiving business or charity grants. Checkout the whitelist for more information, all of the team members are documented!
+                  Our mission is to empower our community through multiple avenues including academic education in NFTs, web3.0 and blockchains, Meta Gorilla token rewards, business assistance tool, networking opportunities, as well as opportunity for receiving business or charity grants. Checkout the roadmap for more information, all of the team members are also documented below!
                   </div>
                   <div className="w-full flex justify-center xl:justify-start">
                     <button onClick={(e) => openLink(e, SOCIAL.DISCORD)} className="w-full sm:w-auto relative">
