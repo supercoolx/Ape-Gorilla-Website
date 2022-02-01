@@ -35,8 +35,9 @@ const HomeTop = () => {
               </div>
               <div className="w-full flex justify-center xl:justify-start">
                 <div className="w-[600px] max-w-full text-14 text-center xl:text-left sm:text-16 md:text-18 text-white-60">
-                  Our mission is to empower our community in educational growth, business and networking opportunities. We are also offering business grant application credit for all NFT holders to receive grants of $5,000 and upto $100,000.
-                  Each Ape Gorilla NFT holder will have access to their own 3d character in our Games, making us even more unique. This community is built to test everyone&apos;s boundaries and create a community mindset around a Happiness Index, modeled by the Kingdom of Bhutan.
+                  Ape Gorilla is a collection of 11,337 unique Non-Fungible Tokens that provide privileged access to the most incredible international events:
+                  mastermind and networking events, brainstorming sessions, and insane parties, all held at amazing locations like beachfront villas, yachts, and mansions. Your Ape Gorilla NFT is your golden ticket to a truly life-changing, real-life community!
+                  You have joined an elite community ready to make a real global impact 🌎 🌍 🌏
                 </div>
               </div>
               <div className="w-full grid grid-cols-1 gap-16 mb-20 sm:mb-30">
@@ -96,11 +97,10 @@ const HomeTop = () => {
                     <span className="text-green-light font-azo text-24 sm:text-36 md:text-[52px] xl:text-[64px]">
                       11,337
                     </span>{" "}
-                    unique NFT tokens
+                    unique Non-Fungible Tokens
                   </div>
                   <div className="w-full text-14 text-center xl:text-left sm:text-16 md:text-18 text-white-60 mb-20 sm:mb-30">
-                    Ape Gorilla was creted by a motivated group of individuals who want to bring a community together with
-                    a product to make a positive change. Welcome to the Ape Gorilla Family.
+                  Our mission is to empower our community through multiple avenues including academic education in NFTs, web3.0 and blockchains, Meta Gorilla token rewards, business assistance tool, networking opportunities, as well as opportunity for receiving business or charity grants. Checkout the whitelist for more information, all of the team members are documented!
                   </div>
                   <div className="w-full flex justify-center xl:justify-start">
                     <button onClick={(e) => openLink(e, SOCIAL.DISCORD)} className="w-full sm:w-auto relative">

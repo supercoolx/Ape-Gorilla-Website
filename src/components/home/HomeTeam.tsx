@@ -7,7 +7,6 @@ import ApeFrank from "assets/img/team/ape_frank.png"
 import ApeLeon from "assets/img/team/ape_leon.jpg"
 import ApeLeona from "assets/img/team/ape_leona.jpg"
 import ApeMaestro from "assets/img/team/ape_maestro.png"
-import ApeMatthew from "assets/img/team/ape_matthew.png"
 import ApeMilton from "assets/img/team/ape_milton.png"
 import ApeOmar from "assets/img/team/ape_omar.png"
 import ApeSilvan from "assets/img/team/ape_silvan.jpg"
@@ -78,14 +77,8 @@ const HomeTeam = () => {
       socials: [{ type: SocialType.Linkedin, link: "https://www.linkedin.com/in/andre-queiroz-costa-b5abb31b6/ " }],
     },
     {
-      name: "Matthew Read",
-      title: "Marketing Strategists",
-      avatar: ApeMatthew,
-      socials: [{ type: SocialType.Linkedin, link: "https://www.linkedin.com/in/matthew-read-0154b011b/" }],
-    },
-    {
       name: "Enrique Martinez",
-      title: "Grandfather Master Blockchains Expert Consultant",
+      title: "Grandfather Master Blockchain Expert Consultant",
       avatar: ApeEnrique,
       socials: [{ type: SocialType.Linkedin, link: "https://www.linkedin.com/in/enrique-martinez-b9903314/" }],
     },

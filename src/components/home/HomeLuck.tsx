@@ -13,11 +13,9 @@ const HomeLuck = () => {
                 WHAT MAKES US UNIQUE?
               </div>
               <div className="w-full text-14 text-center xl:text-left sm:text-16 md:text-18 text-white-60">
-                We will be officially partnering with the people of the Kingdom of Bhutan and will provide our holders
-                greater access to networking, education on technology topics within our unique community. We will also be
-                partnering with high net worth, and highly influential individuals who want to give back to our community.
-                Our mission is to help as many communities as possible, by funding businesses to each NFT holder who wants
-                to build a business around helping others, or changing the lives of those in their community for the better.
+                We have partnerships with high net worth, and highly influential individuals who want to lend their expertese and
+                knowledge with the community. We will also be officially partnered with the people of the Kingdom of Bhutan and will provide our holders
+                greater access to networking, education on technology topics within our unique community.
               </div>
             </div>
           </div>

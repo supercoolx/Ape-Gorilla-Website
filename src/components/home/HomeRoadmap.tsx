@@ -15,40 +15,44 @@ const HomeRoadmap = () => {
 
   const [roadmap] = useState<RoadmapInterface[]>([
     {
-      title: "WELCOME TO THE CLUB!",
-      text: "The Ape Gorilla Club gives the holder a lifetime value NFT, with customized Gorilla’s being the unique art pieces of 11,337 3D NFTs, giving you also the 3D model to be used in future games and metaverses. This NFT will grant all holders access to the “Ape Gorilla Club”, rewards, business investment opportunities, and participate in future networking events, mastermind and meetup parties. Ape Gorilla will also acquire Physical and Virtual Bars/Restaurants/Villas accessible to Ape Gorilla NFT holders. We'll also build a 3D FPS Game and in parallel build an MMORPG with the community. ",
-    },
-    {
-      title: "$6M+ TOTAL GIVEAWAYS",
-      text: "700 ETH is reserved for our official partners of the people of the Kingdom of Bhutan. Over $3,000,000 in USD is reserved to give-away angel investments to business proposals made by Ape Gorilla NFT holders. The minimum angel investment is $5,000 and up to $100,000 for each and any business proposal that falls under the criteria of helping other people, or changing people's lives. We will have a dedicated auditing team to ensure the business proposals are legit.",
-    },
-    {
       title: "COMMUNITY",
-      text: "Ape Gorilla Kick-Off networking meetings will be organized worldwide locations in Europe, Asia, the Caribbean, and North & South America exclusively held for Ape Gorilla NFT holders. The events will be dedicated to community networking and masterminds to learn about Web3.0 online business opportunities, education on crypto, NFT’s, DeFi, and blockchain technology, supported by influential leading speakers in the crypto and NFT space. All of our future roadmaps, requires jobs, so we will allow our community to apply to them using their skillsets.",
-    },
-    {
-      title: "META GORILLA",
-      text: "We will have our own “Meta Gorilla” to reward NFT holders via our website by calling the smart contract. Utilizing Meta Gorilla for the games and to evolve your Ape Gorilla NFT into a Royal Gorilla. The second way of earning rewards is via games, where we enable for our NFT holders which allows players to earn “Meta Gorilla” for accomplishing tasks or achievements in-game.",
-    },
-    {
-      title: "EVOLUTION",
-      text: "We will launch the Royal Gorilla NFT Collection, which can only be minted by Ape Gorilla holders. We will launch Gorilla Build, This will be Software as Service to easily build Website, Sales Funnels, Email Marketing via drag-and-drop functionalities. This will serve as a utility to empower the community to create and build online businesses easily, and at cost price for NFT holders.",
-    },
-    {
-      title: "MERCH",
-      text: "Launch of the “Ape Gorilla” Merchandise with the option to customize merch with a drag-and-drop fashion building software to enable the creative side of our community. Holders will be able to upload their Ape Gorilla model on their desired merch to upload their NFT design onto merch and sell it on our open marketplace.",
-    },
-    {
-      title: "ACADEMY",
-      text: "2022 Ape Gorilla Academy (Web 3.0) As we jump into the new world of blockchains, cryptocurrency, NFT’s, Decentralized Apps, and Decentralized Finance, we want to ensure the community has the right support to resources and knowledge centers to learn cutting edge technologies.",
-    },
-    {
-      title: "NFT GAMIFICATION",
-      text: "Our team will be launching play-to-earn games, which include an (FPS) First Person Shooter Multiplayer game, while in parallel we will build an MMORPG 3D Game to create a metaverse utility experience for NFT’s and our community.",
+      text: "Ape Gorilla Kick-Off networking meetings will be organized worldwide locations in Europe, Asia, the Caribbean, and North & South America exclusively held for Ape Gorilla NFT holders. The events will be dedicated to community networking and masterminds to learn about Web3.0 online business opportunities, education on crypto, NFT’s, DeFi, and blockchain technology, supported by influential leading speakers in the crypto and NFT space.",
     },
     {
       title: "MASTERMINDS",
-      text: "We will hold a mastermind event for our loyal holders, rare NFT’s, and VIP members of the Ape Gorilla Club for an exclusive mastermind experience.",
+      text: "We will hold mastermind events for our loyal holders, rare NFT’s, and VIP members of the Ape Gorilla Club for exclusive mastermind experiences. These events will be incredible luxurious experiences around the world, held at amazing locations like beachfront villas, yachts, and mansions, accessible only to our VIP holders. We want to give our community the opportunity to network and brainstorm with other VIP guests, as well as high net-worth and influential individuals.",
+    },
+    {
+      title: "PHYSICAL ACCESS",
+      text: "Ape Gorilla will also give each Ape Gorilla NFT holder exclusive privilege access and benefits to Physical Clubs, Restaurants and villas acquired or leased over the years for our community. All of which will provide the community with many more opportunities for networking with each other, and creating an exclusive community. Each location will be leased or bought out as a community decision, made with a voting system only announced to Ape Gorilla NFT holders.",
+    },
+    {
+      title: "SOFTWARE",
+      text: "We will launch Gorilla Build soon! This is a Software as Service to easily build Website, Sales Funnels, Email Marketing Campaigns, Booking Appointment system, Landing pages and more via drag-and-drop functionalities. This software tool will serve as a utility to empower the community to create and build online businesses easily, at cost price or free where possible for the community. This software is ready to be launched soon and already exists with a huge proven track record of thousands of successful entrepreneurs using the platform.",
+    },
+    {
+      title: "ACADEMY",
+      text: "As we jump into the new world of blockchains, cryptocurrencies, NFT’s, Decentralized Apps and Decentralized Finance, we want to ensure the community has the right support, resources, and knowledge to learn everything there is to know about these cutting edge technologies.",
+    },
+    {
+      title: "MERCH MARKETPLACE",
+      text: "We will Launch the “Ape Gorilla” Merchandise software which will allow Ape Gorilla NFT holders the option to customize merchandise wear, with a drag-and-drop fashion design software, to enable the community to create their own merch. Holders will be able to “outfit” their Ape Gorilla NFT model with their customized merch and sell it on the Ape Gorilla marketplace. These software mechanics have already been built and are in BETA.",
+    },
+    {
+      title: "META GORILLA & EVOLUTION",
+      text: "We will launch our own Token “Meta Gorilla” to reward our NFT holders who can claim rewards on our website by calling the smart contract. We will then launch the second Royal Gorilla NFT Collection, which can only be minted by Ape Gorilla holders, purchasing a “Golden Chalice” to “Evolve” their Ape Gorilla to mint an additional Royal Gorilla NFT.",
+    },
+    {
+      title: "GAMIFICATION",
+      text: "Our team will be launching a (FPS) First Person Shooter Multiplayer game with play to earn capabilities. Along with the community, and in parallel, we will build a MMORPG 3D Game to interact with the community in a virtual environment.",
+    },
+    {
+      title: "BUSINESS AND CHARITY GRANTS",
+      text: "From the Ape Gorilla NFT sale collection, we will reserve funds to fund business or charity proposals to Ape Gorilla NFT holders requests. We are willing to contribute and fund as many businesses or charities in 2022 as possible, that have a positive impact around the NFT holders community. We will create an open accounting for the business proposals, to allow the community to fund charities, or businesses that help other people to make positive impacts in their communities. The idea to create the framework behind this is to empower the community to bring awareness to assist in their local causes.",
+    },
+    {
+      title: "SOCIAL GOOD",
+      text: "Additionally from the NFT public sale collection, we will also be donating 10% to the Kingdom of Bhutan for the Bhutanese Community Based Organization that is organized by The Ape Gorilla Kingdom of Bhutan's Ambassador’s, and our Partners from the Kingdom of Bhutan, Leon Rabten and Leona Choden Wangchuk, also our Ape Gorilla core founding members. These funds will help with increasing the Happiness Index of Bhutan and its development into the new world and youth development.",
     },
   ])
 
@@ -112,10 +116,7 @@ const HomeRoadmap = () => {
                   ROADMAP
                 </div>
                 <div className="text-green-60 text-14 sm:text-16 md:text-18 text-left">
-                  Welcome to our Roadmap! Theres a lot to take in, but theres even more unannounced partnerships we have in store
-                  for our NFT holders and community we build. The partnerhsips, high networth and high network individuals at the
-                  Ape Gorilla mastermind and networking events are beyond any regular, or standard expectations. Well also have big
-                  name celebrities and influencers too.
+                  Welcome to our Roadmap! Theres a lot to take in, but Ape Gorilla NFT will grant all holders access to the “Ape Gorilla Club”, allowing holders to participate in networking events, high level masterminds, meetup parties, Meta Gorilla rewards, business and charity grant opportunities, software tools, as well as Blockchains and Web3.0 academy. Ape Gorilla will also give each Ape Gorilla NFT holder exclusive privilege access and benefits to Physical Clubs, Restaurants and Villas acquired by us and our partners or leased over the years for our community.
                 </div>
               </div>
             </div>

@@ -10,7 +10,7 @@ const HomeFaq = () => {
       question: "How much is an ApeGorilla NFT?",
       answer: (
         <>
-          The PRESALE price is 0.38 ETH + gas Fees. The PUBLIC SALES price is 0.58 ETH + gas fees. You can qualify for
+          The PRESALE price is 0.22 ETH + gas Fees. The PUBLIC SALES price is 0.58 ETH + gas fees. You can qualify for
           our Presale on 2/2/2022 here:{" "}
           <Link to={URL.WHITELIST} className="text-green-light text-16">
             whitelist
@@ -35,13 +35,13 @@ const HomeFaq = () => {
       question: "Will there be a presale?",
       answer: (
         <>
-          Yes, we’re holding a presale which starts on the 2nd of February 2022 at 7 PM EST and consists of 1,337 items.
+          Yes, and consists of 1,337 items.
         </>
       ),
     },
     {
       question: "When will we be able to mint ApeGorilla NFTs?",
-      answer: <>If you missed the Whitelisting on 2/2/2022, then the Public sale will be announced soon!</>,
+      answer: <>We will be announcing the whitelist and Public sale will be announced soon!</>,
     },
     {
       question: "What can I do with my Ape Gorilla NFT?",
@@ -86,7 +86,7 @@ const HomeFaq = () => {
               FREQUENTLY ASKED QUESTIONS
             </div>
             <div className="w-full text-14 sm:text-16 md:text-18 text-center text-white-60">
-              We strive to answer you the most common question that our community is asking us. Feel free to join our
+              We strive to answer the most common question that our community is asking us. Feel free to join our
               Discord and we will explain everything in detail.
             </div>
           </div>
