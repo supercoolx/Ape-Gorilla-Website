@@ -45,7 +45,7 @@ export const PropsProvider = ({ children }: { children: React.ReactNode }) => {
   const [whitelist] = useState(true)
 
   const [interval] = useState(1000)
-  const [diff, setDiff] = useState(moment.tz("2022-02-02 20:22", "United States/New York").valueOf() - moment().valueOf())
+  const [diff, setDiff] = useState(moment.tz("2022-03-03 20:22", "United States/New York").valueOf() - moment().valueOf())
   const [ready, setReady] = useState(Math.floor(diff / 1000) < 0)
 
   useEffect(() => {

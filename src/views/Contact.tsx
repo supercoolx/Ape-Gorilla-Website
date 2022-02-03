@@ -47,9 +47,7 @@ const Contact = () => {
                 </div>
                 <div className="w-full flex justify-start">
                   <div className="w-[700px] max-w-full text-white-60">
-                    Our mission is to empower our community in educational growth, business and networking
-                    opportunities, play to earn games, test everyone&apos;s boundaries and create a community mindset
-                    around a Happiness Index, modeled by the Kingdom of Bhutan.
+                  Our mission is to empower our community through multiple avenues – including academic education in web3.0 and blockchains, Meta Gorilla token rewards, business assistance tool, networking opportunities, as well as opportunity for receiving business or charity grants. Checkout the whitelist for more information, all of the team members are documented!
                   </div>
                 </div>
               </div>
