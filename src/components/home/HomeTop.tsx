@@ -34,9 +34,11 @@ const HomeTop = () => {
               </div>
               <div className="w-full flex justify-center xl:justify-start">
                 <div className="w-[600px] max-w-full text-14 text-center xl:text-left sm:text-16 md:text-18 text-white-60">
-                  Ape Gorilla is a collection of 11,337 unique Non-Fungible Tokens that provide privileged access to the most incredible international events:
-                  mastermind and networking events, brainstorming sessions, and insane parties, all held at amazing locations like beachfront villas, yachts, and mansions. Your Ape Gorilla NFT is your golden ticket to a truly life-changing, real-life community!
-                  You have joined an elite community ready to make a real global impact 🌎 🌍 🌏
+                  Ape Gorilla is a collection of 11,337 unique Non-Fungible Tokens that provide privileged access to the
+                  most incredible international events: mastermind and networking events, brainstorming sessions, and
+                  insane parties, all held at amazing locations like beachfront villas, yachts, and mansions. Your Ape
+                  Gorilla NFT is your golden ticket to a truly life-changing, real-life community! You have joined an
+                  elite community ready to make a real global impact 🌎 🌍 🌏
                 </div>
               </div>
               <div className="w-full flex flex-wrap justify-center xl:justify-start gap-20">
@@ -71,9 +73,9 @@ const HomeTop = () => {
               </div>
             </div>
           </div>
-          <div className="hidden w-full justify-center mt-[80px] xl:mt-[240px]">
+          <div className="w-full flex justify-center mt-[80px] xl:mt-[140px]">
             <div className="max-w-full w-[900px]">
-              <VideoPlayer video={"https://www.youtube.com/watch?v=dQw4w9WgXcQ"} pre={true} clean={true} />
+              <VideoPlayer video={"https://www.youtube.com/watch?v=G_arcFqb0Os"} pre={true} clean={true} />
             </div>
           </div>
           <div className="w-full grid grid-cols-1 xl:grid-cols-[auto,1fr] gap-60 xl:gap-40 mt-[20px] xl:mt-[160px]">
@@ -93,7 +95,10 @@ const HomeTop = () => {
                     Unique Non-Fungible Tokens
                   </div>
                   <div className="w-full text-14 text-center xl:text-left sm:text-16 md:text-18 text-white-60 mb-20 sm:mb-30">
-                  Our mission is to empower our community through multiple avenues including academic education in NFTs, web3.0 and blockchains, Meta Gorilla token rewards, business assistance tool, networking opportunities, as well as opportunity for receiving business or charity grants. Checkout the roadmap for more information, all of the team members are also documented below!
+                    Our mission is to empower our community through multiple avenues including academic education in
+                    NFTs, web3.0 and blockchains, Meta Gorilla token rewards, business assistance tool, networking
+                    opportunities, as well as opportunity for receiving business or charity grants. Checkout the roadmap
+                    for more information, all of the team members are also documented below!
                   </div>
                   <div className="w-full flex justify-center xl:justify-start">
                     <button onClick={(e) => openLink(e, SOCIAL.DISCORD)} className="w-full sm:w-auto relative">
