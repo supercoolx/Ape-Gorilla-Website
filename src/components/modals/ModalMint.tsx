@@ -35,7 +35,7 @@ const ModalMint = ({
                 <>
                   You successfully minted your{" "}
                   <span className="font-azo text-32 text-green-light sm:text-[44px] md:text-[50px] lg:text-[64px]">
-                    45 Ape Gorilla
+                    {count} Ape Gorilla
                   </span>{" "}
                   NFT&apos;s
                 </>

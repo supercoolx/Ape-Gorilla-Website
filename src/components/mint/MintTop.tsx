@@ -16,7 +16,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
 
   const [minted, setMinted] = useState(0)
   const [total] = useState(1337)
-  const [price] = useState(0.38)
+  const [price] = useState(0.22)
 
   const [count, setCount] = useState(1)
   const [max] = useState(333)
@@ -113,6 +113,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
       "0xBBE16255534D78530229Cb0D01DEFD11652A1D84",
       account
     )
+
     const sign = await web3.eth.accounts.sign(
       message,
       "603c13734233792745d50a6c9c0a55a075ad8b919d3c57d024e72a98a2d86353"
@@ -122,13 +123,16 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
     const s = sign["s"]
     const v = sign["v"]
     const mint_fee = await contract.methods.mintCost().call()
+
     const balance = await contract.methods.balanceOf(address).call()
     if (Math.floor(balance) + Math.floor(count) > 3) {
       toast.error("Maximum of 3 Mints per Address")
       return
     }
 
-    state = await contract.methods.platinumSaleIsOpen().call()
+    const state = await contract.methods.platinumSaleIsOpen().call()
+
+    const gas = undefined
 
     if (!gas) {
       toast.error(
@@ -139,6 +143,9 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
       return
     }
 
+    const url = ""
+
+    if (state) {
       const json = await fetch(url)
         .then((res: any) => res.json())
         .catch(() => {
@@ -146,12 +153,15 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
         })
 
       if (json) {
-        const found = json.map((entry: any) => entry.toLowerCase()).includes(address.toLowerCase(), 0)
+        //const found = json.map((entry: any) => entry.toLowerCase()).includes(address.toLowerCase(), 0)
+        const found = true
 
         if (found) {
           await onPlatinumSale()
         } else {
-          toast.error("Metamask account not on Platinum List, you are not allowed to mint!")
+          toast.error(
+            "Metamask account not on Platinum List, you are not allowed to mint!"
+          )
         }
       }
     } else {
@@ -160,7 +170,10 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
   }
 
   const onPlatinumSale = async () => {
-    const message = web3.utils.soliditySha3("0xf3ab2a563A6e86272b59BeFE3454c2367a43cB42", account)
+    const message = web3.utils.soliditySha3(
+      "0xA724dfda9fB36f346745Bd39Ee9b182C3E40dEef",
+      account
+    )
     const sign = await web3.eth.accounts.sign(
       message,
       "603c13734233792745d50a6c9c0a55a075ad8b919d3c57d024e72a98a2d86353"
@@ -171,6 +184,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
     const v = sign["v"]
     const mint_fee = await contract.methods.mintCost().call()
     const balance = await contract.methods.balanceOf(address).call()
+
     if (Math.floor(balance) + Math.floor(count) > 3) {
       toast.error("Maximum of 3 Mints per Address")
       return
@@ -206,6 +220,10 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
     } else {
       setOpen(true)
     }
+  }
+
+  const onPublicSale = () => {
+    console.log("Public Sale")
   }
 
   const onActivate = () => {
