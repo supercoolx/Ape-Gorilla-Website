@@ -18,23 +18,39 @@ const HomeTimer = () => {
 
   return (
     <>
-      <div className="w-full flex justify-center xl:justify-start">
+      <div className="flex w-full justify-center xl:justify-start">
         <div className="grid grid-cols-4 gap-10 sm:gap-20 md:gap-30">
-          <div className="w-[70px] lg:w-[80px] max-w-full grid grid-cols-1 gap-2">
-            <div className="w-full text-white font-azo text-36 sm:text-48 leading-[110%]">{days}</div>
-            <div className="w-full text-white-60 font-regular text-12 sm:text-18">Days</div>
+          <div className="grid w-[70px] max-w-full grid-cols-1 gap-2 lg:w-[80px]">
+            <div className="font-azo w-full text-36 leading-[110%] text-white sm:text-48">
+              {days}
+            </div>
+            <div className="font-regular w-full text-12 text-white-60 sm:text-18">
+              Days
+            </div>
           </div>
-          <div className="w-[70px] lg:w-[80px] max-w-full grid grid-cols-1 gap-2">
-            <div className="w-full text-white font-azo text-36 sm:text-48 leading-[110%]">{hours}</div>
-            <div className="w-full text-white-60 font-regular text-12 sm:text-18">Hours</div>
+          <div className="grid w-[70px] max-w-full grid-cols-1 gap-2 lg:w-[80px]">
+            <div className="font-azo w-full text-36 leading-[110%] text-white sm:text-48">
+              {hours}
+            </div>
+            <div className="font-regular w-full text-12 text-white-60 sm:text-18">
+              Hours
+            </div>
           </div>
-          <div className="w-[70px] lg:w-[80px] max-w-full grid grid-cols-1 gap-2">
-            <div className="w-full text-white font-azo text-36 sm:text-48 leading-[110%]">{minutes}</div>
-            <div className="w-full text-white-60 font-regular text-12 sm:text-18">Minutes</div>
+          <div className="grid w-[70px] max-w-full grid-cols-1 gap-2 lg:w-[80px]">
+            <div className="font-azo w-full text-36 leading-[110%] text-white sm:text-48">
+              {minutes}
+            </div>
+            <div className="font-regular w-full text-12 text-white-60 sm:text-18">
+              Minutes
+            </div>
           </div>
-          <div className="w-[70px] lg:w-[80px] max-w-full grid grid-cols-1 gap-2">
-            <div className="w-full text-white font-azo text-36 sm:text-48 leading-[110%]">{seconds}</div>
-            <div className="w-full text-white-60 font-regular text-12 sm:text-18">Seconds</div>
+          <div className="grid w-[70px] max-w-full grid-cols-1 gap-2 lg:w-[80px]">
+            <div className="font-azo w-full text-36 leading-[110%] text-white sm:text-48">
+              {seconds}
+            </div>
+            <div className="font-regular w-full text-12 text-white-60 sm:text-18">
+              Seconds
+            </div>
           </div>
         </div>
       </div>

@@ -3,22 +3,30 @@ import React from "react"
 import { MdPlayCircleFilled } from "react-icons/md"
 import Wrapper from "utils/wrapper/Wrapper"
 
-const VideoPlayIcon = ({ title, length }: { title?: string; length?: string }) => {
+const VideoPlayIcon = ({
+  title,
+  length
+}: {
+  title?: string
+  length?: string
+}) => {
   return (
     <>
-      <div className="w-full h-full z-30 flex items-center justify-center bg-purple">
-        <div className="w-full absolute top-0 left-0 bottom-0">
+      <div className="bg-purple z-30 flex h-full w-full items-center justify-center">
+        <div className="absolute top-0 left-0 bottom-0 w-full">
           <img src={Video} alt="" />
         </div>
-        <div className="w-full flex items-center justify-center">
-          <div className="w-40 h-40 shadow-md rounded-full relative">
+        <div className="flex w-full items-center justify-center">
+          <div className="relative h-40 w-40 rounded-full shadow-md">
             <MdPlayCircleFilled className="absolute -top-4 -left-4 text-48 text-white" />
           </div>
           <Wrapper open={title ? true : false}>
-            <div className="text-white font-bold text-14 absolute top-10 md:top-18 left-10 md:left-18">{title}</div>
+            <div className="absolute top-10 left-10 text-14 font-bold text-white md:top-18 md:left-18">
+              {title}
+            </div>
           </Wrapper>
           <Wrapper open={length ? true : false}>
-            <div className="text-white opacity-40 font-bold text-14 absolute bottom-10 md:bottom-18 left-10 md:left-18">
+            <div className="absolute bottom-10 left-10 text-14 font-bold text-white opacity-40 md:bottom-18 md:left-18">
               {length}
             </div>
           </Wrapper>

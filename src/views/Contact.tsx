@@ -7,75 +7,112 @@ import { SOCIAL } from "libs/constants"
 import { openLink } from "libs/functions"
 import { ContactInterface } from "libs/interfaces"
 import React, { useState } from "react"
-import { FaDiscord, FaFacebook, FaInstagram, FaReddit, FaTwitter, FaYoutube } from "react-icons/fa"
+import {
+  FaDiscord,
+  FaFacebook,
+  FaInstagram,
+  FaReddit,
+  FaTwitter,
+  FaYoutube
+} from "react-icons/fa"
 import { SiTiktok } from "react-icons/si"
 
 const Contact = () => {
   const [css] = useState("text-[38px] text-white group-hover:text-green")
   const [socials] = useState<ContactInterface[]>([
-    { icon: <FaDiscord className={css} />, title: "Discord", url: SOCIAL.DISCORD },
-    { icon: <FaTwitter className={css} />, title: "Twitter", url: SOCIAL.TWITTER },
-    { icon: <FaInstagram className={css} />, title: "Instagram", url: SOCIAL.INSTAGRAM },
+    {
+      icon: <FaDiscord className={css} />,
+      title: "Discord",
+      url: SOCIAL.DISCORD
+    },
+    {
+      icon: <FaTwitter className={css} />,
+      title: "Twitter",
+      url: SOCIAL.TWITTER
+    },
+    {
+      icon: <FaInstagram className={css} />,
+      title: "Instagram",
+      url: SOCIAL.INSTAGRAM
+    },
     { icon: <FaReddit className={css} />, title: "Reddit", url: SOCIAL.REDDIT },
-    { icon: <FaFacebook className={css} />, title: "Facebook", url: SOCIAL.FACEBOOK },
-    { icon: <FaYoutube className={css} />, title: "Youtube", url: SOCIAL.YOUTUBE },
+    {
+      icon: <FaFacebook className={css} />,
+      title: "Facebook",
+      url: SOCIAL.FACEBOOK
+    },
+    {
+      icon: <FaYoutube className={css} />,
+      title: "Youtube",
+      url: SOCIAL.YOUTUBE
+    },
     { icon: <SiTiktok className={css} />, title: "TikTok", url: SOCIAL.TIKTOK },
     {
-      icon: <OpenSea className={`fill-current text-white group-hover:text-green w-[38px] h-[38px]`} />,
+      icon: (
+        <OpenSea
+          className={`h-[38px] w-[38px] fill-current text-white group-hover:text-green`}
+        />
+      ),
       title: "OpenSea",
-      url: SOCIAL.OPENSEA,
-    },
+      url: SOCIAL.OPENSEA
+    }
   ])
 
   return (
     <>
       <Nav />
       <WrapperPage>
-        <div className="w-full mt-80 py-[100px] grid grid-cols-1">
-          <div className="w-full flex justify-center h-[240px] sm:h-[280px] xl:h-[450px] relative">
+        <div className="mt-80 grid w-full grid-cols-1 py-[100px]">
+          <div className="relative flex h-[240px] w-full justify-center sm:h-[280px] xl:h-[450px]">
             <img
               src={BannerFooter}
               alt=""
-              className="absolute left-[50%] bottom-0 transform translate-x-[-50%] translate-y-[14.4%] w-[400px] xl:w-[600px] max-w-[calc(100%-40px)]"
+              className="absolute left-[50%] bottom-0 w-[400px] max-w-[calc(100%-40px)] translate-x-[-50%] translate-y-[14.4%] transform xl:w-[600px]"
             />
           </div>
-          <div className="w-full p-30 sm:p-60 xl:p-[100px] xl:py-[120px] bg-brown">
-            <div className="w-full grid grid-cols-1 xl:grid-cols-[1fr,auto] gap-60 xl:gap-100">
-              <div className="w-full grid grid-cols-1">
-                <div className="w-full text-white font-azo text-24 sm:text-36 md:text-56 lg:text-[80px] leading-[110%] mb-20 sm:mb-30">
+          <div className="w-full bg-brown p-30 sm:p-60 xl:p-[100px] xl:py-[120px]">
+            <div className="grid w-full grid-cols-1 gap-60 xl:grid-cols-[1fr,auto] xl:gap-100">
+              <div className="grid w-full grid-cols-1">
+                <div className="font-azo md:text-56 mb-20 w-full text-24 leading-[110%] text-white sm:mb-30 sm:text-36 lg:text-[80px]">
                   CONTACT
                 </div>
-                <div className="w-full flex justify-start">
+                <div className="flex w-full justify-start">
                   <div className="w-[700px] max-w-full text-white-60">
-                  Our mission is to empower our community through multiple avenues – including academic education in web3.0 and blockchains, Meta Gorilla token rewards, business assistance tool, networking opportunities, as well as opportunity for receiving business or charity grants. Checkout the whitelist for more information, all of the team members are documented!
+                    Our mission is to empower our community through multiple
+                    avenues – including academic education in web3.0 and
+                    blockchains, Meta Gorilla token rewards, business assistance
+                    tool, networking opportunities, as well as opportunity for
+                    receiving business or charity grants. Checkout the whitelist
+                    for more information, all of the team members are
+                    documented!
                   </div>
                 </div>
               </div>
-              <div className="w-full flex items-center">
+              <div className="flex w-full items-center">
                 <button
                   onClick={(e) => openLink(e, "mailto:support@apegorilla.com")}
-                  className="w-[280px] max-w-full relative"
+                  className="relative w-[280px] max-w-full"
                 >
-                  <div className="absolute top-0 left-0 bg-green-light w-full h-60 transform -skew-x-12 "></div>
-                  <div className="w-full h-60 relative px-28 text-white font-azo text-14 sm:text-16 md:text-18 flex items-center justify-center">
+                  <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-green-light "></div>
+                  <div className="font-azo relative flex h-60 w-full items-center justify-center px-28 text-14 text-white sm:text-16 md:text-18">
                     EMAIL US
                   </div>
                 </button>
               </div>
             </div>
-            <div className="w-full my-40 sm:my-60 md:my-[100px] border-b-1 border-white opacity-5"></div>
-            <div className="w-full flex justify-center mb-40 sm:mb-60 md:mb-80">
-              <div className="w-[500px] max-w-full text-white text-24 sm:text-36 font-azo text-center">
+            <div className="my-40 w-full border-b-1 border-white opacity-5 sm:my-60 md:my-[100px]"></div>
+            <div className="mb-40 flex w-full justify-center sm:mb-60 md:mb-80">
+              <div className="font-azo w-[500px] max-w-full text-center text-24 text-white sm:text-36">
                 FOLLOW US ON OUR SOCIAL MEDIA
               </div>
             </div>
-            <div className="w-full flex justify-center">
-              <div className="w-[660px] max-w-full grid grid-cols-2 lg:grid-cols-4 gap-30 sm:gap-60">
+            <div className="flex w-full justify-center">
+              <div className="grid w-[660px] max-w-full grid-cols-2 gap-30 sm:gap-60 lg:grid-cols-4">
                 {socials.map((social: ContactInterface, key: number) => (
-                  <div className="w-full flex justify-center" key={key}>
+                  <div className="flex w-full justify-center" key={key}>
                     <button
                       onClick={(e) => openLink(e, social.url)}
-                      className="group w-80 sm:w-100 h-80 sm:h-100 rounded-full bg-white-10 hover:bg-white flex justify-center items-center transition-all duration-200"
+                      className="group flex h-80 w-80 items-center justify-center rounded-full bg-white-10 transition-all duration-200 hover:bg-white sm:h-100 sm:w-100"
                     >
                       {social.icon}
                     </button>

@@ -10,7 +10,11 @@ const WrapperRouter = ({ children }: { children: any }) => {
         <Route
           render={({ location }) => (
             <TransitionGroup className="fade">
-              <CSSTransition key={location.key} classNames="transition" timeout={200}>
+              <CSSTransition
+                key={location.key}
+                classNames="transition"
+                timeout={200}
+              >
                 <div>
                   <Switch>{children}</Switch>
                 </div>

@@ -5,11 +5,11 @@ export const URL = {
   CONTACT: "/contact",
   MINT: "/mint",
   PLATINUM: "/platinum",
-  WHITELIST: "/whitelist",
+  WHITELIST: "/whitelist"
 }
 
 export const REQ = {
-  CALL: SERVER + "/call",
+  CALL: SERVER + "/call"
 }
 
 export const SOCIAL = {
@@ -21,11 +21,13 @@ export const SOCIAL = {
   FACEBOOK: "https://facebook.com/apegorillaclub",
   YOUTUBE: "https://www.youtube.com/channel/UCUG4eWC6Bf0X7FptfT-LlrA",
   TIKTOK: "https://www.tiktok.com/@apegorillaclub",
-  WHITEPAPER: "https://apegorilla.com/documents/Ape_Gorilla_Club_White_Paper.pdf",
-  TERMS: "https://apegorilla.com/documents/Ape_Gorilla_Club_Terms_Conditions.pdf",
+  WHITEPAPER:
+    "https://apegorilla.com/documents/Ape_Gorilla_Club_White_Paper.pdf",
+  TERMS:
+    "https://apegorilla.com/documents/Ape_Gorilla_Club_Terms_Conditions.pdf"
 }
 
 export const DATE = {
   DATETIME: "MMM D YYYY, HH:mm",
-  SHORT: "MMM D, YYYY",
+  SHORT: "MMM D, YYYY"
 }

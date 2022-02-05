@@ -27,7 +27,9 @@ type PropsContextType = {
 
 export const [useProps, CtxProvider] = createCtx<PropsContextType>()
 
-export const PropsContext = createContext<PropsContextType | undefined>(undefined)
+export const PropsContext = createContext<PropsContextType | undefined>(
+  undefined
+)
 
 export const PropsProvider = ({ children }: { children: React.ReactNode }) => {
   const { ethereum } = window
@@ -39,13 +41,18 @@ export const PropsProvider = ({ children }: { children: React.ReactNode }) => {
   const [duration, setDuration] = useState(moment.duration(0, "milliseconds"))
   const [loading, setLoading] = useState(false)
   const [path, setPath] = useState(window.location.pathname)
-  const [route] = useState(parseInt(process.env.REACT_APP_ADMIN ?? "") ? true : false)
+  const [route] = useState(
+    parseInt(process.env.REACT_APP_ADMIN ?? "") ? true : false
+  )
   const [token] = useCookies(["auth"])
   const [web3] = useState(new Web3(ethereum))
   const [whitelist] = useState(true)
 
   const [interval] = useState(1000)
-  const [diff, setDiff] = useState(moment.tz("2022-03-03 20:22", "United States/New York").valueOf() - moment().valueOf())
+  const [diff, setDiff] = useState(
+    moment.tz("2022-03-03 20:22", "United States/New York").valueOf() -
+      moment().valueOf()
+  )
   const [ready, setReady] = useState(Math.floor(diff / 1000) < 0)
 
   useEffect(() => {
@@ -94,7 +101,7 @@ export const PropsProvider = ({ children }: { children: React.ReactNode }) => {
           whitelist,
           setAddress,
           setBalance,
-          setPath,
+          setPath
         }}
       >
         {children}

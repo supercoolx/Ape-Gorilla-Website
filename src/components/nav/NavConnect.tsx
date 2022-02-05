@@ -58,57 +58,69 @@ const NavConnect = ({ platinum }: { platinum?: boolean }) => {
   return (
     <>
       {addr ? (
-        <div className="w-full md:w-auto flex relative">
-          <button onClick={() => setOpenConnect(!openConnect)} className="relative z-30">
+        <div className="relative flex w-full md:w-auto">
+          <button
+            onClick={() => setOpenConnect(!openConnect)}
+            className="relative z-30"
+          >
             <div
-              className={`absolute top-0 left-0 w-full h-44 sm:h-50 transform -skew-x-12 ${
-                platinum ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]" : "bg-green-light"
+              className={`absolute top-0 left-0 h-44 w-full -skew-x-12 transform sm:h-50 ${
+                platinum
+                  ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]"
+                  : "bg-green-light"
               }`}
             ></div>
-            <div className="w-full h-44 sm:h-50 relative px-14 sm:px-28 text-white font-azo text-14 sm:text-16 md:text-18 flex items-center gap-6">
+            <div className="font-azo relative flex h-44 w-full items-center gap-6 px-14 text-14 text-white sm:h-50 sm:px-28 sm:text-16 md:text-18">
               <span className="flex">
-                <span className="text-white text-14 sm:text-16 md:text-18 overflow-ellipsis truncate font-azo">
+                <span className="font-azo truncate overflow-ellipsis text-14 text-white sm:text-16 md:text-18">
                   {addr.slice(0, 4)}
                 </span>
-                <span className="hidden sm:flex text-white text-14 sm:text-16 md:text-18 overflow-ellipsis truncate font-azo">
+                <span className="font-azo hidden truncate overflow-ellipsis text-14 text-white sm:flex sm:text-16 md:text-18">
                   ...{addr.slice(addr.length - 4, addr.length)}
                 </span>
               </span>
               <MdKeyboardArrowDown
-                className={`text-white text-18 transition-all duration-300 ${
-                  openConnect ? "transform rotate-180" : ""
+                className={`text-18 text-white transition-all duration-300 ${
+                  openConnect ? "rotate-180 transform" : ""
                 }`}
               />
             </div>
           </button>
           <Wrapper open={openConnect}>
-            <div onClick={() => setOpenConnect(false)} className="z-10 fixed top-0 left-0 w-full h-full"></div>
+            <div
+              onClick={() => setOpenConnect(false)}
+              className="fixed top-0 left-0 z-10 h-full w-full"
+            ></div>
           </Wrapper>
           <button
             onClick={() => onDisconnect()}
-            className={`z-20 w-full absolute transition-all duration-300 top-0 ${
-              openConnect ? "top-44 sm:top-[50px] opacity-1 left-[-10.5px]" : "left-0 top-0 opacity-0"
+            className={`absolute top-0 z-20 w-full transition-all duration-300 ${
+              openConnect
+                ? "opacity-1 top-44 left-[-10.5px] sm:top-[50px]"
+                : "left-0 top-0 opacity-0"
             }`}
           >
-            <div className="z-20 w-full bg-white h-44 sm:h-50 transform -skew-x-12 px-24 sm:px-28 text-green font-azo text-14 sm:text-16 md:text-18 flex items-center">
+            <div className="font-azo z-20 flex h-44 w-full -skew-x-12 transform items-center bg-white px-24 text-14 text-green sm:h-50 sm:px-28 sm:text-16 md:text-18">
               DISCONNECT
             </div>
           </button>
         </div>
       ) : (
-        <button onClick={() => onActivate()} className="relative group">
+        <button onClick={() => onActivate()} className="group relative">
           <div
-            className={`absolute top-0 left-0 w-full h-44 sm:h-50 transform -skew-x-12 ${
-              platinum ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]" : "bg-green-light"
+            className={`absolute top-0 left-0 h-44 w-full -skew-x-12 transform sm:h-50 ${
+              platinum
+                ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]"
+                : "bg-green-light"
             }`}
           ></div>
-          <div className="w-full h-44 sm:h-50 relative px-16 sm:px-24 md:px-28 text-white font-azo text-14 sm:text-16 md:text-18 flex items-center">
+          <div className="font-azo relative flex h-44 w-full items-center px-16 text-14 text-white sm:h-50 sm:px-24 sm:text-16 md:px-28 md:text-18">
             CONNECT
           </div>
-          <div className="absolute group-hover:flex hidden right-[50%] transform translate-x-[50%] top-[100%] w-[220px]">
-            <div className="text-12 bg-white-10 rounded-full px-20 py-12 text-white relative flex font-azo border-1 border-white mt-14">
+          <div className="absolute right-[50%] top-[100%] hidden w-[220px] translate-x-[50%] transform group-hover:flex">
+            <div className="font-azo relative mt-14 flex rounded-full border-1 border-white bg-white-10 px-20 py-12 text-12 text-white">
               Connect your metamask wallet
-              <AiOutlineCaretUp className="text-white text-24 absolute top-[6px] left-[50%] transform translate-x-[-50%] translate-y-[-100%]" />
+              <AiOutlineCaretUp className="absolute top-[6px] left-[50%] translate-x-[-50%] translate-y-[-100%] transform text-24 text-white" />
             </div>
           </div>
         </button>

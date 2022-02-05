@@ -19,7 +19,7 @@ const VideoPlayerBar = ({
   setPlaying,
   onSeekMouseDown,
   onSeekChange,
-  onSeekMouseUp,
+  onSeekMouseUp
 }: {
   audio?: boolean
   duration: number
@@ -38,34 +38,54 @@ const VideoPlayerBar = ({
 }) => {
   return (
     <>
-      <div className={`absolute left-0 bottom-0 w-full h-full ${audio ? "" : "opacity-0 hover:opacity-100"}`}>
+      <div
+        className={`absolute left-0 bottom-0 h-full w-full ${
+          audio ? "" : "opacity-0 hover:opacity-100"
+        }`}
+      >
         <div
-          className={`absolute w-full left-0 bottom-0 h-80 bg-gradient-to-t from-grey-40 to-transparent ${
+          className={`from-grey-40 absolute left-0 bottom-0 h-80 w-full bg-gradient-to-t to-transparent ${
             audio ? "hidden" : ""
           }`}
         ></div>
         <div
-          className={`absolute left-0 bottom-0 w-full p-10 h-50 grid items-center gap-10 ${
-            audio ? "grid-cols-[auto,1fr,auto,auto]" : "grid-cols-[auto,1fr,auto,auto,auto]"
+          className={`absolute left-0 bottom-0 grid h-50 w-full items-center gap-10 p-10 ${
+            audio
+              ? "grid-cols-[auto,1fr,auto,auto]"
+              : "grid-cols-[auto,1fr,auto,auto,auto]"
           }`}
         >
           <button
             onClick={() => setPlaying(!playing)}
-            className={`w-30 h-30 rounded-4 group flex items-center justify-center ${
+            className={`group flex h-30 w-30 items-center justify-center rounded-4 ${
               light ? "hover:bg-grey-10" : "hover:bg-white-10"
             }`}
           >
             <Wrapper open={playing}>
-              <IoMdPause className={`group-hover:text-purple text-20 ${light ? "text-black" : "text-white"}`} />
+              <IoMdPause
+                className={`group-hover:text-purple text-20 ${
+                  light ? "text-black" : "text-white"
+                }`}
+              />
             </Wrapper>
             <Wrapper open={!playing}>
-              <MdPlayArrow className={`group-hover:text-purple text-28 ${light ? "text-black" : "text-white"}`} />
+              <MdPlayArrow
+                className={`group-hover:text-purple text-28 ${
+                  light ? "text-black" : "text-white"
+                }`}
+              />
             </Wrapper>
           </button>
-          <div className="h-30 w-full grid grid-cols-1 gap-4 items-center relative group">
-            <div className={`w-full  h-4 flex items-center justify-start ${light ? "bg-grey-20" : "bg-white-20"}`}>
+          <div className="group relative grid h-30 w-full grid-cols-1 items-center gap-4">
+            <div
+              className={`flex  h-4 w-full items-center justify-start ${
+                light ? "bg-grey-20" : "bg-white-20"
+              }`}
+            >
               <div
-                className={`group-hover:bg-purple h-4 ${light ? "bg-black" : "bg-white"}`}
+                className={`group-hover:bg-purple h-4 ${
+                  light ? "bg-black" : "bg-white"
+                }`}
                 style={{ width: `${playedPercentage * 100}%` }}
               ></div>
             </div>
@@ -78,35 +98,44 @@ const VideoPlayerBar = ({
               onMouseDown={onSeekMouseDown}
               onChange={(e) => onSeekChange(e)}
               onMouseUp={(e) => onSeekMouseUp(e)}
-              className="absolute cursor-pointer left-0 top-[50%] transform translate-y-[-50%] w-[calc(100%+18px)] mx-[-9px] player-seek"
+              className="player-seek absolute left-0 top-[50%] mx-[-9px] w-[calc(100%+18px)] translate-y-[-50%] transform cursor-pointer"
             />
           </div>
           <div
-            className={`cursor-pointer text-12 font-bold hover:opacity-100 opacity-60 ${
+            className={`cursor-pointer text-12 font-bold opacity-60 hover:opacity-100 ${
               light ? "text-black" : "text-white"
             }`}
           >
-            {parseMinutes(played)} {duration !== Infinity ? `/ ${parseMinutes(duration)}` : ""}
+            {parseMinutes(played)}{" "}
+            {duration !== Infinity ? `/ ${parseMinutes(duration)}` : ""}
           </div>
           <button
             onClick={() => setMuted(!muted)}
-            className={`w-30 h-30 rounded-4 group  flex items-center justify-center ${
+            className={`group flex h-30 w-30  items-center justify-center rounded-4 ${
               light ? "hover:bg-grey-10" : "hover:bg-white-10"
             }`}
           >
             <Wrapper open={muted}>
-              <ImVolumeMute2 className={`group-hover:text-purple text-20 ${light ? "text-black" : "text-white"}`} />
+              <ImVolumeMute2
+                className={`group-hover:text-purple text-20 ${
+                  light ? "text-black" : "text-white"
+                }`}
+              />
             </Wrapper>
             <Wrapper open={!muted}>
-              <ImVolumeMute className={`group-hover:text-purple text-20 ${light ? "text-black" : "text-white"}`} />
+              <ImVolumeMute
+                className={`group-hover:text-purple text-20 ${
+                  light ? "text-black" : "text-white"
+                }`}
+              />
             </Wrapper>
           </button>
           <Wrapper open={!audio}>
             <button
               onClick={() => setFullscreen(!fullscreen)}
-              className="w-30 h-30 rounded-4 group hover:bg-white-10 flex items-center justify-center"
+              className="group flex h-30 w-30 items-center justify-center rounded-4 hover:bg-white-10"
             >
-              <MdFullscreen className="text-white group-hover:text-purple text-24" />
+              <MdFullscreen className="group-hover:text-purple text-24 text-white" />
             </button>
           </Wrapper>
         </div>

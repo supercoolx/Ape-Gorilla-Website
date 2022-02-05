@@ -17,20 +17,32 @@ const App = () => {
 
   const onBg = () => {
     return path === URL.PLATINUM ? (
-      <img src={BgPlat} alt="" className="absolute opacity-30 top-0 left-0 w-full h-full object-cover" />
+      <img
+        src={BgPlat}
+        alt=""
+        className="absolute top-0 left-0 h-full w-full object-cover opacity-30"
+      />
     ) : (
-      <img src={Bg} alt="" className="absolute top-0 left-0 w-full h-full object-cover" />
+      <img
+        src={Bg}
+        alt=""
+        className="absolute top-0 left-0 h-full w-full object-cover"
+      />
     )
   }
 
   return (
     <>
       <div className="w-full min-w-[300px]">
-        <div className="fixed top-0 left-0 w-full h-screen bg-brown">{onBg()}</div>
-        <div className="w-full relative overflow-hidden">
+        <div className="fixed top-0 left-0 h-screen w-full bg-brown">
+          {onBg()}
+        </div>
+        <div className="relative w-full overflow-hidden">
           <Router>
             <ScrollToTop />
-            <WrapperRouter>{RoutesLanding.map((props) => props.component)}</WrapperRouter>
+            <WrapperRouter>
+              {RoutesLanding.map((props) => props.component)}
+            </WrapperRouter>
           </Router>
         </div>
       </div>

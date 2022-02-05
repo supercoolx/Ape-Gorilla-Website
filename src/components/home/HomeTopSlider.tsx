@@ -10,7 +10,13 @@ import Ape8 from "assets/img/apes/ape_8.png"
 import Ape9 from "assets/img/apes/ape_9.png"
 import React, { useEffect, useState } from "react"
 
-const HomeTopSlider = ({ flat, single }: { flat?: boolean; single?: boolean }) => {
+const HomeTopSlider = ({
+  flat,
+  single
+}: {
+  flat?: boolean
+  single?: boolean
+}) => {
   const [apesTop] = useState([Ape1, Ape2, Ape3, Ape4, Ape5])
   const [apesBottom] = useState([Ape6, Ape7, Ape8, Ape9, Ape10])
 
@@ -34,23 +40,30 @@ const HomeTopSlider = ({ flat, single }: { flat?: boolean; single?: boolean }) =
   return (
     <>
       <div
-        className={`w-full relative ${
+        className={`relative w-full ${
           single
-            ? "h-[200px] sm:h-[300px] mt-[100px] sm:mt-[160px]"
-            : "h-[360px] sm:h-[500px] mt-[140px] sm:mt-[200px] mb-40 sm:mb-60"
+            ? "mt-[100px] h-[200px] sm:mt-[160px] sm:h-[300px]"
+            : "mt-[140px] mb-40 h-[360px] sm:mt-[200px] sm:mb-60 sm:h-[500px]"
         }`}
       >
-        <div className="w-[calc(100vw+200px)] absolute top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%] mb-0 sm:mb-30 flex justify-center">
-          <div className={`w-full grid grid-cols-1 gap-10 ${flat ? "" : "showcase"}`}>
-            <div className="w-full overflow-x-hidden h-180 sm:h-[300px] relative">
-              <div style={{ left: `${-offset}px` }} className="absolute top-0 flex space-x-10 w-max">
+        <div className="absolute top-[50%] left-[50%] mb-0 flex w-[calc(100vw+200px)] translate-x-[-50%] translate-y-[-50%] transform justify-center sm:mb-30">
+          <div
+            className={`grid w-full grid-cols-1 gap-10 ${
+              flat ? "" : "showcase"
+            }`}
+          >
+            <div className="relative h-180 w-full overflow-x-hidden sm:h-[300px]">
+              <div
+                style={{ left: `${-offset}px` }}
+                className="absolute top-0 flex w-max space-x-10"
+              >
                 {new Array(4).fill(1).map((entry: number, key: number) => (
                   <div className="flex space-x-10" key={key}>
                     {apesTop.map((creator: string, ke: number) => (
                       <img
                         src={creator}
                         alt=""
-                        className="w-180 sm:w-300 h-180 sm:h-300 rounded-[40px] border-[3px] border-white shadow-md flex items-center justify-center"
+                        className="flex h-180 w-180 items-center justify-center rounded-[40px] border-[3px] border-white shadow-md sm:h-300 sm:w-300"
                         key={ke}
                       />
                     ))}
@@ -59,15 +72,18 @@ const HomeTopSlider = ({ flat, single }: { flat?: boolean; single?: boolean }) =
               </div>
             </div>
             {!single ? (
-              <div className="w-full overflow-x-hidden h-180 sm:h-[300px] relative">
-                <div style={{ right: `${-offset}px` }} className="absolute top-0 flex space-x-[10px] w-max">
+              <div className="relative h-180 w-full overflow-x-hidden sm:h-[300px]">
+                <div
+                  style={{ right: `${-offset}px` }}
+                  className="absolute top-0 flex w-max space-x-[10px]"
+                >
                   {new Array(4).fill(1).map((entry: number, key: number) => (
                     <div className="flex space-x-[10px]" key={key}>
                       {apesBottom.map((creator: string, ke: number) => (
                         <img
                           src={creator}
                           alt=""
-                          className="w-180 sm:w-300 h-180 sm:h-300 rounded-[40px] border-[3px] border-white shadow-md flex items-center justify-center"
+                          className="flex h-180 w-180 items-center justify-center rounded-[40px] border-[3px] border-white shadow-md sm:h-300 sm:w-300"
                           key={ke}
                         />
                       ))}
