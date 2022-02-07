@@ -48,16 +48,34 @@ export const loadContract = async (ethereum: any) => {
         anonymous: false,
         inputs: [
           {
-            indexed: true,
-            internalType: "address",
-            name: "owner",
-            type: "address"
+            inputs: [],
+            stateMutability: "nonpayable",
+            type: "constructor"
           },
           {
-            indexed: true,
-            internalType: "address",
-            name: "operator",
-            type: "address"
+            anonymous: false,
+            inputs: [
+              {
+                indexed: true,
+                internalType: "address",
+                name: "owner",
+                type: "address"
+              },
+              {
+                indexed: true,
+                internalType: "address",
+                name: "approved",
+                type: "address"
+              },
+              {
+                indexed: true,
+                internalType: "uint256",
+                name: "tokenId",
+                type: "uint256"
+              }
+            ],
+            name: "Approval",
+            type: "event"
           },
           {
             indexed: false,
@@ -477,43 +495,56 @@ export const loadContract = async (ethereum: any) => {
       {
         inputs: [
           {
-            internalType: "address",
-            name: "owner",
-            type: "address"
-          },
-          {
-            internalType: "address",
-            name: "operator",
-            type: "address"
+            internalType: "uint256",
+            name: "tokenId",
+            type: "uint256"
           }
         ],
-        name: "isApprovedForAll",
+        name: "getApproved",
         outputs: [
           {
-            internalType: "bool",
-            name: "",
-            type: "bool"
-          }
-        ],
-        stateMutability: "view",
-        type: "function"
-      },
-      {
-        inputs: [
-          {
-            internalType: "address",
-            name: "_add",
-            type: "address"
+            inputs: [
+              {
+                internalType: "address",
+                name: "to",
+                type: "address"
+              },
+              {
+                internalType: "uint256",
+                name: "tokenId",
+                type: "uint256"
+              }
+            ],
+            name: "approve",
+            outputs: [],
+            stateMutability: "nonpayable",
+            type: "function"
           },
           {
-            internalType: "uint8",
-            name: "_v",
-            type: "uint8"
+            inputs: [
+              {
+                internalType: "address",
+                name: "owner",
+                type: "address"
+              }
+            ],
+            name: "balanceOf",
+            outputs: [
+              {
+                internalType: "uint256",
+                name: "",
+                type: "uint256"
+              }
+            ],
+            stateMutability: "view",
+            type: "function"
           },
           {
-            internalType: "bytes32",
-            name: "_r",
-            type: "bytes32"
+            inputs: [],
+            name: "burnUnmintedTokens",
+            outputs: [],
+            stateMutability: "nonpayable",
+            type: "function"
           },
           {
             internalType: "bytes32",
@@ -524,50 +555,95 @@ export const loadContract = async (ethereum: any) => {
         name: "isValidAccessMessage",
         outputs: [
           {
-            internalType: "bool",
-            name: "",
-            type: "bool"
-          }
-        ],
-        stateMutability: "view",
-        type: "function"
-      },
-      {
-        inputs: [],
-        name: "maxMintsPerAddress",
-        outputs: [
+            inputs: [],
+            name: "dev",
+            outputs: [
+              {
+                internalType: "address",
+                name: "",
+                type: "address"
+              }
+            ],
+            stateMutability: "view",
+            type: "function"
+          },
           {
-            internalType: "uint256",
-            name: "",
-            type: "uint256"
-          }
-        ],
-        stateMutability: "view",
-        type: "function"
-      },
-      {
-        inputs: [],
-        name: "mintCost",
-        outputs: [
+            inputs: [
+              {
+                internalType: "uint256",
+                name: "tokenId",
+                type: "uint256"
+              }
+            ],
+            name: "getApproved",
+            outputs: [
+              {
+                internalType: "address",
+                name: "",
+                type: "address"
+              }
+            ],
+            stateMutability: "view",
+            type: "function"
+          },
           {
-            internalType: "uint256",
-            name: "",
-            type: "uint256"
-          }
-        ],
-        stateMutability: "view",
-        type: "function"
-      },
-      {
-        inputs: [
+            inputs: [
+              {
+                internalType: "address",
+                name: "owner",
+                type: "address"
+              },
+              {
+                internalType: "address",
+                name: "operator",
+                type: "address"
+              }
+            ],
+            name: "isApprovedForAll",
+            outputs: [
+              {
+                internalType: "bool",
+                name: "",
+                type: "bool"
+              }
+            ],
+            stateMutability: "view",
+            type: "function"
+          },
           {
-            internalType: "address",
-            name: "",
-            type: "address"
-          }
-        ],
-        name: "mintsPerAddress",
-        outputs: [
+            inputs: [
+              {
+                internalType: "address",
+                name: "_add",
+                type: "address"
+              },
+              {
+                internalType: "uint8",
+                name: "_v",
+                type: "uint8"
+              },
+              {
+                internalType: "bytes32",
+                name: "_r",
+                type: "bytes32"
+              },
+              {
+                internalType: "bytes32",
+                name: "_s",
+                type: "bytes32"
+              }
+            ],
+            name: "isValidAccessMessage",
+            outputs: [
+              {
+                internalType: "bool",
+                name: "",
+                type: "bool"
+              }
+            ],
+            stateMutability: "view",
+            type: "function"
+          },
           {
             internalType: "uint256",
             name: "",
@@ -873,29 +949,54 @@ export const loadContract = async (ethereum: any) => {
         name: "tokenByIndex",
         outputs: [
           {
-            internalType: "uint256",
-            name: "",
-            type: "uint256"
-          }
-        ],
-        stateMutability: "view",
-        type: "function"
-      },
-      {
-        inputs: [
-          {
-            internalType: "address",
-            name: "owner",
-            type: "address"
+            inputs: [],
+            name: "reservedMintsLeft",
+            outputs: [
+              {
+                internalType: "uint256",
+                name: "",
+                type: "uint256"
+              }
+            ],
+            stateMutability: "view",
+            type: "function"
           },
           {
-            internalType: "uint256",
-            name: "index",
-            type: "uint256"
-          }
-        ],
-        name: "tokenOfOwnerByIndex",
-        outputs: [
+            inputs: [],
+            name: "reveal",
+            outputs: [
+              {
+                internalType: "bool",
+                name: "",
+                type: "bool"
+              }
+            ],
+            stateMutability: "view",
+            type: "function"
+          },
+          {
+            inputs: [
+              {
+                internalType: "address",
+                name: "from",
+                type: "address"
+              },
+              {
+                internalType: "address",
+                name: "to",
+                type: "address"
+              },
+              {
+                internalType: "uint256",
+                name: "tokenId",
+                type: "uint256"
+              }
+            ],
+            name: "safeTransferFrom",
+            outputs: [],
+            stateMutability: "nonpayable",
+            type: "function"
+          },
           {
             internalType: "uint256",
             name: "",
