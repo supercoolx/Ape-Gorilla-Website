@@ -25,7 +25,7 @@ const Mint = ({ platinum }: { platinum: boolean }) => {
   ])
 
   useEffect(() => {
-    if (!ready) {
+    if (!ready && !platinum) {
       history.push(URL.HOME)
     }
   }, [ready])
