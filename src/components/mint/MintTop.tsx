@@ -77,7 +77,11 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
       return
     }
 
-    const state = await contract.methods.saleState().call()
+    let state = await contract.methods.saleState().call()
+    if (state === 2) {
+      toast.error("Platinum sale has closed!")
+      return
+    }
 
     if (state === "1") {
       const url = "https://apegorilla.github.io/whitelist.json"
@@ -94,17 +98,15 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
           .includes(address.toLowerCase(), 0)
 
         if (found) {
-          await onPreSale()
+          await onPlatinumSale()
         } else {
           toast.error(
             "Metamask account not whitelisted, you are not allowed to mint!"
           )
         }
       }
-    } else if (state === "2") {
-      await onPublicSale()
     } else {
-      toast.error("Sale is not Open!")
+      toast.error("Platinum Sale is not open!")
     }
   }
 
@@ -190,6 +192,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
 
     if (Math.floor(balance) + Math.floor(count) > 22) {
       toast.error("Maximum of 22 Mints per Address")
+
       return
     }
 

@@ -484,6 +484,25 @@ export const loadContract = async (ethereum: any) => {
         name: "getApproved",
         outputs: [
           {
+            internalType: "address",
+            name: "",
+            type: "address"
+          }
+        ],
+        stateMutability: "view",
+        type: "function"
+      },
+      {
+        inputs: [
+          {
+            internalType: "uint256",
+            name: "tokenId",
+            type: "uint256"
+          }
+        ],
+        name: "getApproved",
+        outputs: [
+          {
             inputs: [
               {
                 internalType: "address",
@@ -528,31 +547,13 @@ export const loadContract = async (ethereum: any) => {
             type: "function"
           },
           {
-            inputs: [
-              {
-                internalType: "string",
-                name: "baseURI_",
-                type: "string"
-              }
-            ],
-            name: "changeBaseURI",
-            outputs: [],
-            stateMutability: "nonpayable",
-            type: "function"
-          },
-          {
-            inputs: [],
-            name: "communityWallet",
-            outputs: [
-              {
-                internalType: "address",
-                name: "",
-                type: "address"
-              }
-            ],
-            stateMutability: "view",
-            type: "function"
-          },
+            internalType: "bytes32",
+            name: "_s",
+            type: "bytes32"
+          }
+        ],
+        name: "isValidAccessMessage",
+        outputs: [
           {
             inputs: [],
             name: "dev",
