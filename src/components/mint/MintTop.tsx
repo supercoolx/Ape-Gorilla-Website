@@ -77,109 +77,25 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
       return
     }
 
-    let state = await contract.methods.saleState().call()
-    if (state === 2) {
-      toast.error("Platinum sale has closed!")
-      return
+    const isOpen = await contract.methods.platinumSaleIsOpen().call()
+
+    if (isOpen) {
+      await onPlatinumSale()
     }
-
-    if (state === "1") {
-      const url = "https://apegorilla.github.io/whitelist.json"
-
-      const json = await fetch(url)
-        .then((res: any) => res.json())
-        .catch(() => {
-          toast.error("Error retrieving whitelist addresses")
-        })
-
-      if (json) {
-        const found = json
-          .map((entry: any) => entry.toLowerCase())
-          .includes(address.toLowerCase(), 0)
-
-        if (found) {
-          await onPlatinumSale()
-        } else {
-          toast.error(
-            "Metamask account not whitelisted, you are not allowed to mint!"
-          )
-        }
-      }
-    } else {
-      toast.error("Platinum Sale is not open!")
-    }
-  }
-
-  const onPreSale = async () => {
-    const message = web3.utils.soliditySha3(
-      "0xBBE16255534D78530229Cb0D01DEFD11652A1D84",
-      account
-    )
-
-    const sign = await web3.eth.accounts.sign(
-      message,
-      "603c13734233792745d50a6c9c0a55a075ad8b919d3c57d024e72a98a2d86353"
-    )
-
-    const r = sign["r"]
-    const s = sign["s"]
-    const v = sign["v"]
-    const mint_fee = await contract.methods.mintCost().call()
-
-    if (Math.floor(balance) + Math.floor(count) > 3) {
-      toast.error("Maximum of 3 Mints per Address")
-      return
-    }
-
-    if (Math.floor(balance) + Math.floor(count) > 3) {
-      toast.error("Maximum of 3 Mints per Address")
-      return
-    }
-
-    const state = await contract.methods.platinumSaleIsOpen().call()
-
-    const gas = undefined
-
-    if (!gas) {
-      toast.error(
-        `Not enough funds in wallet to mint ${count} NFT${
-          count === 1 ? "" : "'s"
-        }`
-      )
-      return
-    }
-
-    const url = ""
-
-    if (state) {
-      const json = await fetch(url)
-        .then((res: any) => res.json())
-        .catch(() => {
-          toast.error("Error retrieving whitelist addresses")
-        })
-
-      if (json) {
-        //const found = json.map((entry: any) => entry.toLowerCase()).includes(address.toLowerCase(), 0)
-        const found = true
-
-        if (found) {
-          await onPlatinumSale()
-        } else {
-          toast.error(
-            "Metamask account not on Platinum List, you are not allowed to mint!"
-          )
-        }
-      }
-    } else {
-      toast.error("Platinum Sale is not open!")
+    else {
+      toast.error("Sale is not Open!")
     }
   }
 
   const onPlatinumSale = async () => {
-    const message = web3.utils.soliditySha3(
-      "0xA724dfda9fB36f346745Bd39Ee9b182C3E40dEef",
-      account
-    )
+    const mint_fee = await contract.methods.mintCost().call()
+    const balance = await contract.methods.balanceOf(address).call()
+    if (Math.floor(balance) + Math.floor(count) > 22) {
+      toast.error('Maximum of 22 Mints per Address')
+      return
+    }
+
+    const message = web3.utils.soliditySha3("0x15f8Fc209A1c97a40e64Bf14C8c7D1D9c0541D0f", account)
     const sign = await web3.eth.accounts.sign(
       message,
       "603c13734233792745d50a6c9c0a55a075ad8b919d3c57d024e72a98a2d86353"
@@ -188,13 +104,6 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
     const r = sign["r"]
     const s = sign["s"]
     const v = sign["v"]
-    const mint_fee = await contract.methods.mintCost().call()
-
-    if (Math.floor(balance) + Math.floor(count) > 22) {
-      toast.error("Maximum of 22 Mints per Address")
-
-      return
-    }
 
     const gas = await contract.methods
       .platinumSaleMint(count, v, r, s)
@@ -205,11 +114,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
       })
 
     if (!gas) {
-      toast.error(
-        `Not enough funds in wallet to mint ${count} NFT${
-          count === 1 ? "" : "'s"
-        }`
-      )
+      toast.error(`Not enough funds in wallet to mint ${count} NFT${count === 1 ? "" : "'s"}`)
       return
     }
 
@@ -228,119 +133,94 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
     }
   }
 
-  const onPublicSale = () => {
-    console.log("Public Sale")
-  }
-
   const onActivate = () => {
     activateBrowserWallet()
   }
 
   return (
     <>
-      <div className="flex w-full justify-center">
-        <div className="grid w-[660px] max-w-full grid-cols-1">
-          <div className="relative mb-40 flex w-full items-center justify-center">
+      <div className="w-full flex justify-center">
+        <div className="w-[660px] max-w-full grid grid-cols-1">
+          <div className="w-full flex items-center justify-center mb-40 relative">
             <div className="relative">
-              <img
-                src={platinum ? SpinnerCircPlat : SpinnerCirc}
-                alt=""
-                className="h-[180px] w-[180px]"
-              />
-              <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] transform">
-                <SpinnerText className="h-[124px] w-[124px] animate-spin-slow" />
+              <img src={platinum ? SpinnerCircPlat : SpinnerCirc} alt="" className="w-[180px] h-[180px]" />
+              <div className="absolute top-[50%] left-[50%] transform translate-x-[-50%] translate-y-[-50%]">
+                <SpinnerText className="animate-spin-slow w-[124px] h-[124px]" />
               </div>
             </div>
           </div>
-          <div className="font-azo font-osb mb-30 w-full text-center text-32 leading-[110%] text-white sm:text-[44px] md:mb-40 md:text-[50px] lg:text-[64px]">
+          <div className="w-full mb-30 md:mb-40 text-white font-azo text-32 sm:text-[44px] md:text-[50px] lg:text-[64px] font-osb text-center leading-[110%]">
             THE APE GORILLA MINTING IS LIVE!
           </div>
-          <div className="mb-40 grid w-full grid-cols-1 gap-16 md:mb-60">
-            <div className="flex w-full flex-wrap items-center justify-between gap-12">
-              <div className="font-regular text-14 text-white-60 sm:text-16">
+          <div className="w-full grid grid-cols-1 gap-16 mb-40 md:mb-60">
+            <div className="w-full flex items-center justify-between flex-wrap gap-12">
+              <div className="text-white-60 text-14 sm:text-16 font-regular">
                 {Math.floor((minted / total) * 100)}% already minted
               </div>
-              <div className="font-regular text-14 text-white-60 sm:text-16">
-                {total - minted} left to mint
-              </div>
+              <div className="text-white-60 text-14 sm:text-16 font-regular">{total - minted} left to mint</div>
             </div>
-            <div className="relative h-8 w-full bg-white-10">
+            <div className="w-full h-8 bg-white-10 relative">
               <div
                 style={{ width: `${Math.floor((minted / total) * 100)}%` }}
                 className={`absolute top-0 left-0 h-8 ${
-                  platinum
-                    ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]"
-                    : "bg-green-light"
+                  platinum ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]" : "bg-green-light"
                 }`}
               ></div>
               <div
                 style={{ left: `${Math.floor((minted / total) * 100)}%` }}
-                className={`absolute top-[50%] h-20 w-2 translate-y-[-50%] transform ${
-                  platinum
-                    ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]"
-                    : "bg-green-light"
+                className={`absolute top-[50%] transform translate-y-[-50%] w-2 h-20 ${
+                  platinum ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]" : "bg-green-light"
                 }`}
               ></div>
             </div>
           </div>
-          <div className="mb-60 grid w-full grid-cols-1 items-center gap-24 md:grid-cols-[1fr,auto,1fr]">
+          <div className="w-full grid grid-cols-1 md:grid-cols-[1fr,auto,1fr] items-center gap-24 mb-60">
             <button className="relative flex w-full items-center justify-between px-28">
-              <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-white-20 "></div>
-              <div className="relative flex h-60 items-center text-14 text-white-60 sm:text-16 md:text-18">
-                Price
-              </div>
-              <div className="relative flex h-60 items-center text-14 font-bold text-white sm:text-16 md:text-18">
+              <div className="absolute top-0 left-0 bg-white-20 w-full h-60 transform -skew-x-12 "></div>
+              <div className="h-60 relative text-white-60 text-14 sm:text-16 md:text-18 flex items-center">Price</div>
+              <div className="h-60 relative text-white font-bold text-14 sm:text-16 md:text-18 flex items-center">
                 {price} ETH
               </div>
             </button>
             {address ? (
               <>
-                <div className="relative h-60 px-20">
-                  <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-white "></div>
-                  <div className="relative flex h-60 items-center justify-center gap-16">
+                <div className="px-20 h-60 relative">
+                  <div className="absolute top-0 left-0 bg-white w-full h-60 transform -skew-x-12 "></div>
+                  <div className="flex items-center justify-center gap-16 relative h-60">
                     <button
                       onClick={() => setCount(Math.max(1, count - 1))}
-                      className="flex h-30 w-30 items-center justify-center"
+                      className="w-30 h-30 flex items-center justify-center"
                     >
-                      <MdRemove className="text-24 text-green" />
+                      <MdRemove className="text-green text-24" />
                     </button>
-                    <div className="min-w-[40px] text-center text-18 font-bold text-green">
-                      {count}
-                    </div>
+                    <div className="text-green text-18 min-w-[40px] text-center font-bold">{count}</div>
                     <button
                       onClick={() => setCount(Math.min(max, count + 1))}
-                      className="flex h-30 w-30 items-center justify-center"
+                      className="w-30 h-30 flex items-center justify-center"
                     >
-                      <MdAdd className="text-24 text-green" />
+                      <MdAdd className="text-green text-24" />
                     </button>
                   </div>
                 </div>
                 <button onClick={() => onMint()} className="relative">
                   <div
-                    className={`absolute top-0 left-0 h-60 w-full -skew-x-12 transform ${
-                      platinum
-                        ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]"
-                        : "bg-green-light"
+                    className={`absolute top-0 left-0 w-full h-60 transform -skew-x-12 ${
+                      platinum ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]" : "bg-green-light"
                     }`}
                   ></div>
-                  <div className="font-azo relative flex h-60 w-full items-center justify-center px-28 text-14 text-white sm:text-16 md:text-18">
+                  <div className="w-full h-60 relative px-28 text-white font-azo text-14 sm:text-16 md:text-18 flex items-center justify-center">
                     MINT NOW
                   </div>
                 </button>
               </>
             ) : (
-              <button
-                onClick={() => onActivate()}
-                className="relative col-span-1 w-full md:col-span-2"
-              >
+              <button onClick={() => onActivate()} className="w-full col-span-1 md:col-span-2 relative">
                 <div
-                  className={`absolute top-0 left-0  h-60 w-full -skew-x-12 transform ${
-                    platinum
-                      ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]"
-                      : "bg-green-light"
+                  className={`absolute top-0 left-0  w-full h-60 transform -skew-x-12 ${
+                    platinum ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]" : "bg-green-light"
                   }`}
                 ></div>
-                <div className="font-azo relative flex h-60 w-full items-center justify-center px-28 text-14 text-white sm:text-16 md:text-18">
+                <div className="w-full h-60 relative px-28 text-white font-azo text-14 sm:text-16 md:text-18 flex items-center justify-center">
                   CONNECT
                 </div>
               </button>
