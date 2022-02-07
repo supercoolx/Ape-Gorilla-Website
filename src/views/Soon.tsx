@@ -3,7 +3,7 @@ import React from "react"
 const Soon = () => {
   return (
     <>
-      <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center text-white text-16 font-semibold">
+      <div className="fixed top-0 left-0 flex h-full w-full items-center justify-center text-16 font-semibold text-white">
         Soon
       </div>
     </>

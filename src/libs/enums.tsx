@@ -1,7 +1,7 @@
 export enum SocialType {
   Twitter,
   Instagram,
-  Linkedin,
+  Linkedin
 }
 
 export enum GnomesType {
@@ -9,5 +9,5 @@ export enum GnomesType {
   Normal,
   Robot,
   Special,
-  Zombie,
+  Zombie
 }

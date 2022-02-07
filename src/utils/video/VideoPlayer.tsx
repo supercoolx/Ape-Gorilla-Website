@@ -12,7 +12,7 @@ const VideoPlayer = ({
   length,
   clean,
   audio,
-  light,
+  light
 }: {
   video: string
   pre: boolean
@@ -72,8 +72,12 @@ const VideoPlayer = ({
 
       const heightNormal = (ref.current.clientWidth * 9) / 16
 
-      const heightFullscreen = wide ? heightMax : (ref.current.clientWidth / 16) * 9
-      const widthFullscreen = wide ? (ref.current?.clientHeight / 9) * 16 : dimensions[0]
+      const heightFullscreen = wide
+        ? heightMax
+        : (ref.current.clientWidth / 16) * 9
+      const widthFullscreen = wide
+        ? (ref.current?.clientHeight / 9) * 16
+        : dimensions[0]
 
       setHeight(`${fullscreen ? heightFullscreen : heightNormal}px`)
       setWidth(fullscreen ? `${widthFullscreen}px` : "100%")
@@ -112,14 +116,16 @@ const VideoPlayer = ({
       <div
         className={`light-r pre-r ${
           fullscreen
-            ? "z-50 flex py-50 items-center justify-center bg-black fixed top-0 left-0 w-screen h-screen"
-            : "w-full h-full"
+            ? "fixed top-0 left-0 z-50 flex h-screen w-screen items-center justify-center bg-black py-50"
+            : "h-full w-full"
         }`}
       >
         <div
           ref={ref}
           style={{ width: width, height: audio ? "50px" : height }}
-          className={`relative rounded-4 overflow-hidden pre-r ${light ? "bg-grey-3" : "dark:bg-white-10 bg-grey-10"}`}
+          className={`pre-r relative overflow-hidden rounded-4 ${
+            light ? "bg-grey-3" : "bg-grey-10 dark:bg-white-10"
+          }`}
         >
           <ReactPlayer
             ref={player}
@@ -135,12 +141,12 @@ const VideoPlayer = ({
             progressInterval={100}
             config={{
               youtube: {
-                playerVars: { showinfo: 1 },
+                playerVars: { showinfo: 1 }
               },
               file: {
                 forceVideo: !audio,
-                forceAudio: audio,
-              },
+                forceAudio: audio
+              }
             }}
             onDuration={(state) => onDuration(state)}
             onProgress={(state) => onProgress(state)}
@@ -167,10 +173,12 @@ const VideoPlayer = ({
         <Wrapper open={fullscreen}>
           <button
             onClick={() => setFullscreen(false)}
-            className="absolute bottom-0 left-0 w-full p-20 flex items-center justify-center h-50 gap-10"
+            className="absolute bottom-0 left-0 flex h-50 w-full items-center justify-center gap-10 p-20"
           >
             <div className="text-white-40">Press</div>
-            <div className="bg-white-10 px-8 h-24 rounded-4 text-white text-14 font-bold flex items-center">ESC</div>
+            <div className="flex h-24 items-center rounded-4 bg-white-10 px-8 text-14 font-bold text-white">
+              ESC
+            </div>
             <div className="text-white-40">to exit fullscreen mode</div>
           </button>
         </Wrapper>

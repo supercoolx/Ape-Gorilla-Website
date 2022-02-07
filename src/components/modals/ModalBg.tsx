@@ -6,9 +6,12 @@ const ModalBg = ({ handler }: { handler: any }) => {
     <>
       <button
         onClick={() => handler(false)}
-        className="z-10 fixed top-[-100px] left-0 w-screen h-[calc(100vh+200px)] bg-green-90 backdrop-filter backdrop-blur-md"
+        className="fixed top-[-100px] left-0 z-10 h-[calc(100vh+200px)] w-screen bg-green-90 backdrop-blur-md backdrop-filter"
       ></button>
-      <button onClick={() => handler(false)} className="z-40 fixed top-30 right-30">
+      <button
+        onClick={() => handler(false)}
+        className="fixed top-30 right-30 z-40"
+      >
         <MdClose className="text-24 text-white" />
       </button>
     </>

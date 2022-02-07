@@ -21,7 +21,7 @@ const Mint = ({ platinum }: { platinum: boolean }) => {
   const [specials] = useState<SpecialInterface[]>([
     { image: "", id: 1 },
     { image: "", id: 2 },
-    { image: "", id: 3 },
+    { image: "", id: 3 }
   ])
 
   useEffect(() => {
@@ -33,105 +33,122 @@ const Mint = ({ platinum }: { platinum: boolean }) => {
   return (
     <>
       <Nav platinum={platinum} />
-      <div className="w-full relative pt-[80px] pb-80 flex items-center px-20 sm:px-30">
+      <div className="relative flex w-full items-center px-20 pt-[80px] pb-80 sm:px-30">
         <WrapperPage>
-          <div className="w-full flex justify-center items-center py-80 sm:py-100 min-h-[calc(100vh-100px)]">
-            <div className="w-[1220px] max-w-full grid grid-cols-1 gap-60 md:gap-80 lg:gap-[150px]">
+          <div className="flex min-h-[calc(100vh-100px)] w-full items-center justify-center py-80 sm:py-100">
+            <div className="grid w-[1220px] max-w-full grid-cols-1 gap-60 md:gap-80 lg:gap-[150px]">
               <MintTop platinum={platinum} />
             </div>
           </div>
         </WrapperPage>
       </div>
-      <div className="hidden w-full bg-green relative justify-center py-[120px] sm:py-[160px] px-20 sm:px-30 overflow-hidden">
-        <div className="absolute bottom-0 left-[50%] transform translate-x-[-50%] w-screen h-[900px] bg-gradient-to-t from-green-light-60 to-green"></div>
-        <div className="absolute bottom-[100%] w-full h-60 bg-gradient-to-t from-green to-transparent"></div>
-        <div className="w-full max-w-screen-2xl relative grid grid-cols-1 gap-60 sm:gap-100">
-          <div className="w-full flex justify-center">
-            <div className="w-[700px] max-w-full grid grid-cols-1 gap-30">
-              <div className="w-full font-azo text-center text-white text-32 sm:text-[42px] md:text-[52px] lg:text-[60px]">
-                $6M+ TOTAL{" "}
-                <span className="font-azo text-green-light text-32 sm:text-[42px] md:text-[52px] lg:text-[60px]">
-                  GIVEAWAYS
+      <div className="relative hidden w-full justify-center overflow-hidden bg-green py-[120px] px-20 sm:py-[160px] sm:px-30">
+        <div className="absolute bottom-0 left-[50%] h-[900px] w-screen translate-x-[-50%] transform bg-gradient-to-t from-green-light-60 to-green"></div>
+        <div className="absolute bottom-[100%] h-60 w-full bg-gradient-to-t from-green to-transparent"></div>
+        <div className="relative grid w-full max-w-screen-2xl grid-cols-1 gap-60 sm:gap-100">
+          <div className="flex w-full justify-center">
+            <div className="grid w-[700px] max-w-full grid-cols-1 gap-30">
+              <div className="font-azo w-full text-center text-32 text-white sm:text-[42px] md:text-[52px] lg:text-[60px]">
+                COMMUNITY{" "}
+                <span className="font-azo text-32 text-green-light sm:text-[42px] md:text-[52px] lg:text-[60px]">
+                  MASTERMINDS
                 </span>
               </div>
-              <div className="w-full text-white-60 text-center text-18">
-                700 ETH is reserved for our official partners of the people of the Kingdom of Bhutan. Over $3,000,000 in
-                USD is reserved to give-away angel investments to business proposals made by Ape Gorilla NFT holders.
-                The minimum angel investment is $5,000 and up to $100,000 for each and any business that helps other
-                people, or changes peoples lives.
+              <div className="w-full text-center text-18 text-white-60">
+                On a mission to building a community surrounded around helping
+                and empowering each other with access to high-level events,
+                web3.0 training, software, and games.
               </div>
             </div>
           </div>
           <div className="hidden w-full justify-center">
-            <div className="max-w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-30 sm:gap-40 2xl:gap-x-80 2xl:gap-y-50">
+            <div className="grid max-w-full grid-cols-1 gap-30 sm:gap-40 md:grid-cols-2 xl:grid-cols-3 2xl:gap-x-80 2xl:gap-y-50">
               {specials.map((special: SpecialInterface, key: number) => (
                 <div className="w-full" key={key}>
-                  <div className="w-full flex justify-center mb-24">
-                    <div className="w-200 sm:w-[330px] h-200 sm:h-[330px] relative border-[3px] border-white rounded-[40px] overflow-hidden">
+                  <div className="mb-24 flex w-full justify-center">
+                    <div className="relative h-200 w-200 overflow-hidden rounded-[40px] border-[3px] border-white sm:h-[330px] sm:w-[330px]">
                       <img src={special.image} alt="" className="w-full " />
                     </div>
                   </div>
-                  <div className="w-full mb-10 text-center text-24 font-azo text-white">APEGORILLA#{special.id}</div>
+                  <div className="font-azo mb-10 w-full text-center text-24 text-white">
+                    APEGORILLA#{special.id}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </div>
       </div>
-      <div className="hidden w-full bg-white relative justify-center py-[20px] sm:py-[140px] px-20 sm:px-30">
-        <div className="w-full max-w-screen-2xl relative grid grid-cols-1 xl:grid-cols-[2fr,3fr] gap-40">
-          <div className="w-full h-full relative flex justify-center row-start-2 xl:row-start-1">
+      <div className="relative hidden w-full justify-center bg-white py-[20px] px-20 sm:py-[140px] sm:px-30">
+        <div className="relative grid w-full max-w-screen-2xl grid-cols-1 gap-40 xl:grid-cols-[2fr,3fr]">
+          <div className="relative row-start-2 flex h-full w-full justify-center xl:row-start-1">
             <img
               src={BannerFooter}
               alt=""
-              className="relative xl:absolute z-20 bottom-[-120px] sm:bottom-[-140px] w-[500px] max-w-full transform translate-y-[14.4%]"
+              className="relative bottom-[-120px] z-20 w-[500px] max-w-full translate-y-[14.4%] transform sm:bottom-[-140px] xl:absolute"
             />
           </div>
-          <div className="w-full flex justify-center xl:justify-end">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-40">
-              <div className="w-full flex justify-center">
-                <div className="w-120 max-w-full grid grid-cols-1">
-                  <div className="w-120 h-120 bg-green-light rounded-[50px] mb-30 flex items-center justify-center">
-                    <Paw className="w-44 h-44 text-white" />
+          <div className="flex w-full justify-center xl:justify-end">
+            <div className="grid grid-cols-1 gap-40 sm:grid-cols-2 md:grid-cols-4">
+              <div className="flex w-full justify-center">
+                <div className="grid w-120 max-w-full grid-cols-1">
+                  <div className="mb-30 flex h-120 w-120 items-center justify-center rounded-[50px] bg-green-light">
+                    <Paw className="h-44 w-44 text-white" />
                   </div>
-                  <div className="w-full mb-8 text-green font-azo text-24 text-center">11,337</div>
-                  <div className="w-full text-center text-green-60 text-18">Supplies</div>
+                  <div className="font-azo mb-8 w-full text-center text-24 text-green">
+                    11,337
+                  </div>
+                  <div className="w-full text-center text-18 text-green-60">
+                    Supplies
+                  </div>
                 </div>
               </div>
-              <div className="w-full flex justify-center">
-                <div className="w-120 max-w-full grid grid-cols-1">
-                  <div className="w-120 h-120 bg-green-light rounded-[50px] mb-30 flex items-center justify-center">
-                    <MdStars className="text-white text-[44px]" />
+              <div className="flex w-full justify-center">
+                <div className="grid w-120 max-w-full grid-cols-1">
+                  <div className="mb-30 flex h-120 w-120 items-center justify-center rounded-[50px] bg-green-light">
+                    <MdStars className="text-[44px] text-white" />
                   </div>
-                  <div className="w-full mb-8 text-green font-azo text-24 text-center">400+</div>
-                  <div className="w-full text-center text-green-60 text-18">Items</div>
+                  <div className="font-azo mb-8 w-full text-center text-24 text-green">
+                    400+
+                  </div>
+                  <div className="w-full text-center text-18 text-green-60">
+                    Items
+                  </div>
                 </div>
               </div>
-              <div className="w-full flex justify-center">
-                <div className="w-120 max-w-full grid grid-cols-1">
-                  <div className="w-120 h-120 bg-green-light rounded-[50px] mb-30 flex items-center justify-center">
-                    <MdStar className="text-white text-[44px]" />
+              <div className="flex w-full justify-center">
+                <div className="grid w-120 max-w-full grid-cols-1">
+                  <div className="mb-30 flex h-120 w-120 items-center justify-center rounded-[50px] bg-green-light">
+                    <MdStar className="text-[44px] text-white" />
                   </div>
-                  <div className="w-full mb-8 text-green font-azo text-24 text-center">100+</div>
-                  <div className="w-full text-center text-green-60 text-18">Specials</div>
+                  <div className="font-azo mb-8 w-full text-center text-24 text-green">
+                    100+
+                  </div>
+                  <div className="w-full text-center text-18 text-green-60">
+                    Specials
+                  </div>
                 </div>
               </div>
-              <div className="w-full flex justify-center">
-                <div className="w-120 max-w-full grid grid-cols-1">
-                  <div className="w-120 h-120 bg-green-light rounded-[50px] mb-30 flex items-center justify-center">
+              <div className="flex w-full justify-center">
+                <div className="grid w-120 max-w-full grid-cols-1">
+                  <div className="mb-30 flex h-120 w-120 items-center justify-center rounded-[50px] bg-green-light">
                     <img src={Logo} className="w-44" alt="" />
                   </div>
-                  <div className="w-full mb-8 text-green font-azo text-24 text-center">50+</div>
-                  <div className="w-full text-center text-green-60 text-18">Legendary</div>
+                  <div className="font-azo mb-8 w-full text-center text-24 text-green">
+                    50+
+                  </div>
+                  <div className="w-full text-center text-18 text-green-60">
+                    Legendary
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="hidden w-full bg-green relative justify-center py-[120px] sm:py-[160px] overflow-hidden">
-        <div className="absolute bottom-0 left-[50%] transform translate-x-[-50%] w-screen h-[900px] bg-gradient-to-t from-green-light-60 to-green"></div>
-        <div className="w-full max-w-screen-2xl relative">
+      <div className="relative hidden w-full justify-center overflow-hidden bg-green py-[120px] sm:py-[160px]">
+        <div className="absolute bottom-0 left-[50%] h-[900px] w-screen translate-x-[-50%] transform bg-gradient-to-t from-green-light-60 to-green"></div>
+        <div className="relative w-full max-w-screen-2xl">
           <HomeFaq />
         </div>
       </div>

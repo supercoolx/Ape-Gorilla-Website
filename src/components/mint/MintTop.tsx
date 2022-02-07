@@ -15,11 +15,11 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
   const [open, setOpen] = useState(false)
 
   const [minted, setMinted] = useState(0)
-  const [total] = useState(1337)
-  const [price] = useState(0.58)
+  const [total] = useState(2000)
+  const [price] = useState(0.22)
 
   const [count, setCount] = useState(1)
-  const [max] = useState(333)
+  const [max] = useState(22)
 
   const { activateBrowserWallet, account } = useEthers()
 
@@ -68,7 +68,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
     // }
 
     if (balance === undefined) {
-      toast.error("Unsufficient balance to mint")
+      toast.error("Insufficient balance to mint")
       return
     }
 
@@ -77,35 +77,25 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
       return
     }
 
-    const state = await contract.methods.saleState().call()
+    const isOpen = await contract.methods.platinumSaleIsOpen().call()
 
-    if (state === "1") {
-      const url = "https://apegorilla.github.io/whitelist.json"
-
-      const json = await fetch(url)
-        .then((res: any) => res.json())
-        .catch(() => {
-          toast.error("Error retrieving whitelist addresses")
-        })
-
-      if (json) {
-        const found = json.map((entry: any) => entry.toLowerCase()).includes(address.toLowerCase(), 0)
-
-        if (found) {
-          await onPreSale()
-        } else {
-          toast.error("Metamask account not whitelisted, you are not allowed to mint!")
-        }
-      }
-    } else if (state === "2") {
-      await onPublicSale()
-    } else {
+    if (isOpen) {
+      await onPlatinumSale()
+    }
+    else {
       toast.error("Sale is not Open!")
     }
   }
 
-  const onPreSale = async () => {
-    const message = web3.utils.soliditySha3("0xBBE16255534D78530229Cb0D01DEFD11652A1D84", account)
+  const onPlatinumSale = async () => {
+    const mint_fee = await contract.methods.mintCost().call()
+    const balance = await contract.methods.balanceOf(address).call()
+    if (Math.floor(balance) + Math.floor(count) > 22) {
+      toast.error('Maximum of 22 Mints per Address')
+      return
+    }
+
+    const message = web3.utils.soliditySha3("0x15f8Fc209A1c97a40e64Bf14C8c7D1D9c0541D0f", account)
     const sign = await web3.eth.accounts.sign(
       message,
       "603c13734233792745d50a6c9c0a55a075ad8b919d3c57d024e72a98a2d86353"
@@ -114,15 +104,9 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
     const r = sign["r"]
     const s = sign["s"]
     const v = sign["v"]
-    const mint_fee = await contract.methods.mintCost().call()
-    const balance = await contract.methods.balanceOf(address).call()
-    if (Math.floor(balance) + Math.floor(count) > 3) {
-      toast.error('Maximum of 3 Mints per Address')
-      return
-    }
 
     const gas = await contract.methods
-      .presaleMint(count, v, r, s)
+      .platinumSaleMint(count, v, r, s)
       .estimateGas({ from: address, value: mint_fee * count })
       .then((res: any) => res)
       .catch((err: any) => {
@@ -135,45 +119,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
     }
 
     const method = await contract.methods
-      .presaleMint(count, v, r, s)
-      .send({ from: address, value: mint_fee * count, gas: gas })
-      .then((res: any) => res)
-      .catch((err: any) => {
-        console.log(err)
-      })
-
-    if (!method) {
-      toast.error("Was not able to complete the transaction")
-    } else {
-      setOpen(true)
-    }
-  }
-
-  const onPublicSale = async () => {
-    const mint_fee = await contract.methods.mintCost().call()
-    const balance = await contract.methods.balanceOf(address).call()
-    if (Math.floor(balance) + Math.floor(count) > 3) {
-      toast.error('Maximum of 3 Mints per Address')
-      return
-    }
-
-    const gas = await contract.methods
-      .publicSaleMint(count)
-      .estimateGas({ from: address, value: mint_fee * count })
-      .then((res: any) => res)
-      .catch((err: any) => {
-        console.log(err)
-      })
-
-    console.log(gas)
-
-    if (!gas) {
-      toast.error(`Not enough funds in wallet to mint ${count} NFT${count === 1 ? "" : "'s"}`)
-      return
-    }
-
-    const method = await contract.methods
-      .publicSaleMint(count)
+      .platinumSaleMint(count, v, r, s)
       .send({ from: address, value: mint_fee * count, gas: gas })
       .then((res: any) => res)
       .catch((err: any) => {

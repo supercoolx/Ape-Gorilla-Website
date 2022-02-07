@@ -5,7 +5,9 @@ import { toast } from "react-toastify"
 export const parseMinutes = (number: number) => {
   const seconds = Math.round(number)
 
-  return `${Math.floor(seconds / 60)}:${seconds % 60 < 10 ? "0" : ""}${seconds % 60}`
+  return `${Math.floor(seconds / 60)}:${seconds % 60 < 10 ? "0" : ""}${
+    seconds % 60
+  }`
 }
 
 export function openLink(event: any, link: string) {
