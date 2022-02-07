@@ -15,11 +15,11 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
   const [open, setOpen] = useState(false)
 
   const [minted, setMinted] = useState(0)
-  const [total] = useState(1337)
+  const [total] = useState(2000)
   const [price] = useState(0.22)
 
   const [count, setCount] = useState(1)
-  const [max] = useState(333)
+  const [max] = useState(22)
 
   const { activateBrowserWallet, account } = useEthers()
 
@@ -68,7 +68,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
     // }
 
     if (balance === undefined) {
-      toast.error("Unsufficient balance to mint")
+      toast.error("Insufficient balance to mint")
       return
     }
 
