@@ -8,7 +8,6 @@ import { SOCIAL, URL } from "libs/constants"
 import { openLink } from "libs/functions"
 import React from "react"
 import { Link } from "react-router-dom"
-import VideoPlayer from "utils/video/VideoPlayer"
 
 const HomeTop = () => {
   const { ready } = useProps()
@@ -79,15 +78,6 @@ const HomeTop = () => {
               </div>
             </div>
           </div>
-          <div className="mt-[80px] flex w-full justify-center xl:mt-[140px]">
-            <div className="w-[900px] max-w-full">
-              <VideoPlayer
-                video={"https://www.youtube.com/watch?v=G_arcFqb0Os"}
-                pre={true}
-                clean={true}
-              />
-            </div>
-          </div>
           <div className="mt-[20px] grid w-full grid-cols-1 gap-60 xl:mt-[160px] xl:grid-cols-[auto,1fr] xl:gap-40">
             <div className="relative flex w-full justify-center xl:w-[450px] 2xl:w-[550px]">
               <div className="hidden w-[600px] max-w-full sm:max-w-[100vw] xl:absolute xl:top-[60%] xl:left-[55%] xl:flex xl:w-[550px] xl:translate-x-[-50%] xl:translate-y-[-50%] xl:transform 2xl:left-[46%] 2xl:w-[700px]">
@@ -109,13 +99,12 @@ const HomeTop = () => {
                     Unique Non-Fungible Tokens
                   </div>
                   <div className="mb-20 w-full text-center text-14 text-white-60 sm:mb-30 sm:text-16 md:text-18 xl:text-left">
-                    Our mission is to empower our community through multiple
-                    avenues including academic education in NFTs, web3.0 and
-                    blockchains, Meta Gorilla token rewards, business assistance
-                    tool, networking opportunities, as well as opportunity for
-                    receiving business or charity grants. Checkout the roadmap
-                    for more information, all of the team members are also
-                    documented below!
+                    Ape Gorilla project is a purposed driven NFT project surrounded
+                    around helping and empowering each other. Our projects mission is to empower our community
+                    through multiple avenues including opportunity for the holders to receiving business or
+                    charity grants, academy in web3.0 and blockchains, business assistance software,
+                    networking opportunities and grant access to high-level events, web3.0 training,
+                    software, and games.
                   </div>
                   <div className="flex w-full justify-center xl:justify-start">
                     <button
