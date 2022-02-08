@@ -15,7 +15,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
   const [open, setOpen] = useState(false)
 
   const [minted, setMinted] = useState(0)
-  const [total] = useState(2000)
+  const [total] = useState(platinum ? 222 : 2000)
   const [price] = useState(0.22)
 
   const [count, setCount] = useState(1)
