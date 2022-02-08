@@ -48,6 +48,8 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
   }, 30000)
 
   const onLoad = async () => {
+    setLoading(false)
+
     if (contract) {
       const newMinted = await contract.methods.totalSupply().call()
 
@@ -57,8 +59,8 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
         setMinted(newMinted)
         setInvalid(false)
       }
-
-      setLoading(false)
+    } else {
+      setInvalid(true)
     }
   }
 
