@@ -1,10 +1,13 @@
 import { useEthers, useInterval } from "@usedapp/core"
+import AppStore from "assets/img/appstore.jpg"
+import GooglePlay from "assets/img/googleplaystore.jpg"
 import SpinnerCirc from "assets/img/spinner_circ.png"
 import SpinnerCircPlat from "assets/img/spinner_circ_plat.png"
 import { ReactComponent as SpinnerText } from "assets/img/spinner_text.svg"
 import HomeTopSlider from "components/home/HomeTopSlider"
 import ModalMint from "components/modals/ModalMint"
 import { useProps } from "contexts/PropsContext"
+import { openLink } from "libs/functions"
 import React, { useEffect, useState } from "react"
 import { MdRemove, MdAdd } from "react-icons/md"
 import { toast } from "react-toastify"
@@ -14,6 +17,8 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
 
   const [open, setOpen] = useState(false)
 
+  const [invalid, setInvalid] = useState(true)
+  const [loading, setLoading] = useState(true)
   const [minted, setMinted] = useState(0)
   const [total] = useState(platinum ? 222 : 2000)
   const [price] = useState(0.22)
@@ -46,11 +51,14 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
     if (contract) {
       const newMinted = await contract.methods.totalSupply().call()
 
-      console.log(newMinted)
+      console.log("Minted", newMinted)
 
       if (mounted) {
         setMinted(newMinted)
+        setInvalid(false)
       }
+
+      setLoading(false)
     }
   }
 
@@ -162,97 +170,153 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
           <div className="font-azo font-osb mb-30 w-full text-center text-32 leading-[110%] text-white sm:text-[44px] md:mb-40 md:text-[50px] lg:text-[64px]">
             THE APE GORILLA MINTING IS LIVE!
           </div>
-          <div className="mb-40 grid w-full grid-cols-1 gap-16 md:mb-60">
-            <div className="flex w-full flex-wrap items-center justify-between gap-12">
-              <div className="font-regular text-14 text-white-60 sm:text-16">
-                {Math.floor((minted / total) * 100)}% already minted
-              </div>
-              <div className="font-regular text-14 text-white-60 sm:text-16">
-                {total - minted} left to mint
-              </div>
-            </div>
-            <div className="relative h-8 w-full bg-white-10">
-              <div
-                style={{ width: `${Math.floor((minted / total) * 100)}%` }}
-                className={`absolute top-0 left-0 h-8 ${
-                  platinum
-                    ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]"
-                    : "bg-green-light"
-                }`}
-              ></div>
-              <div
-                style={{ left: `${Math.floor((minted / total) * 100)}%` }}
-                className={`absolute top-[50%] h-20 w-2 translate-y-[-50%] transform ${
-                  platinum
-                    ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]"
-                    : "bg-green-light"
-                }`}
-              ></div>
-            </div>
-          </div>
-          <div className="mb-60 grid w-full grid-cols-1 items-center gap-24 md:grid-cols-[1fr,auto,1fr]">
-            <button className="relative flex w-full items-center justify-between px-28">
-              <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-white-20 "></div>
-              <div className="relative flex h-60 items-center text-14 text-white-60 sm:text-16 md:text-18">
-                Price
-              </div>
-              <div className="relative flex h-60 items-center text-14 font-bold text-white sm:text-16 md:text-18">
-                {price} ETH
-              </div>
-            </button>
-            {address ? (
-              <>
-                <div className="relative h-60 px-20">
-                  <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-white "></div>
-                  <div className="relative flex h-60 items-center justify-center gap-16">
-                    <button
-                      onClick={() => setCount(Math.max(1, count - 1))}
-                      className="flex h-30 w-30 items-center justify-center"
-                    >
-                      <MdRemove className="text-24 text-green" />
-                    </button>
-                    <div className="min-w-[40px] text-center text-18 font-bold text-green">
-                      {count}
+          {!loading ? (
+            <>
+              {!invalid ? (
+                <>
+                  <div className="mb-40 grid w-full grid-cols-1 gap-16 md:mb-60">
+                    <div className="flex w-full flex-wrap items-center justify-between gap-12">
+                      <div className="font-regular text-14 text-white-60 sm:text-16">
+                        {Math.floor((minted / total) * 100)}% already minted
+                      </div>
+                      <div className="font-regular text-14 text-white-60 sm:text-16">
+                        {total - minted} left to mint
+                      </div>
                     </div>
+                    <div className="relative h-8 w-full bg-white-10">
+                      <div
+                        style={{
+                          width: `${Math.floor((minted / total) * 100)}%`
+                        }}
+                        className={`absolute top-0 left-0 h-8 ${
+                          platinum
+                            ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]"
+                            : "bg-green-light"
+                        }`}
+                      ></div>
+                      <div
+                        style={{
+                          left: `${Math.floor((minted / total) * 100)}%`
+                        }}
+                        className={`absolute top-[50%] h-20 w-2 translate-y-[-50%] transform ${
+                          platinum
+                            ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]"
+                            : "bg-green-light"
+                        }`}
+                      ></div>
+                    </div>
+                  </div>
+                  <div className="mb-60 grid w-full grid-cols-1 items-center gap-24 md:grid-cols-[1fr,auto,1fr]">
+                    <button className="relative flex w-full items-center justify-between px-28">
+                      <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-white-20 "></div>
+                      <div className="relative flex h-60 items-center text-14 text-white-60 sm:text-16 md:text-18">
+                        Price
+                      </div>
+                      <div className="relative flex h-60 items-center text-14 font-bold text-white sm:text-16 md:text-18">
+                        {price} ETH
+                      </div>
+                    </button>
+                    {address ? (
+                      <>
+                        <div className="relative h-60 px-20">
+                          <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-white "></div>
+                          <div className="relative flex h-60 items-center justify-center gap-16">
+                            <button
+                              onClick={() => setCount(Math.max(1, count - 1))}
+                              className="flex h-30 w-30 items-center justify-center"
+                            >
+                              <MdRemove className="text-24 text-green" />
+                            </button>
+                            <div className="min-w-[40px] text-center text-18 font-bold text-green">
+                              {count}
+                            </div>
+                            <button
+                              onClick={() => setCount(Math.min(max, count + 1))}
+                              className="flex h-30 w-30 items-center justify-center"
+                            >
+                              <MdAdd className="text-24 text-green" />
+                            </button>
+                          </div>
+                        </div>
+                        <button onClick={() => onMint()} className="relative">
+                          <div
+                            className={`absolute top-0 left-0 h-60 w-full -skew-x-12 transform ${
+                              platinum
+                                ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]"
+                                : "bg-green-light"
+                            }`}
+                          ></div>
+                          <div className="font-azo relative flex h-60 w-full items-center justify-center px-28 text-14 text-white sm:text-16 md:text-18">
+                            MINT NOW
+                          </div>
+                        </button>
+                      </>
+                    ) : (
+                      <button
+                        onClick={() => onActivate()}
+                        className="relative col-span-1 w-full md:col-span-2"
+                      >
+                        <div
+                          className={`absolute top-0 left-0  h-60 w-full -skew-x-12 transform ${
+                            platinum
+                              ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]"
+                              : "bg-green-light"
+                          }`}
+                        ></div>
+                        <div className="font-azo relative flex h-60 w-full items-center justify-center px-28 text-14 text-white sm:text-16 md:text-18">
+                          CONNECT
+                        </div>
+                      </button>
+                    )}
+                  </div>
+                </>
+              ) : (
+                <div className="grid w-full grid-cols-1 gap-20">
+                  <div className="w-full text-center text-16 text-white-60">
+                    Minting functionality is only available through metamask.
+                    Please visit the App Store or Google Play Store to visit us
+                    with use of the MetaMask app!
+                  </div>
+                  <div className="flex w-full flex-wrap items-center justify-center gap-20">
                     <button
-                      onClick={() => setCount(Math.min(max, count + 1))}
-                      className="flex h-30 w-30 items-center justify-center"
+                      onClick={(e) =>
+                        openLink(
+                          e,
+                          "https://play.google.com/store/apps/details?id=io.metamask"
+                        )
+                      }
+                      className="w-full sm:w-[200px]"
                     >
-                      <MdAdd className="text-24 text-green" />
+                      <img
+                        src={GooglePlay}
+                        alt=""
+                        className="w-full rounded-[8px]"
+                      />
+                    </button>
+                    <button
+                      onClick={(e) =>
+                        openLink(
+                          e,
+                          "https://apps.apple.com/us/app/metamask-blockchain-wallet/id1438144202"
+                        )
+                      }
+                      className="w-full sm:w-[200px]"
+                    >
+                      <img
+                        src={AppStore}
+                        alt=""
+                        className="w-full rounded-[8px]"
+                      />
                     </button>
                   </div>
                 </div>
-                <button onClick={() => onMint()} className="relative">
-                  <div
-                    className={`absolute top-0 left-0 h-60 w-full -skew-x-12 transform ${
-                      platinum
-                        ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]"
-                        : "bg-green-light"
-                    }`}
-                  ></div>
-                  <div className="font-azo relative flex h-60 w-full items-center justify-center px-28 text-14 text-white sm:text-16 md:text-18">
-                    MINT NOW
-                  </div>
-                </button>
-              </>
-            ) : (
-              <button
-                onClick={() => onActivate()}
-                className="relative col-span-1 w-full md:col-span-2"
-              >
-                <div
-                  className={`absolute top-0 left-0  h-60 w-full -skew-x-12 transform ${
-                    platinum
-                      ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]"
-                      : "bg-green-light"
-                  }`}
-                ></div>
-                <div className="font-azo relative flex h-60 w-full items-center justify-center px-28 text-14 text-white sm:text-16 md:text-18">
-                  CONNECT
-                </div>
-              </button>
-            )}
-          </div>
+              )}
+            </>
+          ) : (
+            <div className="w-full text-center text-16 text-white-60">
+              Loading...
+            </div>
+          )}
           <HomeTopSlider flat={true} single={true} />
         </div>
       </div>

@@ -29,6 +29,7 @@
     "react": "^17.0.2",
     "react-cookie": "^4.1.1",
     "react-dapp-web3": "^2.1.0",
+    "react-device-detect": "^2.1.2",
     "react-dom": "^17.0.2",
     "react-dropzone": "^11.3.4",
     "react-icons": "^4.2.0",
