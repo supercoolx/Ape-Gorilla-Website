@@ -1,6 +1,7 @@
 import { useEthers, useInterval } from "@usedapp/core"
 import AppStore from "assets/img/appstore.jpg"
 import GooglePlay from "assets/img/googleplaystore.jpg"
+import { ReactComponent as MetaMask } from "assets/img/metamask.svg"
 import SpinnerCirc from "assets/img/spinner_circ.png"
 import SpinnerCircPlat from "assets/img/spinner_circ_plat.png"
 import { ReactComponent as SpinnerText } from "assets/img/spinner_text.svg"
@@ -174,7 +175,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
           </div>
           {!loading ? (
             <>
-              {!invalid ? (
+              {invalid ? (
                 <>
                   <div className="mb-40 grid w-full grid-cols-1 gap-16 md:mb-60">
                     <div className="flex w-full flex-wrap items-center justify-between gap-12">
@@ -279,6 +280,23 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
                     Please visit the App Store or Google Play Store to visit us
                     with use of the MetaMask app!
                   </div>
+                  <div className="flex w-full justify-center">
+                    <button
+                      onClick={(e) =>
+                        openLink(
+                          e,
+                          platinum
+                            ? "https://metamask.app.link/dapp/apegorilla.com/platinum"
+                            : "https://metamask.app.link/dapp/apegorilla.com"
+                        )
+                      }
+                    >
+                      <MetaMask className="h-80 w-80" />
+                    </button>
+                  </div>
+                  <div className="w-full text-center text-16 text-white-60">
+                    or...
+                  </div>
                   <div className="flex w-full flex-wrap items-center justify-center gap-20">
                     <button
                       onClick={(e) =>
@@ -287,12 +305,12 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
                           "https://play.google.com/store/apps/details?id=io.metamask"
                         )
                       }
-                      className="w-full sm:w-[200px]"
+                      className="w-full sm:w-[160px]"
                     >
                       <img
                         src={GooglePlay}
                         alt=""
-                        className="w-full rounded-[8px]"
+                        className="w-full rounded-[6px]"
                       />
                     </button>
                     <button
@@ -302,12 +320,12 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
                           "https://apps.apple.com/us/app/metamask-blockchain-wallet/id1438144202"
                         )
                       }
-                      className="w-full sm:w-[200px]"
+                      className="w-full sm:w-[160px]"
                     >
                       <img
                         src={AppStore}
                         alt=""
-                        className="w-full rounded-[8px]"
+                        className="w-full rounded-[6px]"
                       />
                     </button>
                   </div>
