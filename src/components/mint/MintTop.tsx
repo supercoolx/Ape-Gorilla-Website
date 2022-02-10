@@ -175,7 +175,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
           </div>
           {!loading ? (
             <>
-              {invalid ? (
+              {!invalid ? (
                 <>
                   <div className="mb-40 grid w-full grid-cols-1 gap-16 md:mb-60">
                     <div className="flex w-full flex-wrap items-center justify-between gap-12">
@@ -276,12 +276,14 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
               ) : (
                 <div className="grid w-full grid-cols-1 gap-20">
                   <div className="w-full text-center text-16 text-white-60">
-                    Minting with a Mobile phone functionality is only available through metamask browser.
-                    </div>
-                    <div className="w-full text-center text-16 text-white-60">
-                    Please open Metamask and use the browser to go to apegorilla.com/platinum to mint an Ape Gorilla.
-                    </div>
-                    <div className="w-full text-center text-16 text-white-60">
+                    Minting with a Mobile phone functionality is only available
+                    through metamask browser.
+                  </div>
+                  <div className="w-full text-center text-16 text-white-60">
+                    Please open Metamask and use the browser to go to
+                    apegorilla.com/platinum to mint an Ape Gorilla.
+                  </div>
+                  <div className="w-full text-center text-16 text-white-60">
                     Dont have Metamask? Download them below!
                   </div>
                   <div className="flex w-full justify-center">
