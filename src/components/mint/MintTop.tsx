@@ -276,10 +276,10 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
               ) : (
                 <div className="grid w-full grid-cols-1 gap-20">
                   <div className="w-full text-center text-16 text-white-60">
-                    Minting with a Mobile phone functionality is only available through metamask browser.
+                    Minting with a Mobile phone functionality is only available through Metamask App.
                     </div>
                     <div className="w-full text-center text-16 text-white-60">
-                    Please open Metamask and use the browser to go to apegorilla.com/platinum to mint an Ape Gorilla.
+                    To mint an Ape Gorilla. Please ensure to have Metamask downloaded on your Phone.
                     </div>
                     <div className="w-full text-center text-16 text-white-60">
                     Dont have Metamask? Download them below!
