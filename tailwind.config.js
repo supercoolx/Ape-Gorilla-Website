@@ -12,14 +12,14 @@ module.exports = {
       "2xl": "1340px",
       "3xl": "1560px",
       "4xl": "1660px",
-      "5xl": "1840px",
+      "5xl": "1840px"
     },
     minHeight: {
       0: "0",
       "1/4": "25%",
       "1/2": "50%",
       "3/4": "75%",
-      full: "100%",
+      full: "100%"
     },
     extend: {
       animation: {
@@ -27,6 +27,7 @@ module.exports = {
         slider: "slider 30s linear infinite",
         "spin-slow": "spin 5s linear infinite",
         "slider-reverse": "slider-reverse 30s linear infinite",
+        "roll-left": "roll-left 24s infinite linear"
       },
       borderRadius: {
         none: "0px",
@@ -38,16 +39,16 @@ module.exports = {
         10: "0.625rem",
         12: "0.75rem",
         24: "1.5rem",
-        full: "9999rem",
+        full: "9999rem"
       },
       borderWidth: {
         none: "0px",
         1: "1px",
         2: "2px",
-        7: "7px",
+        7: "7px"
       },
       boxShadow: {
-        sm: "0px 10px 50px rgba(0, 0, 0, 0.03)",
+        sm: "0px 10px 50px rgba(0, 0, 0, 0.03)"
       },
       colors: {
         transparent: "transparent",
@@ -67,7 +68,7 @@ module.exports = {
         "state-green": "rgba(18, 106, 1, 1)",
         "state-red": "rgba(218, 38, 35, 1)",
         brown: "rgba(20, 11, 2, 1)",
-        silver: "rgba(157, 173, 176, 1)",
+        silver: "rgba(157, 173, 176, 1)"
       },
       fontSize: {
         8: "0.5rem",
@@ -89,15 +90,15 @@ module.exports = {
         48: "3rem",
         64: "4rem",
         80: "5rem",
-        180: "11.25rem",
+        180: "11.25rem"
       },
       maxWidth: {
-        100: "100px",
+        100: "100px"
       },
       ringWidth: {
         1: "0.0625rem",
         2: "0.125rem",
-        3: "0.1875rem",
+        3: "0.1875rem"
       },
       spacing: {
         1: "0.0625rem",
@@ -159,20 +160,27 @@ module.exports = {
         320: "20rem",
         400: "25rem",
         450: "28.125rem",
-        520: "32.5rem",
+        520: "32.5rem"
       },
       keyframes: {
+        "roll-left": {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(-75%)" }
+        },
         slider: {
           "0%": { transform: "translateX(0px)" },
-          "100%": { transform: "translateX(-3180px)" },
+          "100%": { transform: "translateX(-3180px)" }
         },
         "slider-reverse": {
           "0%": { transform: "translateX(-3180px)" },
-          "100%": { transform: "translateX(0px)" },
-        },
-      },
-    },
+          "100%": { transform: "translateX(0px)" }
+        }
+      }
+    }
   },
 
-  plugins: [require("@tailwindcss/aspect-ratio"), require("@tailwindcss/line-clamp")],
+  plugins: [
+    require("@tailwindcss/aspect-ratio"),
+    require("@tailwindcss/line-clamp")
+  ]
 }

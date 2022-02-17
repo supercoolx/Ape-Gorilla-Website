@@ -160,7 +160,7 @@ const HomeTeam = () => {
   return (
     <>
       <div className="relative my-40 w-full bg-white px-20 sm:my-60 sm:px-30">
-        <div className="absolute top-[50%] left-[50%] h-[calc(100%+140px)] w-screen translate-x-[-50%] translate-y-[-50%] transform bg-white md:h-[calc(100%+260px)]"></div>
+        <div className="xl::h-[calc(100%+240px)] absolute top-[50%] left-[50%] h-[calc(100%+140px)] w-screen translate-x-[-50%] translate-y-[-50%] transform bg-white"></div>
         <div className="relative grid w-full grid-cols-1 gap-40 md:gap-80 lg:gap-120">
           <div className="flex w-full justify-center">
             <div className="grid w-[700px] max-w-full grid-cols-1 gap-30">
@@ -176,7 +176,7 @@ const HomeTeam = () => {
             </div>
           </div>
           <div className="w-full">
-            <div className="paused flex w-max animate-slider">
+            <div className="paused flex w-max animate-roll-left">
               {new Array(4).fill(1).map((entry: number, key: number) => (
                 <div className="flex space-x-10" key={key}>
                   {team.map((person: TeamInterface, key: number) => (

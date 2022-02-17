@@ -1,6 +1,8 @@
 import Footer from "components/footer/Footer"
+import HomeButhan from "components/home/HomeButhan"
 import HomeFaq from "components/home/HomeFaq"
 import HomeLuck from "components/home/HomeLuck"
+import HomePartners from "components/home/HomePartners"
 import HomeRoadmap from "components/home/HomeRoadmap"
 import HomeTeam from "components/home/HomeTeam"
 import HomeTop from "components/home/HomeTop"
@@ -17,9 +19,11 @@ const Home = () => {
           <div className="absolute bottom-0 left-[50%] h-[1200px] w-screen translate-x-[-50%] transform bg-gradient-to-t from-green-light-60 to-transparent"></div>
           <div className="relative grid w-full grid-cols-1 gap-[140px] lg:gap-[240px]">
             <HomeTop />
+            <HomeButhan />
             <HomeRoadmap />
             <HomeLuck />
             <HomeTeam />
+            <HomePartners />
             <HomeFaq />
           </div>
         </div>
