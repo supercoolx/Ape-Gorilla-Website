@@ -12,7 +12,7 @@ const VideoPlayerClean = ({
     <>
       <button
         onClick={() => setPlaying(!playing)}
-        className="absolute left-0 bottom-0 z-20 flex h-full w-full items-center justify-center opacity-0 hover:opacity-100"
+        className="absolute top-[50%] left-[50%] z-20 flex h-100 w-100 translate-x-[-50%] translate-y-[-50%] transform items-center justify-center opacity-0 hover:opacity-100"
       >
         <div className="relative h-[62px] w-[62px] rounded-full bg-white shadow-md">
           {playing ? (

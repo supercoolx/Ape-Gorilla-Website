@@ -24,10 +24,10 @@ const HomeButhan = () => {
             </div>
           </div>
         </div>
-        <div className="mb-[50px] hidden w-full justify-center xl:mt-[140px]">
+        <div className="mb-[50px] flex w-full justify-center xl:mt-[140px]">
           <div className="w-[900px] max-w-full">
             <VideoPlayer
-              video={"https://www.youtube.com/watch?v=G_arcFqb0Os"}
+              video={"https://www.youtube.com/watch?v=59iPEC6K7JY"}
               pre={true}
               clean={true}
             />
