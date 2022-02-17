@@ -2,6 +2,7 @@ import BannerGiant from "assets/img/banner_giant.png"
 import BannerTop from "assets/img/banner_top.png"
 import SpinnerCirc from "assets/img/spinner_circ.png"
 import { ReactComponent as SpinnerText } from "assets/img/spinner_text.svg"
+import Video from "assets/img/thumbnail.png"
 import HomeTopSlider from "components/home/HomeTopSlider"
 import { useProps } from "contexts/PropsContext"
 import { SOCIAL, URL } from "libs/constants"
@@ -79,12 +80,13 @@ const HomeTop = () => {
               </div>
             </div>
           </div>
-          <div className="mt-[80px] hidden w-full justify-center xl:mt-[140px]">
+          <div className="mt-[80px] flex w-full justify-center xl:mt-[140px]">
             <div className="w-[900px] max-w-full">
               <VideoPlayer
                 video={"https://www.youtube.com/watch?v=G_arcFqb0Os"}
                 pre={true}
                 clean={true}
+                thumbnail={Video}
               />
             </div>
           </div>

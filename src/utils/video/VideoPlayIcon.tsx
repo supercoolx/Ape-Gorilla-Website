@@ -1,12 +1,13 @@
-import Video from "assets/img/thumbnail.png"
 import React from "react"
 import { MdPlayCircleFilled } from "react-icons/md"
 import Wrapper from "utils/wrapper/Wrapper"
 
 const VideoPlayIcon = ({
+  thumbnail,
   title,
   length
 }: {
+  thumbnail: string
   title?: string
   length?: string
 }) => {
@@ -14,7 +15,7 @@ const VideoPlayIcon = ({
     <>
       <div className="bg-purple z-30 flex h-full w-full items-center justify-center">
         <div className="absolute top-0 left-0 bottom-0 w-full">
-          <img src={Video} alt="" />
+          <img src={thumbnail} alt="" />
         </div>
         <div className="flex w-full items-center justify-center">
           <div className="relative h-[54px] w-[54px] rounded-full bg-white shadow-md">

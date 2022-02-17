@@ -12,7 +12,8 @@ const VideoPlayer = ({
   length,
   clean,
   audio,
-  light
+  light,
+  thumbnail
 }: {
   video: string
   pre: boolean
@@ -21,6 +22,7 @@ const VideoPlayer = ({
   clean?: boolean
   audio?: boolean
   light?: boolean
+  thumbnail: string
 }) => {
   const ref = useRef<HTMLDivElement>(null)
   const player = useRef<ReactPlayer>(null)
@@ -134,7 +136,13 @@ const VideoPlayer = ({
             light={pre}
             volume={volume}
             muted={muted}
-            playIcon={<VideoPlayIcon title={title} length={length} />}
+            playIcon={
+              <VideoPlayIcon
+                title={title}
+                length={length}
+                thumbnail={thumbnail}
+              />
+            }
             controls={false}
             width={width}
             height={audio ? "50px" : height}

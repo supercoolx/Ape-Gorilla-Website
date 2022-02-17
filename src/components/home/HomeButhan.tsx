@@ -1,4 +1,5 @@
 import BannerButhan from "assets/img/banner_buthan.png"
+import Buthan from "assets/img/buthan.jpg"
 import { openLink } from "libs/functions"
 import React from "react"
 import VideoPlayer from "utils/video/VideoPlayer"
@@ -24,12 +25,13 @@ const HomeButhan = () => {
             </div>
           </div>
         </div>
-        <div className="mb-[50px] flex w-full justify-center xl:mt-[140px]">
+        <div className="mb-[50px] flex w-full justify-center xl:mt-[80px]">
           <div className="w-[900px] max-w-full">
             <VideoPlayer
               video={"https://www.youtube.com/watch?v=59iPEC6K7JY"}
               pre={true}
               clean={true}
+              thumbnail={Buthan}
             />
           </div>
         </div>
