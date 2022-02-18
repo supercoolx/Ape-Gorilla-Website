@@ -35,8 +35,8 @@ const HomeButhan = () => {
             />
           </div>
         </div>
-        <div className="grid w-full grid-cols-[auto,1fr] items-center gap-100">
-          <div className="flex">
+        <div className="grid w-full grid-cols-1 items-center gap-100 lg:grid-cols-[auto,1fr]">
+          <div className="flex w-full justify-center lg:w-auto">
             <img src={BannerButhan} alt="" />
           </div>
           <div className="grid w-full grid-cols-1 gap-24">
@@ -51,7 +51,7 @@ const HomeButhan = () => {
               Bhutan and will provide our holders greater access to networking,
               education on technology topics within our unique community.
             </div>
-            <div className="flex w-full flex-wrap justify-center gap-20 xl:justify-start">
+            <div className="flex w-full flex-wrap justify-start gap-20">
               <button
                 onClick={(e) => openLink(e, "https://p3d.in/ar/76p2T")}
                 className="relative w-full sm:w-auto"
