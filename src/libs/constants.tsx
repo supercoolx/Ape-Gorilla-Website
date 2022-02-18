@@ -31,3 +31,21 @@ export const DATE = {
   DATETIME: "MMM D YYYY, HH:mm",
   SHORT: "MMM D, YYYY"
 }
+
+export const SPRING = {
+  mass: 1,
+  tension: 200,
+  friction: 1,
+  clamp: true,
+  precision: 0.01,
+  velocity: 0
+}
+
+export const SPRING_SLOW = {
+  mass: 1,
+  tension: 20,
+  friction: 4,
+  clamp: true,
+  precision: 0.01,
+  velocity: 0
+}

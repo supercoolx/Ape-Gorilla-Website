@@ -42,15 +42,15 @@ const Mint = ({ platinum }: { platinum: boolean }) => {
           </div>
         </WrapperPage>
       </div>
-      <div className="relative hidden w-full justify-center overflow-hidden bg-green py-[120px] px-20 sm:py-[160px] sm:px-30">
-        <div className="absolute bottom-0 left-[50%] h-[900px] w-screen translate-x-[-50%] transform bg-gradient-to-t from-green-light-60 to-green"></div>
-        <div className="absolute bottom-[100%] h-60 w-full bg-gradient-to-t from-green to-transparent"></div>
+      <div className="relative hidden w-full justify-center overflow-hidden bg-brown py-[120px] px-20 sm:py-[160px] sm:px-30">
+        <div className="absolute bottom-0 left-[50%] h-[900px] w-screen translate-x-[-50%] transform bg-gradient-to-t from-orange-60 to-brown"></div>
+        <div className="absolute bottom-[100%] h-60 w-full bg-gradient-to-t from-brown to-transparent"></div>
         <div className="relative grid w-full max-w-screen-2xl grid-cols-1 gap-60 sm:gap-100">
           <div className="flex w-full justify-center">
             <div className="grid w-[700px] max-w-full grid-cols-1 gap-30">
               <div className="font-azo w-full text-center text-32 text-white sm:text-[42px] md:text-[52px] lg:text-[60px]">
                 COMMUNITY{" "}
-                <span className="font-azo text-32 text-green-light sm:text-[42px] md:text-[52px] lg:text-[60px]">
+                <span className="font-azo text-32 text-orange sm:text-[42px] md:text-[52px] lg:text-[60px]">
                   MASTERMINDS
                 </span>
               </div>
@@ -92,52 +92,52 @@ const Mint = ({ platinum }: { platinum: boolean }) => {
             <div className="grid grid-cols-1 gap-40 sm:grid-cols-2 md:grid-cols-4">
               <div className="flex w-full justify-center">
                 <div className="grid w-120 max-w-full grid-cols-1">
-                  <div className="mb-30 flex h-120 w-120 items-center justify-center rounded-[50px] bg-green-light">
+                  <div className="mb-30 flex h-120 w-120 items-center justify-center rounded-[50px] bg-orange">
                     <Paw className="h-44 w-44 text-white" />
                   </div>
-                  <div className="font-azo mb-8 w-full text-center text-24 text-green">
+                  <div className="font-azo mb-8 w-full text-center text-24 text-brown">
                     11,337
                   </div>
-                  <div className="w-full text-center text-18 text-green-60">
+                  <div className="text-brown-60 w-full text-center text-18">
                     Supplies
                   </div>
                 </div>
               </div>
               <div className="flex w-full justify-center">
                 <div className="grid w-120 max-w-full grid-cols-1">
-                  <div className="mb-30 flex h-120 w-120 items-center justify-center rounded-[50px] bg-green-light">
+                  <div className="mb-30 flex h-120 w-120 items-center justify-center rounded-[50px] bg-orange">
                     <MdStars className="text-[44px] text-white" />
                   </div>
-                  <div className="font-azo mb-8 w-full text-center text-24 text-green">
+                  <div className="font-azo mb-8 w-full text-center text-24 text-brown">
                     400+
                   </div>
-                  <div className="w-full text-center text-18 text-green-60">
+                  <div className="text-brown-60 w-full text-center text-18">
                     Items
                   </div>
                 </div>
               </div>
               <div className="flex w-full justify-center">
                 <div className="grid w-120 max-w-full grid-cols-1">
-                  <div className="mb-30 flex h-120 w-120 items-center justify-center rounded-[50px] bg-green-light">
+                  <div className="mb-30 flex h-120 w-120 items-center justify-center rounded-[50px] bg-orange">
                     <MdStar className="text-[44px] text-white" />
                   </div>
-                  <div className="font-azo mb-8 w-full text-center text-24 text-green">
+                  <div className="font-azo mb-8 w-full text-center text-24 text-brown">
                     100+
                   </div>
-                  <div className="w-full text-center text-18 text-green-60">
+                  <div className="text-brown-60 w-full text-center text-18">
                     Specials
                   </div>
                 </div>
               </div>
               <div className="flex w-full justify-center">
                 <div className="grid w-120 max-w-full grid-cols-1">
-                  <div className="mb-30 flex h-120 w-120 items-center justify-center rounded-[50px] bg-green-light">
+                  <div className="mb-30 flex h-120 w-120 items-center justify-center rounded-[50px] bg-orange">
                     <img src={Logo} className="w-44" alt="" />
                   </div>
-                  <div className="font-azo mb-8 w-full text-center text-24 text-green">
+                  <div className="font-azo mb-8 w-full text-center text-24 text-brown">
                     50+
                   </div>
-                  <div className="w-full text-center text-18 text-green-60">
+                  <div className="text-brown-60 w-full text-center text-18">
                     Legendary
                   </div>
                 </div>
@@ -146,8 +146,8 @@ const Mint = ({ platinum }: { platinum: boolean }) => {
           </div>
         </div>
       </div>
-      <div className="relative hidden w-full justify-center overflow-hidden bg-green py-[120px] sm:py-[160px]">
-        <div className="absolute bottom-0 left-[50%] h-[900px] w-screen translate-x-[-50%] transform bg-gradient-to-t from-green-light-60 to-green"></div>
+      <div className="relative hidden w-full justify-center overflow-hidden bg-brown py-[120px] sm:py-[160px]">
+        <div className="absolute bottom-0 left-[50%] h-[900px] w-screen translate-x-[-50%] transform bg-gradient-to-t from-orange-60 to-brown"></div>
         <div className="relative w-full max-w-screen-2xl">
           <HomeFaq />
         </div>

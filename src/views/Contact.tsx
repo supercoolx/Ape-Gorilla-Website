@@ -18,7 +18,7 @@ import {
 import { SiTiktok } from "react-icons/si"
 
 const Contact = () => {
-  const [css] = useState("text-[38px] text-white group-hover:text-green")
+  const [css] = useState("text-[38px] text-white group-hover:text-brown")
   const [socials] = useState<ContactInterface[]>([
     {
       icon: <FaDiscord className={css} />,
@@ -50,7 +50,7 @@ const Contact = () => {
     {
       icon: (
         <OpenSea
-          className={`h-[38px] w-[38px] fill-current text-white group-hover:text-green`}
+          className={`h-[38px] w-[38px] fill-current text-white group-hover:text-brown`}
         />
       ),
       title: "OpenSea",
@@ -93,7 +93,7 @@ const Contact = () => {
                   onClick={(e) => openLink(e, "mailto:support@apegorilla.com")}
                   className="relative w-[280px] max-w-full"
                 >
-                  <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-green-light "></div>
+                  <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-orange "></div>
                   <div className="font-azo relative flex h-60 w-full items-center justify-center px-28 text-14 text-white sm:text-16 md:text-18">
                     EMAIL US
                   </div>

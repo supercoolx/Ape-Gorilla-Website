@@ -164,10 +164,10 @@ const HomeTeam = () => {
         <div className="relative grid w-full grid-cols-1 gap-40 md:gap-80 lg:gap-120">
           <div className="flex w-full justify-center">
             <div className="grid w-[700px] max-w-full grid-cols-1 gap-30">
-              <div className="font-azo md:text-56 w-full text-center text-24 leading-[110%] text-green sm:text-36 lg:text-[80px]">
+              <div className="font-azo md:text-56 w-full text-center text-24 leading-[110%] text-brown sm:text-36 lg:text-[80px]">
                 MEET THE APE GORILLA TEAM
               </div>
-              <div className="w-full text-center text-14 text-green-60 sm:text-16 md:text-18">
+              <div className="w-full text-center text-14 text-brown-60 sm:text-16 md:text-18">
                 We are most proud to be part of the Ape Gorilla Project and are
                 happy to bring the community together, and empower them with
                 opportunities, knowledge, and network through technology and
@@ -180,7 +180,7 @@ const HomeTeam = () => {
               {new Array(4).fill(1).map((entry: number, key: number) => (
                 <div className="flex space-x-10" key={key}>
                   {team.map((person: TeamInterface, key: number) => (
-                    <div className="w-[280px]" key={key}>
+                    <div className="w-[280px] cursor-pointer" key={key}>
                       <div className="mb-24 flex w-full justify-center">
                         <div className="w-[240px]">
                           <img
@@ -190,10 +190,10 @@ const HomeTeam = () => {
                           />
                         </div>
                       </div>
-                      <div className="font-azo mb-10 w-full text-center text-18 text-green sm:text-24">
+                      <div className="font-azo mb-10 w-full text-center text-18 text-brown sm:text-24">
                         {person.name}
                       </div>
-                      <div className="font-regular mb-24 w-full text-center text-14 text-green-60 sm:text-18">
+                      <div className="font-regular mb-24 w-full text-center text-14 text-brown-60 sm:text-18">
                         {person.title}
                       </div>
                       <div className="flex w-full items-center justify-center gap-12">
@@ -201,19 +201,19 @@ const HomeTeam = () => {
                           (social: SocialInterface, ke: number) => (
                             <button
                               onClick={(e) => openLink(e, social.link)}
-                              className="group flex h-50 w-50 items-center justify-center rounded-full bg-green-10 transition-all duration-300 hover:bg-green"
+                              className="group flex h-50 w-50 items-center justify-center rounded-full bg-brown-10 transition-all duration-300 hover:bg-brown"
                               key={ke}
                             >
                               {
                                 {
                                   [SocialType.Instagram]: (
-                                    <FaInstagram className="text-18 text-green transition-all duration-300 group-hover:text-white" />
+                                    <FaInstagram className="text-18 text-brown transition-all duration-300 group-hover:text-white" />
                                   ),
                                   [SocialType.Linkedin]: (
-                                    <FaLinkedin className="text-18 text-green transition-all duration-300 group-hover:text-white" />
+                                    <FaLinkedin className="text-18 text-brown transition-all duration-300 group-hover:text-white" />
                                   ),
                                   [SocialType.Twitter]: (
-                                    <FaTwitter className="text-18 text-green transition-all duration-300 group-hover:text-white" />
+                                    <FaTwitter className="text-18 text-brown transition-all duration-300 group-hover:text-white" />
                                   )
                                 }[social.type]
                               }
@@ -245,10 +245,10 @@ const HomeTeam = () => {
                         />
                       </div>
                     </div>
-                    <div className="font-azo mb-10 w-full text-center text-18 text-green sm:text-24">
+                    <div className="font-azo mb-10 w-full text-center text-18 text-brown sm:text-24">
                       {person.name}
                     </div>
-                    <div className="font-regular mb-24 w-full text-center text-14 text-green-60 sm:text-18">
+                    <div className="font-regular mb-24 w-full text-center text-14 text-brown-60 sm:text-18">
                       {person.title}
                     </div>
                     <div className="flex w-full items-center justify-center gap-12">
@@ -256,19 +256,19 @@ const HomeTeam = () => {
                         (social: SocialInterface, ke: number) => (
                           <button
                             onClick={(e) => openLink(e, social.link)}
-                            className="group flex h-50 w-50 items-center justify-center rounded-full bg-green-10 transition-all duration-300 hover:bg-green"
+                            className="group flex h-50 w-50 items-center justify-center rounded-full bg-brown-10 transition-all duration-300 hover:bg-brown"
                             key={ke}
                           >
                             {
                               {
                                 [SocialType.Instagram]: (
-                                  <FaInstagram className="text-18 text-green transition-all duration-300 group-hover:text-white" />
+                                  <FaInstagram className="text-18 text-brown transition-all duration-300 group-hover:text-white" />
                                 ),
                                 [SocialType.Linkedin]: (
-                                  <FaLinkedin className="text-18 text-green transition-all duration-300 group-hover:text-white" />
+                                  <FaLinkedin className="text-18 text-brown transition-all duration-300 group-hover:text-white" />
                                 ),
                                 [SocialType.Twitter]: (
-                                  <FaTwitter className="text-18 text-green transition-all duration-300 group-hover:text-white" />
+                                  <FaTwitter className="text-18 text-brown transition-all duration-300 group-hover:text-white" />
                                 )
                               }[social.type]
                             }
@@ -286,7 +286,7 @@ const HomeTeam = () => {
                 onClick={() => setOpen(!open)}
                 className="flex items-center justify-center gap-10"
               >
-                <div className="font-azo text-24 text-green-light">
+                <div className="font-azo text-24 text-orange">
                   {open ? "CLOSE TEAM SECTION" : "SEE THE ENTIRE TEAM"}
                 </div>
               </button>

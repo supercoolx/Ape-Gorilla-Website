@@ -12,7 +12,7 @@ const HomeFaq = () => {
         <>
           The PRESALE price is 0.22 ETH + gas Fees. The PUBLIC SALES price is
           0.58 ETH + gas fees. You can qualify for our Presale and get on the{" "}
-          <Link to={URL.WHITELIST} className="text-16 text-green-light">
+          <Link to={URL.WHITELIST} className="text-16 text-orange">
             whitelist
           </Link>
           .
@@ -25,7 +25,7 @@ const HomeFaq = () => {
         <>
           After you minted them, you can see them in your Opensea account or on
           the{" "}
-          <Link to={URL.WHITELIST} className="text-16 text-green-light">
+          <Link to={URL.WHITELIST} className="text-16 text-orange">
             whitelist
           </Link>{" "}
           page

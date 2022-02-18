@@ -67,7 +67,7 @@ const NavConnect = ({ platinum }: { platinum?: boolean }) => {
               className={`absolute top-0 left-0 h-44 w-full -skew-x-12 transform sm:h-50 ${
                 platinum
                   ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]"
-                  : "bg-green-light"
+                  : "bg-orange"
               }`}
             ></div>
             <div className="font-azo relative flex h-44 w-full items-center gap-6 px-14 text-14 text-white sm:h-50 sm:px-28 sm:text-16 md:text-18">
@@ -100,7 +100,7 @@ const NavConnect = ({ platinum }: { platinum?: boolean }) => {
                 : "left-0 top-0 opacity-0"
             }`}
           >
-            <div className="font-azo z-20 flex h-44 w-full -skew-x-12 transform items-center bg-white px-24 text-14 text-green sm:h-50 sm:px-28 sm:text-16 md:text-18">
+            <div className="font-azo z-20 flex h-44 w-full -skew-x-12 transform items-center bg-white px-24 text-14 text-brown sm:h-50 sm:px-28 sm:text-16 md:text-18">
               DISCONNECT
             </div>
           </button>
@@ -111,7 +111,7 @@ const NavConnect = ({ platinum }: { platinum?: boolean }) => {
             className={`absolute top-0 left-0 h-44 w-full -skew-x-12 transform sm:h-50 ${
               platinum
                 ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]"
-                : "bg-green-light"
+                : "bg-orange"
             }`}
           ></div>
           <div className="font-azo relative flex h-44 w-full items-center px-16 text-14 text-white sm:h-50 sm:px-24 sm:text-16 md:px-28 md:text-18">

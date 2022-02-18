@@ -35,7 +35,7 @@ const WhitelistTop = ({ handler }: { handler: any }) => {
                 onClick={(e) => openLink(e, SOCIAL.DISCORD)}
                 className="relative w-full sm:w-auto"
               >
-                <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-green-light "></div>
+                <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-orange "></div>
                 <div className="font-azo relative flex h-60 w-full items-center justify-center px-28 text-14 text-white sm:text-16 md:text-18">
                   WHITELIST ME
                 </div>
@@ -63,7 +63,7 @@ const WhitelistTop = ({ handler }: { handler: any }) => {
               <div className="relative grid w-full grid-cols-[1fr,auto] items-center gap-20 px-28">
                 <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-white "></div>
                 <input
-                  className="relative flex h-60 w-full items-center text-14 text-green sm:text-16"
+                  className="relative flex h-60 w-full items-center text-14 text-brown sm:text-16"
                   placeholder="Your address..."
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
@@ -71,7 +71,7 @@ const WhitelistTop = ({ handler }: { handler: any }) => {
                 <div className="relative h-24 w-24">
                   <Wrapper open={address ? true : false}>
                     {success ? (
-                      <MdCheckCircle className="text-24 text-state-green" />
+                      <MdCheckCircle className="text-state-brown text-24" />
                     ) : (
                       <IoMdCloseCircle className="text-24 text-state-red" />
                     )}
@@ -79,7 +79,7 @@ const WhitelistTop = ({ handler }: { handler: any }) => {
                 </div>
               </div>
               <button onClick={() => onCheck()} className="relative">
-                <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-green-light "></div>
+                <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-orange "></div>
                 <div className="font-azo relative flex h-60 w-full items-center justify-center px-28 text-14 text-white sm:text-16 md:text-18">
                   CHECK
                 </div>

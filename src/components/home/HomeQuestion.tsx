@@ -24,7 +24,7 @@ const HomeQuestion = ({
     <>
       <button
         onClick={() => setOpen(!open)}
-        className={`grid w-full grid-cols-1 bg-white-10 transition-all duration-200 ${
+        className={`group grid w-full grid-cols-1 bg-white-10 transition-all duration-200 ${
           open ? "pb-14 md:pb-26" : ""
         }`}
       >
@@ -33,16 +33,16 @@ const HomeQuestion = ({
             open ? "border-b-1" : ""
           }`}
         >
-          <div className="font-azo w-full text-18 text-white-60 md:text-24">
+          <div className="font-azo w-full text-18 text-white-60 transition-all duration-200 group-hover:text-orange-60 md:text-24 ">
             0{index + 1}
           </div>
-          <div className="font-azo w-full text-left text-16 text-white md:text-18 lg:text-24">
+          <div className="font-azo w-full text-left text-16 text-white transition-all duration-200 group-hover:text-orange md:text-18 lg:text-24">
             {question.question}
           </div>
           {open ? (
-            <MdRemove className="text-24 text-white-60" />
+            <MdRemove className="text-24 text-white-60 transition-all duration-200 group-hover:text-orange-60" />
           ) : (
-            <MdAdd className="text-24 text-white" />
+            <MdAdd className="text-24 text-white transition-all duration-200 group-hover:text-orange" />
           )}
         </div>
         <div

@@ -38,7 +38,7 @@ const Whitelist = () => {
         </WrapperPage>
       </div>
       <Wrapper open={nfts && nfts.length > 0}>
-        <div className="relative flex w-full justify-center bg-green py-[120px] sm:py-[150px]">
+        <div className="relative flex w-full justify-center bg-brown py-[120px] sm:py-[150px]">
           <div className="grid w-full max-w-screen-2xl grid-cols-1 gap-60">
             <div className="font-azo w-full text-24 text-white sm:text-36">
               YOUR NFTS

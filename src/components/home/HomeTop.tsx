@@ -6,9 +6,10 @@ import Video from "assets/img/thumbnail.png"
 import HomeTopSlider from "components/home/HomeTopSlider"
 import { useProps } from "contexts/PropsContext"
 import { SOCIAL, URL } from "libs/constants"
-import { openLink } from "libs/functions"
 import React from "react"
 import { Link } from "react-router-dom"
+import ButtonOrange from "utils/buttons/ButtonOrange"
+import ButtonWhite from "utils/buttons/ButtonWhite"
 import VideoPlayer from "utils/video/VideoPlayer"
 
 const HomeTop = () => {
@@ -48,21 +49,13 @@ const HomeTop = () => {
               <div className="flex w-full flex-wrap justify-center gap-20 xl:justify-start">
                 {ready ? (
                   <Link to={URL.MINT} className="relative w-full sm:w-auto">
-                    <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-green-light "></div>
+                    <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-orange "></div>
                     <div className="font-azo relative flex h-60 w-full items-center justify-center px-28 text-14 text-white sm:text-16 md:text-18">
                       MINT NOW
                     </div>
                   </Link>
                 ) : (
-                  <button
-                    onClick={(e) => openLink(e, SOCIAL.DISCORD)}
-                    className="relative w-full sm:w-auto"
-                  >
-                    <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-green-light "></div>
-                    <div className="font-azo relative flex h-60 w-full items-center justify-center px-28 text-14 text-white sm:text-16 md:text-18">
-                      WHITELIST ME
-                    </div>
-                  </button>
+                  <ButtonOrange title={" WHITELIST ME"} link={SOCIAL.DISCORD} />
                 )}
               </div>
               <div className="relative mt-40 hidden w-full items-center justify-center lg:justify-start xl:flex">
@@ -98,14 +91,14 @@ const HomeTop = () => {
                   alt=""
                   className="w-full xl:mt-[160px]"
                 />
-                <div className="absolute bottom-[-2px] left-0 h-30 w-full bg-gradient-to-t from-green to-transparent"></div>
+                <div className="absolute bottom-[-2px] left-0 h-30 w-full bg-gradient-to-t from-brown to-transparent"></div>
               </div>
             </div>
             <div className="grid w-full grid-cols-1 gap-30">
               <div className="flex w-full justify-center xl:justify-end">
                 <div className="w-[600px] max-w-full">
                   <div className="font-azo mb-30 w-full text-center text-24 leading-[110%] text-white sm:text-36 md:text-[52px] xl:text-left xl:text-[64px]">
-                    <span className="font-azo text-24 text-green-light sm:text-36 md:text-[52px] xl:text-[64px]">
+                    <span className="font-azo text-24 text-orange sm:text-36 md:text-[52px] xl:text-[64px]">
                       11,337
                     </span>{" "}
                     Unique Non-Fungible Tokens
@@ -121,15 +114,7 @@ const HomeTop = () => {
                     training, software, and games.
                   </div>
                   <div className="flex w-full justify-center xl:justify-start">
-                    <button
-                      onClick={(e) => openLink(e, SOCIAL.DISCORD)}
-                      className="relative w-full sm:w-auto"
-                    >
-                      <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-white "></div>
-                      <div className="font-azo relative flex h-60 w-full items-center justify-center px-28 text-14 text-green sm:text-16 md:text-18">
-                        JOIN DISCORD
-                      </div>
-                    </button>
+                    <ButtonWhite title={"JOIN DISCORD"} link={SOCIAL.DISCORD} />
                   </div>
                 </div>
               </div>

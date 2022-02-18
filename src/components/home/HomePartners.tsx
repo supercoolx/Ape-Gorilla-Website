@@ -77,8 +77,8 @@ const HomePartners = () => {
         {...swipeable}
         className="relative z-10 mb-40 mt-[-130px] w-full lg:mt-[-230px] xl:mt-[-240px]"
       >
-        <div className="absolute top-0 bottom-0 left-[50%] w-screen translate-x-[-50%] transform bg-green-light"></div>
-        <div className="relative grid w-full grid-cols-1 gap-100 bg-green-light py-40 sm:py-60 md:py-100">
+        <div className="absolute top-0 bottom-0 left-[50%] w-screen translate-x-[-50%] transform bg-orange"></div>
+        <div className="relative grid w-full grid-cols-1 gap-100 bg-orange py-40 sm:py-60 md:py-100">
           <div className="grid w-full grid-cols-1 gap-40 sm:gap-60 lg:grid-cols-[1fr,auto]">
             <div className="flex w-full justify-start">
               <div className="grid w-[550px] max-w-full grid-cols-1 gap-20 sm:gap-30 xl:w-[650px]">
@@ -99,14 +99,14 @@ const HomePartners = () => {
                 className="relative flex h-50 w-80 items-center justify-center"
               >
                 <div className="absolute top-0 left-0 h-50 w-full -skew-x-12 transform bg-white "></div>
-                <MdKeyboardArrowLeft className="relative text-24 text-green" />
+                <MdKeyboardArrowLeft className="relative text-24 text-brown" />
               </button>
               <button
                 onClick={() => onStep(1)}
                 className="relative flex h-50 w-80 items-center justify-center"
               >
                 <div className="absolute top-0 left-0 h-50 w-full -skew-x-12 transform bg-white "></div>
-                <MdKeyboardArrowRight className="relative text-24 text-green" />
+                <MdKeyboardArrowRight className="relative text-24 text-brown" />
               </button>
             </div>
           </div>

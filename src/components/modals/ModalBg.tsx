@@ -6,7 +6,7 @@ const ModalBg = ({ handler }: { handler: any }) => {
     <>
       <button
         onClick={() => handler(false)}
-        className="fixed top-[-100px] left-0 z-10 h-[calc(100vh+200px)] w-screen bg-green-90 backdrop-blur-md backdrop-filter"
+        className="bg-brown-90 fixed top-[-100px] left-0 z-10 h-[calc(100vh+200px)] w-screen backdrop-blur-md backdrop-filter"
       ></button>
       <button
         onClick={() => handler(false)}
