@@ -3,6 +3,7 @@ import BannerTop from "assets/img/banner_top.png"
 import SpinnerCirc from "assets/img/spinner_circ.png"
 import { ReactComponent as SpinnerText } from "assets/img/spinner_text.svg"
 import Video from "assets/img/thumbnail.png"
+import HomeTimer from "components/home/HomeTimer"
 import HomeTopSlider from "components/home/HomeTopSlider"
 import { useProps } from "contexts/PropsContext"
 import { SOCIAL, URL } from "libs/constants"
@@ -46,6 +47,7 @@ const HomeTop = () => {
                   elite community ready to make a real global impact 🌎 🌍 🌏
                 </div>
               </div>
+              <HomeTimer />
               <div className="flex w-full flex-wrap justify-center gap-20 xl:justify-start">
                 {ready ? (
                   <Link to={URL.MINT} className="relative w-full sm:w-auto">

@@ -18,7 +18,7 @@ const WhitelistTimer = () => {
 
   return (
     <>
-      <div className="mb-40 flex w-full justify-start md:mb-60">
+      <div className="mb-20 flex w-full justify-start md:mb-30">
         <div className="grid grid-cols-2 gap-10 sm:gap-20 md:gap-30 lg:grid-cols-4">
           <div className="grid w-[130px] max-w-full grid-cols-1 gap-2 lg:w-[160px]">
             <div className="font-azo w-full text-48 leading-[110%] text-white sm:text-[64px] md:text-[80px] lg:text-[96px]">

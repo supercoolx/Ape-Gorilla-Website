@@ -1,3 +1,4 @@
+import WhitelistTimer from "components/whitelist/WhitelistTimer"
 import { useProps } from "contexts/PropsContext"
 import { SOCIAL } from "libs/constants"
 import { openLink } from "libs/functions"
@@ -24,6 +25,7 @@ const WhitelistTop = ({ handler }: { handler: any }) => {
       {!ready ? (
         <div className="grid w-full grid-cols-1">
           <div className="grid w-full grid-cols-1">
+            <WhitelistTimer />
             <div className="font-regular mb-40 w-full text-16 text-white-60 sm:text-18">
               On a mission to building a community surrounded around helping and
               empowering each other with access to high-level events, web3.0
@@ -71,7 +73,7 @@ const WhitelistTop = ({ handler }: { handler: any }) => {
                 <div className="relative h-24 w-24">
                   <Wrapper open={address ? true : false}>
                     {success ? (
-                      <MdCheckCircle className="text-state-brown text-24" />
+                      <MdCheckCircle className="text-24 text-state-brown" />
                     ) : (
                       <IoMdCloseCircle className="text-24 text-state-red" />
                     )}
