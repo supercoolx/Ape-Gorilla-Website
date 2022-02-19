@@ -18,8 +18,8 @@ const VideoPlayIcon = ({
           <img src={thumbnail} alt="" />
         </div>
         <div className="flex w-full items-center justify-center">
-          <div className="relative h-[54px] w-[54px] rounded-full bg-white shadow-md">
-            <MdPlayCircleFilled className="absolute -top-8 -left-8 text-[72px] text-green-light" />
+          <div className="group relative h-[54px] w-[54px] rounded-full bg-white shadow-md transition-all duration-200 hover:bg-orange">
+            <MdPlayCircleFilled className="absolute -top-8 -left-8 text-[72px] text-orange transition-all duration-200 group-hover:text-brown" />
           </div>
           <Wrapper open={title ? true : false}>
             <div className="absolute top-10 left-10 text-14 font-bold text-white md:top-18 md:left-18">

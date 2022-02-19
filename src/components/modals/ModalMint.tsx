@@ -26,7 +26,7 @@ const ModalMint = ({
               {count === 1 ? (
                 <>
                   You successfully minted your{" "}
-                  <span className="font-azo text-32 text-green-light sm:text-[44px] md:text-[50px] lg:text-[64px]">
+                  <span className="font-azo text-32 text-orange sm:text-[44px] md:text-[50px] lg:text-[64px]">
                     Ape Gorilla
                   </span>{" "}
                   NFT
@@ -34,7 +34,7 @@ const ModalMint = ({
               ) : (
                 <>
                   You successfully minted your{" "}
-                  <span className="font-azo text-32 text-green-light sm:text-[44px] md:text-[50px] lg:text-[64px]">
+                  <span className="font-azo text-32 text-orange sm:text-[44px] md:text-[50px] lg:text-[64px]">
                     {count} Ape Gorilla
                   </span>{" "}
                   NFT&apos;s
@@ -49,19 +49,19 @@ const ModalMint = ({
                 onClick={(e) => openLink(e, SOCIAL.TWITTER)}
                 className="group flex h-50 w-50 items-center justify-center rounded-full bg-white-10 transition duration-200 hover:bg-white"
               >
-                <FaTwitter className="text-22 text-white transition duration-200 group-hover:text-green" />
+                <FaTwitter className="text-22 text-white transition duration-200 group-hover:text-brown" />
               </button>
               <button
                 onClick={(e) => openLink(e, SOCIAL.DISCORD)}
                 className="group flex h-50 w-50 items-center justify-center rounded-full bg-white-10 transition duration-200 hover:bg-white"
               >
-                <FaDiscord className="text-22 text-white transition duration-200 group-hover:text-green" />
+                <FaDiscord className="text-22 text-white transition duration-200 group-hover:text-brown" />
               </button>
               <button
                 onClick={(e) => openLink(e, SOCIAL.INSTAGRAM)}
                 className="group flex h-50 w-50 items-center justify-center rounded-full bg-white-10 transition duration-200 hover:bg-white"
               >
-                <FaInstagram className="text-22 text-white transition duration-200 group-hover:text-green" />
+                <FaInstagram className="text-22 text-white transition duration-200 group-hover:text-brown" />
               </button>
             </div>
           </div>

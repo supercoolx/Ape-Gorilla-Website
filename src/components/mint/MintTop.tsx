@@ -194,7 +194,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
                         className={`absolute top-0 left-0 h-8 ${
                           platinum
                             ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]"
-                            : "bg-green-light"
+                            : "bg-orange"
                         }`}
                       ></div>
                       <div
@@ -204,7 +204,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
                         className={`absolute top-[50%] h-20 w-2 translate-y-[-50%] transform ${
                           platinum
                             ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]"
-                            : "bg-green-light"
+                            : "bg-orange"
                         }`}
                       ></div>
                     </div>
@@ -228,16 +228,16 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
                               onClick={() => setCount(Math.max(1, count - 1))}
                               className="flex h-30 w-30 items-center justify-center"
                             >
-                              <MdRemove className="text-24 text-green" />
+                              <MdRemove className="text-24 text-brown" />
                             </button>
-                            <div className="min-w-[40px] text-center text-18 font-bold text-green">
+                            <div className="min-w-[40px] text-center text-18 font-bold text-brown">
                               {count}
                             </div>
                             <button
                               onClick={() => setCount(Math.min(max, count + 1))}
                               className="flex h-30 w-30 items-center justify-center"
                             >
-                              <MdAdd className="text-24 text-green" />
+                              <MdAdd className="text-24 text-brown" />
                             </button>
                           </div>
                         </div>
@@ -246,7 +246,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
                             className={`absolute top-0 left-0 h-60 w-full -skew-x-12 transform ${
                               platinum
                                 ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]"
-                                : "bg-green-light"
+                                : "bg-orange"
                             }`}
                           ></div>
                           <div className="font-azo relative flex h-60 w-full items-center justify-center px-28 text-14 text-white sm:text-16 md:text-18">
@@ -263,7 +263,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
                           className={`absolute top-0 left-0  h-60 w-full -skew-x-12 transform ${
                             platinum
                               ? "bg-gradient-to-br from-[#c3cccf] via-[#9DADB0] to-[#c3cccf]"
-                              : "bg-green-light"
+                              : "bg-orange"
                           }`}
                         ></div>
                         <div className="font-azo relative flex h-60 w-full items-center justify-center px-28 text-14 text-white sm:text-16 md:text-18">

@@ -16,9 +16,9 @@ const VideoPlayerClean = ({
       >
         <div className="relative h-[62px] w-[62px] rounded-full bg-white shadow-md">
           {playing ? (
-            <MdPauseCircleFilled className="absolute -top-14 -left-14 text-[90px] text-green-light" />
+            <MdPauseCircleFilled className="absolute -top-14 -left-14 text-[90px] text-orange" />
           ) : (
-            <MdPlayCircleFilled className="absolute -top-14 -left-14 text-[90px] text-green-light" />
+            <MdPlayCircleFilled className="absolute -top-14 -left-14 text-[90px] text-orange" />
           )}
         </div>
       </button>

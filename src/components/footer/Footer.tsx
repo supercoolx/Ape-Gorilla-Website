@@ -23,7 +23,7 @@ const Footer = () => {
 
   return (
     <>
-      <div className="relative w-full bg-green">
+      <div className="relative w-full bg-brown">
         <div className="flex w-full justify-center bg-white px-20 pb-30 pt-30 sm:px-30 sm:pb-40 sm:pt-40 xl:pt-60">
           <div className="grid w-full max-w-screen-2xl grid-cols-1 gap-20 sm:gap-30 md:gap-40">
             <div className="grid w-full grid-cols-1 items-start justify-between gap-20 sm:gap-40 xl:grid-cols-[1fr,auto]">
@@ -34,13 +34,13 @@ const Footer = () => {
                     className="flow grid items-center justify-center gap-12"
                   >
                     <img src={LogoBlack} alt="" className="h-30 sm:h-50" />
-                    <div className="font-azo hidden text-24 text-green lg:flex">
+                    <div className="font-azo hidden text-24 text-brown lg:flex">
                       APE GORILLA
                     </div>
                   </Link>
                 </div>
                 <div className="flex w-full justify-start">
-                  <div className="w-[400px] max-w-full text-14 text-green-60 sm:text-16">
+                  <div className="text-brown-60 w-[400px] max-w-full text-14 sm:text-16">
                     11,337 unique NFT tokens, which provide access to an
                     exclusive club.
                   </div>
@@ -50,7 +50,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 items-start gap-40 sm:gap-60 xl:grid-cols-2 xl:gap-80">
                   <div className="flex w-full items-start">
                     <div className="grid grid-cols-1 gap-30">
-                      <div className="font-azo w-full text-24 text-green">
+                      <div className="font-azo w-full text-24 text-brown">
                         Links
                       </div>
                       <div className="grid w-[210px] grid-cols-1 gap-20">
@@ -71,57 +71,57 @@ const Footer = () => {
                   </div>
                   <div className="flex w-full items-start">
                     <div className="grid grid-cols-1 gap-30">
-                      <div className="font-azo w-full text-24 text-green">
+                      <div className="font-azo w-full text-24 text-brown">
                         Follow us
                       </div>
                       <div className="grid w-full grid-cols-4 justify-start gap-20">
                         <button
                           onClick={(e) => openLink(e, SOCIAL.TWITTER)}
-                          className="group flex h-50 w-50 items-center justify-center rounded-full bg-green-10 transition duration-200 hover:bg-green"
+                          className="group bg-brown-10 flex h-50 w-50 items-center justify-center rounded-full transition duration-200 hover:bg-brown"
                         >
-                          <FaTwitter className="text-22 text-green group-hover:text-white" />
+                          <FaTwitter className="text-22 text-brown group-hover:text-white" />
                         </button>
                         <button
                           onClick={(e) => openLink(e, SOCIAL.DISCORD)}
-                          className="group flex h-50 w-50 items-center justify-center rounded-full bg-green-10 transition duration-200 hover:bg-green"
+                          className="group bg-brown-10 flex h-50 w-50 items-center justify-center rounded-full transition duration-200 hover:bg-brown"
                         >
-                          <FaDiscord className="text-22 text-green group-hover:text-white" />
+                          <FaDiscord className="text-22 text-brown group-hover:text-white" />
                         </button>
                         <button
                           onClick={(e) => openLink(e, SOCIAL.INSTAGRAM)}
-                          className="group flex h-50 w-50 items-center justify-center rounded-full bg-green-10 transition duration-200 hover:bg-green"
+                          className="group bg-brown-10 flex h-50 w-50 items-center justify-center rounded-full transition duration-200 hover:bg-brown"
                         >
-                          <FaInstagram className="text-22 text-green group-hover:text-white" />
+                          <FaInstagram className="text-22 text-brown group-hover:text-white" />
                         </button>
                         <button
                           onClick={(e) => openLink(e, SOCIAL.REDDIT)}
-                          className="group flex h-50 w-50 items-center justify-center rounded-full bg-green-10 transition duration-200 hover:bg-green"
+                          className="group bg-brown-10 flex h-50 w-50 items-center justify-center rounded-full transition duration-200 hover:bg-brown"
                         >
-                          <FaReddit className="text-22 text-green group-hover:text-white" />
+                          <FaReddit className="text-22 text-brown group-hover:text-white" />
                         </button>
                         <button
                           onClick={(e) => openLink(e, SOCIAL.OPENSEA)}
-                          className="group flex h-50 w-50 items-center justify-center rounded-full bg-green-10 transition duration-200 hover:bg-green"
+                          className="group bg-brown-10 flex h-50 w-50 items-center justify-center rounded-full transition duration-200 hover:bg-brown"
                         >
-                          <OpenSea className="fill-current text-22 text-green group-hover:text-white" />
+                          <OpenSea className="fill-current text-22 text-brown group-hover:text-white" />
                         </button>
                         <button
                           onClick={(e) => openLink(e, SOCIAL.FACEBOOK)}
-                          className="group flex h-50 w-50 items-center justify-center rounded-full bg-green-10 transition duration-200 hover:bg-green"
+                          className="group bg-brown-10 flex h-50 w-50 items-center justify-center rounded-full transition duration-200 hover:bg-brown"
                         >
-                          <FaFacebook className="text-22 text-green group-hover:text-white" />
+                          <FaFacebook className="text-22 text-brown group-hover:text-white" />
                         </button>
                         <button
                           onClick={(e) => openLink(e, SOCIAL.YOUTUBE)}
-                          className="group flex h-50 w-50 items-center justify-center rounded-full bg-green-10 transition duration-200 hover:bg-green"
+                          className="group bg-brown-10 flex h-50 w-50 items-center justify-center rounded-full transition duration-200 hover:bg-brown"
                         >
-                          <FaYoutube className="text-22 text-green group-hover:text-white" />
+                          <FaYoutube className="text-22 text-brown group-hover:text-white" />
                         </button>
                         <button
                           onClick={(e) => openLink(e, SOCIAL.TIKTOK)}
-                          className="group flex h-50 w-50 items-center justify-center rounded-full bg-green-10 transition duration-200 hover:bg-green"
+                          className="group bg-brown-10 flex h-50 w-50 items-center justify-center rounded-full transition duration-200 hover:bg-brown"
                         >
-                          <SiTiktok className="text-22 text-green group-hover:text-white" />
+                          <SiTiktok className="text-22 text-brown group-hover:text-white" />
                         </button>
                       </div>
                     </div>
@@ -129,8 +129,8 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full border-b-1 border-green-10"></div>
-            <div className="w-full text-center text-14 text-green-60 sm:text-16 md:text-18">
+            <div className="border-brown-10 w-full border-b-1"></div>
+            <div className="text-brown-60 w-full text-center text-14 sm:text-16 md:text-18">
               © {new Date().getFullYear()} Schwarz Enterprise LLC. All Rights
               Reserved.
             </div>

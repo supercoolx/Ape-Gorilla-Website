@@ -11,22 +11,22 @@ const NavLink = ({ url, title }: { url: string; title: string }) => {
       <div className="flex w-full justify-center">
         <Link to={url} className="group relative max-w-full">
           <div
-            className={`absolute top-[50%] left-[-50px] translate-y-[-50%] transform group-hover:flex ${
-              path === url ? "flex" : "hidden"
+            className={`absolute top-[50%] left-[-50px] flex translate-y-[-50%] transform transition-all duration-200 group-hover:opacity-100 ${
+              path === url ? "opacity-100" : "opacity-0"
             }`}
           >
-            <MdKeyboardArrowRight className="text-24 text-green-light" />
+            <MdKeyboardArrowRight className="text-24 text-orange" />
           </div>
           <div
-            className={`absolute top-[50%] right-[-50px] translate-y-[-50%] transform group-hover:flex ${
-              path === url ? "flex" : "hidden"
+            className={`absolute top-[50%] right-[-50px] flex translate-y-[-50%] transform transition-all duration-200 group-hover:opacity-100 ${
+              path === url ? "opacity-100" : "opacity-0"
             }`}
           >
-            <MdKeyboardArrowLeft className="text-24 text-green-light" />
+            <MdKeyboardArrowLeft className="text-24 text-orange" />
           </div>
           <div
-            className={`font-azo w-full text-22 leading-[110%] group-hover:text-green-light sm:text-[24px] md:text-[36px] ${
-              path === url ? "text-green-light" : "text-white"
+            className={`font-azo w-full text-22 leading-[110%] transition-all duration-200 group-hover:text-orange sm:text-[24px] md:text-[36px] ${
+              path === url ? "text-orange" : "text-white"
             }`}
           >
             {title}

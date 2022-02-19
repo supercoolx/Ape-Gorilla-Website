@@ -5,7 +5,7 @@ const HomeLuck = () => {
   return (
     <>
       <div className="relative w-full">
-        <div className="absolute top-0 left-[50%] h-[900px] w-screen translate-y-[-300px] translate-x-[-50%] transform bg-gradient-to-b from-green-light-60 to-transparent"></div>
+        <div className="absolute top-0 left-[50%] h-[900px] w-screen translate-y-[-300px] translate-x-[-50%] transform bg-gradient-to-b from-orange-60 to-transparent"></div>
         <div className="relative grid w-full grid-cols-1 gap-60 xl:grid-cols-[1fr,auto] xl:gap-40">
           <div className="flex w-full items-center">
             <div className="grid w-full grid-cols-1 gap-30">

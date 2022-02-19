@@ -115,10 +115,10 @@ const HomeRoadmap = () => {
           <div className="grid w-full grid-cols-1 gap-40 sm:gap-60 lg:grid-cols-[1fr,auto]">
             <div className="flex w-full justify-start">
               <div className="grid w-[550px] max-w-full grid-cols-1 gap-20 sm:gap-30 xl:w-[650px]">
-                <div className="font-azo w-full text-left text-24 text-green sm:text-36 md:text-48 lg:text-[56px]">
+                <div className="font-azo w-full text-left text-24 text-brown sm:text-36 md:text-48 lg:text-[56px]">
                   ROADMAP
                 </div>
-                <div className="text-left text-14 text-green-60 sm:text-16 md:text-18">
+                <div className="text-brown-60 text-left text-14 sm:text-16 md:text-18">
                   Welcome to our Roadmap! Theres a lot to take in, but Ape
                   Gorilla NFT will grant all holders access to the “Ape Gorilla
                   Club”, allowing holders to participate in networking events,
@@ -137,14 +137,14 @@ const HomeRoadmap = () => {
                 onClick={() => onStep(-1)}
                 className="relative flex h-50 w-80 items-center justify-center"
               >
-                <div className="absolute top-0 left-0 h-50 w-full -skew-x-12 transform bg-green "></div>
+                <div className="absolute top-0 left-0 h-50 w-full -skew-x-12 transform bg-brown "></div>
                 <MdKeyboardArrowLeft className="relative text-24 text-white" />
               </button>
               <button
                 onClick={() => onStep(1)}
                 className="relative flex h-50 w-80 items-center justify-center"
               >
-                <div className="absolute top-0 left-0 h-50 w-full -skew-x-12 transform bg-green "></div>
+                <div className="absolute top-0 left-0 h-50 w-full -skew-x-12 transform bg-brown "></div>
                 <MdKeyboardArrowRight className="relative text-24 text-white" />
               </button>
             </div>
@@ -152,7 +152,7 @@ const HomeRoadmap = () => {
           <div className="flex w-full justify-center">
             <div className="relative w-full">
               <div className="absolute top-[17px] left-[50%] h-2 w-screen translate-x-[-50%] transform overflow-hidden">
-                <div className="absolute bottom-0 top-0 left-0 h-2 w-full bg-green-10"></div>
+                <div className="bg-brown-10 absolute bottom-0 top-0 left-0 h-2 w-full"></div>
                 <div className="absolute top-[-1px] left-0 h-4 w-80 bg-gradient-to-r from-white to-white-0"></div>
                 <div className="absolute top-[-1px] right-0 h-4 w-80 bg-gradient-to-l from-white to-white-0"></div>
               </div>
@@ -177,26 +177,24 @@ const HomeRoadmap = () => {
                       <div className="mb-60 flex w-full justify-start sm:mb-80">
                         <div
                           className={`relative flex h-36 w-36 items-center justify-center rounded-full border-2 bg-white ${
-                            step >= key
-                              ? "border-green-light"
-                              : "border-green-60"
+                            step >= key ? "border-orange" : "border-brown-60"
                           }`}
                         >
                           <div
                             className={`absolute top-[50%] left-[50%] h-24 w-24 translate-x-[-50%] translate-y-[-50%] transform rounded-full ${
-                              step >= key ? "bg-green-light" : "bg-green-60"
+                              step >= key ? "bg-orange" : "bg-brown-60"
                             }`}
                           ></div>
                         </div>
                       </div>
                       <div
                         className={`font-azo mb-24 w-full text-24 md:text-36 ${
-                          step >= key ? "text-green" : "text-green-60"
+                          step >= key ? "text-brown" : "text-brown-60"
                         }`}
                       >
                         {entry.title}
                       </div>
-                      <div className=" font-regular w-full text-14 text-green-60 sm:text-16 md:text-18">
+                      <div className=" font-regular text-brown-60 w-full text-14 sm:text-16 md:text-18">
                         {entry.text}
                       </div>
                     </div>

@@ -1,7 +1,8 @@
 import BannerButhan from "assets/img/banner_buthan.png"
 import Buthan from "assets/img/buthan.jpg"
-import { openLink } from "libs/functions"
 import React from "react"
+import ButtonOrange from "utils/buttons/ButtonOrange"
+import ButtonWhite from "utils/buttons/ButtonWhite"
 import VideoPlayer from "utils/video/VideoPlayer"
 
 const HomeButhan = () => {
@@ -49,24 +50,14 @@ const HomeButhan = () => {
               Ape Gorilla holders a 3D AR Version. All of our 3D Art is fully 3D and rigged.
             </div>
             <div className="flex w-full flex-wrap justify-start gap-20">
-              <button
-                onClick={(e) => openLink(e, "https://p3d.in/ar/76p2T")}
-                className="relative w-full sm:w-auto"
-              >
-                <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-green-light "></div>
-                <div className="font-azo relative flex h-60 w-full items-center justify-center px-28 text-14 text-white sm:text-16 md:text-18">
-                  AR PREVIEW
-                </div>
-              </button>
-              <button
-                onClick={(e) => openLink(e, "https://p3d.in/76p2T")}
-                className="relative w-full sm:w-auto"
-              >
-                <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-white"></div>
-                <div className="font-azo relative flex h-60 w-full items-center justify-center px-28 text-14 text-green sm:text-16 md:text-18">
-                  BROWSER PREVIEW
-                </div>
-              </button>
+              <ButtonOrange
+                title={"AR PREVIEW"}
+                link={"https://p3d.in/ar/76p2T"}
+              />
+              <ButtonWhite
+                title={"BROWSER PREVIEW"}
+                link={"https://p3d.in/76p2T"}
+              />
             </div>
           </div>
         </div>
