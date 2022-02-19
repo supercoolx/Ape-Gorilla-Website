@@ -40,8 +40,8 @@ const HomeFaq = () => {
       question: "When will we be able to mint Ape Gorilla NFTs?",
       answer: (
         <>
-          We will be announcing the whitelist and Public sale dates soon! The
-          priority is executing the roadmap and serve our community first!{" "}
+          Our whitelist sale will be on the 22nd of February, 2022 at 2:22PM EST. Our Public
+          Sale will be announced soon. The priority is executing the roadmap and serve our community first!{" "}
         </>
       )
     },
