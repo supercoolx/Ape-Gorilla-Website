@@ -280,11 +280,11 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
                     through metamask browser.
                   </div>
                   <div className="w-full text-center text-16 text-white-60">
-                    Please open Metamask and use the browser to go to
-                    apegorilla.com/platinum to mint an Ape Gorilla.
+                    To Mint an Ape Gorilla please Click on the FOX ICON BELOW
                   </div>
                   <div className="w-full text-center text-16 text-white-60">
-                    Dont have Metamask? Download them below!
+                     Ensure to download Metamask and have minimum of 0.22 ETH.
+
                   </div>
                   <div className="flex w-full justify-center">
                     <button

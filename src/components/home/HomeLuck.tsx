@@ -13,12 +13,12 @@ const HomeLuck = () => {
                 WHAT MAKES US UNIQUE?
               </div>
               <div className="w-full text-center text-14 text-white-60 sm:text-16 md:text-18 xl:text-left">
-                We have partnerships with high net worth, and highly influential
+                We have partnerships with high net worth, and highly influential and skilled
                 individuals who want to lend their expertese and knowledge with
-                the community. We will also be officially partnered with the
-                people of the Kingdom of Bhutan and will provide our holders
-                greater access to networking, education on technology topics
-                within our unique community.
+                the community. We are executing on our roadmap utilies to demonstrate we are truly
+                here for the longterm, we have spent over $300,000 into the project of personal family
+                and close friend monies to make this a possibility for everyone. Most of our team is documented
+                and are committed to a longterm successful project.
               </div>
             </div>
           </div>
