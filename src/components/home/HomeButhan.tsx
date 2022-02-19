@@ -41,15 +41,12 @@ const HomeButhan = () => {
           </div>
           <div className="grid w-full grid-cols-1 gap-24">
             <div className="font-azo w-full text-left text-24 leading-[110%] text-white sm:text-36 md:text-[52px] xl:text-[64px]">
-              3d PREVIEW
+              AR 3d PREVIEW
             </div>
             <div className="w-full text-left text-14 text-white-60 sm:text-16 md:text-18">
-              We will be officially partnering with the people of the Kingdom of
-              Bhutan and will provide our holders greater access to networking,
-              education on technology topics within our unique community. We
-              will be officially partnering with the people of the Kingdom of
-              Bhutan and will provide our holders greater access to networking,
-              education on technology topics within our unique community.
+              Check out this awesome 3d AR Preview on your smart phone! You can have a live
+              Ape Gorilla in your living room! We will provide future opportunities to have all
+              Ape Gorilla holders a 3D AR Version. All of our 3D Art is fully 3D and rigged.
             </div>
             <div className="flex w-full flex-wrap justify-start gap-20">
               <button

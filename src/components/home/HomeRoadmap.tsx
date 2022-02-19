@@ -15,20 +15,20 @@ const HomeRoadmap = () => {
 
   const [roadmap] = useState<RoadmapInterface[]>([
     {
+      title: "SOFTWARE",
+      text: "We HAVE LAUNCHED Gorilla Build! Get 100% lifetime off for pre-sale buyers! This is a Software as Service to easily build Website, Sales Funnels, Email Marketing Campaigns, Booking Appointment system, Landing pages and more via drag-and-drop functionalities. This software tool serves as a utility to empower the community to create and build online businesses easily, at cost price or free where possible for the community. This software is ready to be launched soon and already exists with a huge proven track record of thousands of successful entrepreneurs using the platform."
+    },
+    {
       title: "COMMUNITY",
       text: "Ape Gorilla Kick-Off networking meetings will be organized worldwide locations in Europe, Asia, the Caribbean, and North & South America exclusively held for Ape Gorilla NFT holders. The events will be dedicated to community networking and masterminds to learn about Web3.0 online business opportunities, education on crypto, NFT’s, DeFi, and blockchain technology, supported by influential leading speakers in the crypto and NFT space."
     },
     {
+      title: "PHYSICAL ACCESS",
+      text: "Ape Gorilla is also give each Ape Gorilla NFT holder exclusive two nights free at any two bedroom beach apartment at cabaretecondos.com, with additional privilege access and benefits to Physical Clubs, Restaurants and villas acquired or leased over the years for our community. All of which will provide the community with many more opportunities for networking with each other, and creating an exclusive community. Each location will be leased or bought out as a community decision, made with a voting system only announced to Ape Gorilla NFT holders."
+    },
+    {
       title: "MASTERMINDS",
       text: "We will hold mastermind events for our loyal holders, rare NFT’s, and VIP members of the Ape Gorilla Club for exclusive mastermind experiences. These events will be incredible luxurious experiences around the world, held at amazing locations like beachfront villas, yachts, and mansions, accessible only to our VIP holders. We want to give our community the opportunity to network and brainstorm with other VIP guests, as well as high net-worth and influential individuals."
-    },
-    {
-      title: "PHYSICAL ACCESS",
-      text: "Ape Gorilla will also give each Ape Gorilla NFT holder exclusive privilege access and benefits to Physical Clubs, Restaurants and villas acquired or leased over the years for our community. All of which will provide the community with many more opportunities for networking with each other, and creating an exclusive community. Each location will be leased or bought out as a community decision, made with a voting system only announced to Ape Gorilla NFT holders."
-    },
-    {
-      title: "SOFTWARE",
-      text: "We will launch Gorilla Build soon! This is a Software as Service to easily build Website, Sales Funnels, Email Marketing Campaigns, Booking Appointment system, Landing pages and more via drag-and-drop functionalities. This software tool will serve as a utility to empower the community to create and build online businesses easily, at cost price or free where possible for the community. This software is ready to be launched soon and already exists with a huge proven track record of thousands of successful entrepreneurs using the platform."
     },
     {
       title: "ACADEMY",
