@@ -1,6 +1,10 @@
 import { RoadmapInterface } from "libs/interfaces"
 import React, { useEffect, useRef, useState } from "react"
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md"
+import {
+  MdCheck,
+  MdKeyboardArrowLeft,
+  MdKeyboardArrowRight
+} from "react-icons/md"
 import { useSwipeable } from "react-swipeable"
 import Wrapper from "utils/wrapper/Wrapper"
 
@@ -118,7 +122,7 @@ const HomeRoadmap = () => {
                 <div className="font-azo w-full text-left text-24 text-brown sm:text-36 md:text-48 lg:text-[56px]">
                   ROADMAP
                 </div>
-                <div className="text-brown-60 text-left text-14 sm:text-16 md:text-18">
+                <div className="text-left text-14 text-brown-60 sm:text-16 md:text-18">
                   Welcome to our Roadmap! Theres a lot to take in, but Ape
                   Gorilla NFT will grant all holders access to the “Ape Gorilla
                   Club”, allowing holders to participate in networking events,
@@ -152,7 +156,7 @@ const HomeRoadmap = () => {
           <div className="flex w-full justify-center">
             <div className="relative w-full">
               <div className="absolute top-[17px] left-[50%] h-2 w-screen translate-x-[-50%] transform overflow-hidden">
-                <div className="bg-brown-10 absolute bottom-0 top-0 left-0 h-2 w-full"></div>
+                <div className="absolute bottom-0 top-0 left-0 h-2 w-full bg-brown-10"></div>
                 <div className="absolute top-[-1px] left-0 h-4 w-80 bg-gradient-to-r from-white to-white-0"></div>
                 <div className="absolute top-[-1px] right-0 h-4 w-80 bg-gradient-to-l from-white to-white-0"></div>
               </div>
@@ -181,10 +185,14 @@ const HomeRoadmap = () => {
                           }`}
                         >
                           <div
-                            className={`absolute top-[50%] left-[50%] h-24 w-24 translate-x-[-50%] translate-y-[-50%] transform rounded-full ${
+                            className={`absolute top-[50%] left-[50%] flex h-24 w-24 translate-x-[-50%] translate-y-[-50%] transform items-center justify-center rounded-full ${
                               step >= key ? "bg-orange" : "bg-brown-60"
                             }`}
-                          ></div>
+                          >
+                            <Wrapper open={step >= key}>
+                              <MdCheck className="text-16 text-white" />
+                            </Wrapper>
+                          </div>
                         </div>
                       </div>
                       <div
@@ -194,7 +202,7 @@ const HomeRoadmap = () => {
                       >
                         {entry.title}
                       </div>
-                      <div className=" font-regular text-brown-60 w-full text-14 sm:text-16 md:text-18">
+                      <div className=" font-regular w-full text-14 text-brown-60 sm:text-16 md:text-18">
                         {entry.text}
                       </div>
                     </div>
