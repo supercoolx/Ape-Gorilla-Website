@@ -27,11 +27,11 @@ export const setterToken = (token: string) => {
 }
 
 export const getterAddress = () => {
-  return localStorage.getItem("gnomes-address") || ""
+  return localStorage.getItem("apegorilla-address") || ""
 }
 
 export const setterAddress = (address: string) => {
-  localStorage.setItem("gnomes-address", address)
+  localStorage.setItem("apegorilla-address", address)
 
   return Promise.resolve()
 }
