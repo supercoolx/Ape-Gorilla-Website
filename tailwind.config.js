@@ -67,7 +67,6 @@ module.exports = {
         "orange-60": "rgba(253, 142, 25, .6)",
         "state-brown": "rgba(18, 106, 1, 1)",
         "state-red": "rgba(218, 38, 35, 1)",
-        brown: "rgba(20, 11, 2, 1)",
         silver: "rgba(157, 173, 176, 1)"
       },
       fontSize: {
