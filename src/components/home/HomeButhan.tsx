@@ -19,7 +19,10 @@ const HomeButhan = () => {
             <div className="w-[740px] max-w-full text-center text-14 text-white-60 sm:text-16 md:text-18">
               We will be officially partnering with the people of the Kingdom of
               Bhutan and will provide our holders greater access to networking,
-              education on technology topics within our unique community.
+              education on technology topics within our unique community. Our intentions
+              are to work and collaborate with highly skilled individuals in the crypto space
+              to implement a web3.0 incubator in the Kingdom of Bhutan, working closely with the
+              people of the Kingdom of Bhutan.
             </div>
           </div>
         </div>
