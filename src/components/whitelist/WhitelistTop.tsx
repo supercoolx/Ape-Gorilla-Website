@@ -3,9 +3,6 @@ import { useProps } from "contexts/PropsContext"
 import { SOCIAL } from "libs/constants"
 import { openLink } from "libs/functions"
 import React, { useState } from "react"
-import { IoMdCloseCircle } from "react-icons/io"
-import { MdCheckCircle } from "react-icons/md"
-import Wrapper from "utils/wrapper/Wrapper"
 
 const WhitelistTop = ({ handler }: { handler: any }) => {
   const { ready } = useProps()
@@ -60,32 +57,6 @@ const WhitelistTop = ({ handler }: { handler: any }) => {
               networking opportunities, as well as opportunity for receiving
               business or charity grants. Checkout the whitelist for more
               information, all of the team members are documented!
-            </div>
-            <div className="grid w-full grid-cols-1 justify-start gap-20 md:grid-cols-[1fr,auto]">
-              <div className="relative grid w-full grid-cols-[1fr,auto] items-center gap-20 px-28">
-                <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-white "></div>
-                <input
-                  className="relative flex h-60 w-full items-center text-14 text-brown sm:text-16"
-                  placeholder="Your address..."
-                  value={address}
-                  onChange={(e) => setAddress(e.target.value)}
-                />
-                <div className="relative h-24 w-24">
-                  <Wrapper open={address ? true : false}>
-                    {success ? (
-                      <MdCheckCircle className="text-24 text-state-brown" />
-                    ) : (
-                      <IoMdCloseCircle className="text-24 text-state-red" />
-                    )}
-                  </Wrapper>
-                </div>
-              </div>
-              <button onClick={() => onCheck()} className="relative">
-                <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-orange "></div>
-                <div className="font-azo relative flex h-60 w-full items-center justify-center px-28 text-14 text-white sm:text-16 md:text-18">
-                  CHECK
-                </div>
-              </button>
             </div>
           </div>
         </div>
