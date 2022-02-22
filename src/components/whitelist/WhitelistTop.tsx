@@ -1,8 +1,8 @@
 import WhitelistTimer from "components/whitelist/WhitelistTimer"
 import { useProps } from "contexts/PropsContext"
 import { SOCIAL } from "libs/constants"
-import { openLink } from "libs/functions"
 import React, { useState } from "react"
+import ButtonOrange from "utils/buttons/ButtonOrange"
 
 const WhitelistTop = ({ handler }: { handler: any }) => {
   const { ready } = useProps()
@@ -30,15 +30,7 @@ const WhitelistTop = ({ handler }: { handler: any }) => {
               channel and join the community to get Whitelisted!
             </div>
             <div className="flex w-full justify-start gap-20">
-              <button
-                onClick={(e) => openLink(e, SOCIAL.JOTFORM)}
-                className="relative w-full sm:w-auto"
-              >
-                <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-orange "></div>
-                <div className="font-azo relative flex h-60 w-full items-center justify-center px-28 text-14 text-white sm:text-16 md:text-18">
-                  WHITELIST ME
-                </div>
-              </button>
+              <ButtonOrange title={"WHITELIST ME"} link={SOCIAL.JOTFORM} />
             </div>
           </div>
         </div>
@@ -57,6 +49,9 @@ const WhitelistTop = ({ handler }: { handler: any }) => {
               networking opportunities, as well as opportunity for receiving
               business or charity grants. Checkout the whitelist for more
               information, all of the team members are documented!
+            </div>
+            <div className="flex w-full justify-start gap-20">
+              <ButtonOrange title={"WHITELIST ME"} link={SOCIAL.JOTFORM} />
             </div>
           </div>
         </div>
