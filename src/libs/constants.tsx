@@ -17,6 +17,7 @@ export const SOCIAL = {
   OPENSEA: "https://opensea.io/ApeGorilla",
   TWITTER: "https://twitter.com/Apegorillaclub",
   DISCORD: "https://discord.gg/apegorilla",
+  JOTFORM: "https://form.jotform.com/220227455744354",
   REDDIT: "https://www.reddit.com/r/ApeGorillaClub/",
   FACEBOOK: "https://facebook.com/apegorillaclub",
   YOUTUBE: "https://www.youtube.com/channel/UCUG4eWC6Bf0X7FptfT-LlrA",

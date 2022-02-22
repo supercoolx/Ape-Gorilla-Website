@@ -34,7 +34,7 @@ const WhitelistTop = ({ handler }: { handler: any }) => {
             </div>
             <div className="flex w-full justify-start gap-20">
               <button
-                onClick={(e) => openLink(e, SOCIAL.DISCORD)}
+                onClick={(e) => openLink(e, SOCIAL.JOTFORM)}
                 className="relative w-full sm:w-auto"
               >
                 <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-orange "></div>
