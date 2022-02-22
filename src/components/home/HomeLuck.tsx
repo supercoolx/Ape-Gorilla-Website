@@ -1,5 +1,4 @@
 import Luck from "assets/img/luck.png"
-import Video from "assets/img/thumbnail.png"
 import React from "react"
 import VideoPlayer from "utils/video/VideoPlayer"
 
@@ -30,7 +29,7 @@ const HomeLuck = () => {
                     video={"https://www.youtube.com/watch?v=Avy-NFTQVRM"}
                     pre={true}
                     clean={true}
-                    thumbnail={Video}
+                    thumbnail={""}
                   />
                 </div>
               </div>
