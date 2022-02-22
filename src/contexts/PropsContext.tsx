@@ -13,6 +13,7 @@ type PropsContextType = {
   balance: number
   contract: any
   duration: moment.Duration
+  ethereum: any
   loading: boolean
   path: string
   ready: boolean
@@ -51,7 +52,7 @@ export const PropsProvider = ({ children }: { children: React.ReactNode }) => {
   const [interval] = useState(1000)
 
   const [date] = useState(
-    moment.tz("2022/02/022 14:22", "America/New_York").valueOf()
+    moment.tz("2022/01/022 14:22", "America/New_York").valueOf()
   )
   const [diff, setDiff] = useState(date - moment().valueOf())
   const [ready, setReady] = useState(Math.floor(diff / 1000) < 0)
@@ -93,6 +94,7 @@ export const PropsProvider = ({ children }: { children: React.ReactNode }) => {
           balance,
           contract,
           duration,
+          ethereum,
           loading,
           path,
           ready,
