@@ -5,6 +5,8 @@ import PartnerLoa from "assets/img/partners/loa.png"
 import PartnerSchwarz from "assets/img/partners/schwarz.png"
 import PartnerTge from "assets/img/partners/tge.png"
 import PartnerW from "assets/img/partners/w.png"
+import { openLink } from "libs/functions"
+import { PartnerInterface } from "libs/interfaces"
 import React, { useEffect, useRef, useState } from "react"
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md"
 import { useSwipeable } from "react-swipeable"
@@ -18,14 +20,14 @@ const HomePartners = () => {
   const [widthItem, setWidthItem] = useState(440)
   const [widthWrapper, setWidthWrapper] = useState(440)
 
-  const [roadmap] = useState([
-    PartnerDc,
-    PartnerElite,
-    PartnerJw,
-    PartnerLoa,
-    PartnerSchwarz,
-    PartnerTge,
-    PartnerW
+  const [partners] = useState<PartnerInterface[]>([
+    { image: PartnerDc, link: "" },
+    { image: PartnerElite, link: "" },
+    { image: PartnerJw, link: "" },
+    { image: PartnerLoa, link: "" },
+    { image: PartnerSchwarz, link: "" },
+    { image: PartnerTge, link: "" },
+    { image: PartnerW, link: "" }
   ])
 
   useEffect(() => {
@@ -68,8 +70,8 @@ const HomePartners = () => {
 
   const onStep = (offset: number) => {
     if (step + offset < 0) {
-      setStep(roadmap.length - 1)
-    } else if (step + offset >= roadmap.length) {
+      setStep(partners.length - 1)
+    } else if (step + offset >= partners.length) {
       setStep(0)
     } else {
       setStep(step + offset)
@@ -120,16 +122,19 @@ const HomePartners = () => {
                 className="relative w-full transition-all duration-200"
               >
                 <div className="flex w-max">
-                  {roadmap.map((entry: string, key: number) => (
-                    <div
+                  {partners.map((partner: PartnerInterface, key: number) => (
+                    <button
+                      onClick={(e) =>
+                        partner.link ? openLink(e, partner.link) : ""
+                      }
                       style={{ width: `${Math.min(widthWrapper, 440)}px` }}
                       className="relative pr-40"
                       key={key}
                     >
                       <div className="flex w-full items-center justify-center rounded-4 bg-white-20 p-30">
-                        <img src={entry} alt="" className="h-[140px]" />
+                        <img src={partner.image} alt="" className="h-[140px]" />
                       </div>
-                    </div>
+                    </button>
                   ))}
                 </div>
               </div>

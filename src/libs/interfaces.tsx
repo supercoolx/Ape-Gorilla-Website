@@ -24,6 +24,11 @@ export interface NftInterface {
   address: string
 }
 
+export interface PartnerInterface {
+  image: string
+  link: string
+}
+
 export interface PropsInterface {
   admin: boolean
   authenticated: boolean
