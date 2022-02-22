@@ -14,11 +14,12 @@ import { MdRemove, MdAdd } from "react-icons/md"
 import { toast } from "react-toastify"
 
 const MintTop = ({ platinum }: { platinum: boolean }) => {
-  const { address, balance, contract, web3, setAddress } = useProps()
+  const { address, balance, contract, ethereum, web3, setAddress } = useProps()
 
   const [open, setOpen] = useState(false)
 
   const [invalid, setInvalid] = useState(true)
+  const [incorrectNetwork, setIncorrectNetwork] = useState(false)
   const [loading, setLoading] = useState(true)
   const [minted, setMinted] = useState(0)
   const [total] = useState(platinum ? 222 : 2000)
@@ -44,6 +45,16 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
     setAddress(account ? account : "")
   }, [account])
 
+  useEffect(() => {
+    let networkId = ethereum.networkVersion
+
+    console.log(networkId)
+
+    if (networkId !== "1") {
+      setIncorrectNetwork(true)
+    }
+  }, [ethereum])
+
   useInterval(() => {
     onLoad()
   }, 30000)
@@ -53,8 +64,6 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
 
     if (contract) {
       const newMinted = await contract.methods.totalSupply().call()
-
-      console.log("Minted", newMinted)
 
       if (mounted) {
         setMinted(newMinted)
@@ -72,11 +81,11 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
       return
     }
 
-    // let networkId = window.ethereum.networkVersion
-    // if (networkId !== 1) {
-    //   toast.error("Switch to Ethereum Mainnet")
-    //   return
-    // }
+    let networkId = ethereum.networkVersion
+    if (networkId !== "1") {
+      toast.error("Switch to Ethereum Mainnet")
+      return
+    }
 
     if (balance === undefined) {
       toast.error("Insufficient balance to mint")
@@ -274,68 +283,83 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
                   </div>
                 </>
               ) : (
-                <div className="grid w-full grid-cols-1 gap-20">
-                  <div className="w-full text-center text-16 text-white-60">
-                    Minting with a Mobile phone functionality is only available
-                    through metamask browser.
-                  </div>
-                  <div className="w-full text-center text-16 text-white-60">
-                    To Mint an Ape Gorilla please Click on the FOX ICON BELOW
-                  </div>
-                  <div className="w-full text-center text-16 text-white-60">
-                     Ensure to download Metamask and have minimum of 0.22 ETH.
-
-                  </div>
-                  <div className="flex w-full justify-center">
-                    <button
-                      onClick={(e) =>
-                        openLink(
-                          e,
-                          platinum
-                            ? "https://metamask.app.link/dapp/apegorilla.com/platinum"
-                            : "https://metamask.app.link/dapp/apegorilla.com"
-                        )
-                      }
-                    >
-                      <MetaMask className="h-80 w-80" />
-                    </button>
-                  </div>
-                  <div className="w-full text-center text-16 text-white-60">
-                    or...
-                  </div>
-                  <div className="flex w-full flex-wrap items-center justify-center gap-20">
-                    <button
-                      onClick={(e) =>
-                        openLink(
-                          e,
-                          "https://play.google.com/store/apps/details?id=io.metamask"
-                        )
-                      }
-                      className="w-full sm:w-[160px]"
-                    >
-                      <img
-                        src={GooglePlay}
-                        alt=""
-                        className="w-full rounded-[6px]"
-                      />
-                    </button>
-                    <button
-                      onClick={(e) =>
-                        openLink(
-                          e,
-                          "https://apps.apple.com/us/app/metamask-blockchain-wallet/id1438144202"
-                        )
-                      }
-                      className="w-full sm:w-[160px]"
-                    >
-                      <img
-                        src={AppStore}
-                        alt=""
-                        className="w-full rounded-[6px]"
-                      />
-                    </button>
-                  </div>
-                </div>
+                <>
+                  {incorrectNetwork ? (
+                    <div className="grid w-full grid-cols-1 gap-20">
+                      <div className="w-full text-center text-16 text-white-60">
+                        Make sure to switch to the Ethereum Mainnet to be able
+                        to Mint an Ape Gorilla.
+                      </div>
+                      <div className="flex w-full justify-center">
+                        <MetaMask className="h-80 w-80" />
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="grid w-full grid-cols-1 gap-20">
+                      <div className="w-full text-center text-16 text-white-60">
+                        Minting with a Mobile phone functionality is only
+                        available through metamask browser.
+                      </div>
+                      <div className="w-full text-center text-16 text-white-60">
+                        To Mint an Ape Gorilla please Click on the FOX ICON
+                        BELOW
+                      </div>
+                      <div className="w-full text-center text-16 text-white-60">
+                        Ensure to download Metamask and have minimum of 0.22
+                        ETH.
+                      </div>
+                      <div className="flex w-full justify-center">
+                        <button
+                          onClick={(e) =>
+                            openLink(
+                              e,
+                              platinum
+                                ? "https://metamask.app.link/dapp/apegorilla.com/platinum"
+                                : "https://metamask.app.link/dapp/apegorilla.com"
+                            )
+                          }
+                        >
+                          <MetaMask className="h-80 w-80" />
+                        </button>
+                      </div>
+                      <div className="w-full text-center text-16 text-white-60">
+                        or...
+                      </div>
+                      <div className="flex w-full flex-wrap items-center justify-center gap-20">
+                        <button
+                          onClick={(e) =>
+                            openLink(
+                              e,
+                              "https://play.google.com/store/apps/details?id=io.metamask"
+                            )
+                          }
+                          className="w-full sm:w-[160px]"
+                        >
+                          <img
+                            src={GooglePlay}
+                            alt=""
+                            className="w-full rounded-[6px]"
+                          />
+                        </button>
+                        <button
+                          onClick={(e) =>
+                            openLink(
+                              e,
+                              "https://apps.apple.com/us/app/metamask-blockchain-wallet/id1438144202"
+                            )
+                          }
+                          className="w-full sm:w-[160px]"
+                        >
+                          <img
+                            src={AppStore}
+                            alt=""
+                            className="w-full rounded-[6px]"
+                          />
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </>
               )}
             </>
           ) : (

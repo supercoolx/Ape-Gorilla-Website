@@ -13,6 +13,7 @@ type PropsContextType = {
   balance: number
   contract: any
   duration: moment.Duration
+  ethereum: any
   loading: boolean
   path: string
   ready: boolean
@@ -93,6 +94,7 @@ export const PropsProvider = ({ children }: { children: React.ReactNode }) => {
           balance,
           contract,
           duration,
+          ethereum,
           loading,
           path,
           ready,
