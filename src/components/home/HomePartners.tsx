@@ -90,10 +90,8 @@ const HomePartners = () => {
                   PARTNERS
                 </div>
                 <div className="text-left text-14 text-white-60 sm:text-16 md:text-18">
-                  We will be officially partnering with the people of the
-                  Kingdom of Bhutan and will provide our holders greater access
-                  to networking, education on technology topics within our
-                  unique community.
+                  We are officially partnered with the people of the Kingdom of Bhutan, and many other
+                  specialists in the blockchain, art and technology. We will be announcing further partnerships here.
                 </div>
               </div>
             </div>
