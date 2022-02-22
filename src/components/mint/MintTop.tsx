@@ -369,11 +369,11 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
               Loading...
             </div>
           )}
-          <div className="mt-[80px] hidden w-full justify-center xl:mt-[100px]">
+          <div className="mt-[80px] flex w-full justify-center xl:mt-[100px]">
             {/* flex */}
             <div className="w-[900px] max-w-full">
               <VideoPlayer
-                video={"https://www.youtube.com/watch?v=G_arcFqb0Os"}
+                video={"https://www.youtube.com/watch?v=Avy-NFTQVRM"}
                 pre={true}
                 clean={true}
                 thumbnail={Video}
