@@ -1,21 +1,11 @@
 import WhitelistTimer from "components/whitelist/WhitelistTimer"
 import { useProps } from "contexts/PropsContext"
 import { SOCIAL } from "libs/constants"
-import React, { useState } from "react"
+import React from "react"
 import ButtonOrange from "utils/buttons/ButtonOrange"
 
-const WhitelistTop = ({ handler }: { handler: any }) => {
+const WhitelistTop = () => {
   const { ready } = useProps()
-
-  const [address, setAddress] = useState("")
-  const [success, setSuccess] = useState(false)
-
-  const onCheck = () => {
-    console.log("Checked")
-
-    setSuccess(true)
-    handler([{ image: "", id: 1, address: "123" }])
-  }
 
   return (
     <>

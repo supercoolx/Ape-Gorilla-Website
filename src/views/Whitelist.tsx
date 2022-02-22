@@ -9,7 +9,7 @@ import React, { useState } from "react"
 import Wrapper from "utils/wrapper/Wrapper"
 
 const Whitelist = () => {
-  const [nfts, setNfts] = useState<NftInterface[]>([])
+  const [nfts] = useState<NftInterface[]>([])
 
   return (
     <>
@@ -33,7 +33,7 @@ const Whitelist = () => {
                 className="relative bottom-[-80px] z-10 w-full max-w-full translate-y-[14.4%] transform sm:w-[550px] sm:max-w-[1200px] xl:absolute xl:bottom-[-160px] xl:left-[-80px] xl:translate-x-[0px] 2xl:w-[650px]"
               />
             </div>
-            <WhitelistTop handler={setNfts} />
+            <WhitelistTop />
           </div>
         </WrapperPage>
       </div>
