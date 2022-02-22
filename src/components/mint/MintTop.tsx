@@ -5,6 +5,7 @@ import { ReactComponent as MetaMask } from "assets/img/metamask.svg"
 import SpinnerCirc from "assets/img/spinner_circ.png"
 import SpinnerCircPlat from "assets/img/spinner_circ_plat.png"
 import { ReactComponent as SpinnerText } from "assets/img/spinner_text.svg"
+import Video from "assets/img/thumbnail.png"
 import HomeTopSlider from "components/home/HomeTopSlider"
 import ModalMint from "components/modals/ModalMint"
 import { useProps } from "contexts/PropsContext"
@@ -12,6 +13,7 @@ import { openLink } from "libs/functions"
 import React, { useEffect, useState } from "react"
 import { MdRemove, MdAdd } from "react-icons/md"
 import { toast } from "react-toastify"
+import VideoPlayer from "utils/video/VideoPlayer"
 
 const MintTop = ({ platinum }: { platinum: boolean }) => {
   const { address, balance, contract, ethereum, web3, setAddress } = useProps()
@@ -367,6 +369,17 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
               Loading...
             </div>
           )}
+          <div className="mt-[80px] hidden w-full justify-center xl:mt-[100px]">
+            {/* flex */}
+            <div className="w-[900px] max-w-full">
+              <VideoPlayer
+                video={"https://www.youtube.com/watch?v=G_arcFqb0Os"}
+                pre={true}
+                clean={true}
+                thumbnail={Video}
+              />
+            </div>
+          </div>
           <HomeTopSlider flat={true} single={true} />
         </div>
       </div>
