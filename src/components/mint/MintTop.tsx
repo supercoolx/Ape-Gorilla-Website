@@ -5,7 +5,6 @@ import { ReactComponent as MetaMask } from "assets/img/metamask.svg"
 import SpinnerCirc from "assets/img/spinner_circ.png"
 import SpinnerCircPlat from "assets/img/spinner_circ_plat.png"
 import { ReactComponent as SpinnerText } from "assets/img/spinner_text.svg"
-import Video from "assets/img/thumbnail.png"
 import HomeTopSlider from "components/home/HomeTopSlider"
 import ModalMint from "components/modals/ModalMint"
 import { useProps } from "contexts/PropsContext"
@@ -13,7 +12,6 @@ import { openLink } from "libs/functions"
 import React, { useEffect, useState } from "react"
 import { MdRemove, MdAdd } from "react-icons/md"
 import { toast } from "react-toastify"
-import VideoPlayer from "utils/video/VideoPlayer"
 
 const MintTop = ({ platinum }: { platinum: boolean }) => {
   const { address, balance, contract, ethereum, web3, setAddress } = useProps()
@@ -90,7 +88,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
     }
 
     if (balance === undefined) {
-      toast.error("Insufficient balance to mint")
+      toast.error("Unsufficient balance to mint")
       return
     }
 
@@ -99,16 +97,36 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
       return
     }
 
-    const isOpen = await contract.methods.platinumSaleIsOpen().call()
+    const state = await contract.methods.saleState().call()
 
-    if (isOpen) {
-      await onPlatinumSale()
+    if (state === "1") {
+      const url = "https://apegorilla.github.io/whitelist.json"
+
+      const json = await fetch(url)
+        .then((res: any) => res.json())
+        .catch(() => {
+          toast.error("Error retrieving whitelisted addresses!")
+        })
+
+      if (json) {
+        const found = json
+          .map((entry: any) => entry.toLowerCase())
+          .includes(address.toLowerCase(), 0)
+
+        if (found) {
+          await onPreSale()
+        } else {
+          toast.error("Wallet is not whitelisted, you are not allowed to mint!")
+        }
+      }
+    } else if (state === "2") {
+      await onPublicSale()
     } else {
       toast.error("Sale is not Open!")
     }
   }
 
-  const onPlatinumSale = async () => {
+  const onPreSale = async () => {
     const mint_fee = await contract.methods.mintCost().call()
     const balance = await contract.methods.balanceOf(address).call()
     if (Math.floor(balance) + Math.floor(count) > 22) {
@@ -120,6 +138,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
       "0x15f8Fc209A1c97a40e64Bf14C8c7D1D9c0541D0f",
       account
     )
+
     const sign = await web3.eth.accounts.sign(
       message,
       "603c13734233792745d50a6c9c0a55a075ad8b919d3c57d024e72a98a2d86353"
@@ -130,12 +149,52 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
     const v = sign["v"]
 
     const gas = await contract.methods
-      .platinumSaleMint(count, v, r, s)
+      .presaleMint(count, v, r, s)
       .estimateGas({ from: address, value: mint_fee * count })
       .then((res: any) => res)
       .catch((err: any) => {
         console.log(err)
       })
+
+    if (!gas) {
+      toast.error(
+        `Insufficient balance to mint ${count} NFT${count === 1 ? "" : "s"}`
+      )
+      return
+    }
+
+    const method = await contract.methods
+      .presaleMint(count, v, r, s)
+      .send({ from: address, value: mint_fee * count, gas: gas })
+      .then((res: any) => res)
+      .catch((err: any) => {
+        console.log(err)
+      })
+
+    if (!method) {
+      toast.error("Was not able to complete the transaction")
+    } else {
+      setOpen(true)
+    }
+  }
+
+  const onPublicSale = async () => {
+    const mint_fee = await contract.methods.mintCost().call()
+    const balance = await contract.methods.balanceOf(address).call()
+    if (Math.floor(balance) + Math.floor(count) > 22) {
+      toast.error("Maximum of 22 Mints per Address")
+      return
+    }
+
+    const gas = await contract.methods
+      .publicSaleMint(count)
+      .estimateGas({ from: address, value: mint_fee * count })
+      .then((res: any) => res)
+      .catch((err: any) => {
+        console.log(err)
+      })
+
+    console.log(gas)
 
     if (!gas) {
       toast.error(
@@ -147,7 +206,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
     }
 
     const method = await contract.methods
-      .platinumSaleMint(count, v, r, s)
+      .publicSaleMint(count)
       .send({ from: address, value: mint_fee * count, gas: gas })
       .then((res: any) => res)
       .catch((err: any) => {
@@ -369,17 +428,6 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
               Loading...
             </div>
           )}
-          <div className="mt-[80px] hidden w-full justify-center xl:mt-[100px]">
-            {/* flex */}
-            <div className="w-[900px] max-w-full">
-              <VideoPlayer
-                video={"https://www.youtube.com/watch?v=G_arcFqb0Os"}
-                pre={true}
-                clean={true}
-                thumbnail={Video}
-              />
-            </div>
-          </div>
           <HomeTopSlider flat={true} single={true} />
         </div>
       </div>
