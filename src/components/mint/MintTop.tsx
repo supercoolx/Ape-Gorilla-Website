@@ -22,7 +22,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
   const [incorrectNetwork, setIncorrectNetwork] = useState(false)
   const [loading, setLoading] = useState(true)
   const [minted, setMinted] = useState(0)
-  const [total] = useState(platinum ? 222 : 2000)
+  const [total] = useState(platinum ? 222 : 1337)
   const [price] = useState(0.22)
 
   const [count, setCount] = useState(1)
@@ -46,9 +46,11 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
   }, [account])
 
   useEffect(() => {
-    let networkId = ethereum.networkVersion
+    if (!ethereum) {
+      return
+    }
 
-    console.log(networkId)
+    let networkId = ethereum.networkVersion
 
     if (networkId !== "1") {
       setIncorrectNetwork(true)
@@ -63,9 +65,15 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
     setLoading(false)
 
     if (contract) {
-      const newMinted = await contract.methods.totalSupply().call()
+      const newMinted = await contract.methods
+        .totalSupply()
+        .call()
+        .then((res: any) => res)
+        .catch((error: any) => {
+          console.log(error.response)
+        })
 
-      if (mounted) {
+      if (mounted && newMinted) {
         setMinted(newMinted)
         setInvalid(false)
       }

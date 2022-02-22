@@ -26,7 +26,7 @@ const NavOpen = ({ open, handler }: { open: boolean; handler: any }) => {
         return item ? (
           <animated.div
             style={style}
-            className="fixed top-0 left-0 z-40 h-[100vh] w-full min-w-[300px] bg-brown-90 py-14 px-20 sm:py-24 sm:px-30 md:px-40"
+            className="fixed top-0 left-0 z-40 h-[100vh] w-full min-w-[300px] bg-brown-90 py-14 px-20 sm:py-24 sm:px-30"
           >
             <div className="relative z-20 grid w-full grid-cols-1">
               <div className="flex w-full justify-center">
