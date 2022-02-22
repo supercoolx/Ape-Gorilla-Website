@@ -22,7 +22,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
   const [incorrectNetwork, setIncorrectNetwork] = useState(false)
   const [loading, setLoading] = useState(true)
   const [minted, setMinted] = useState(0)
-  const [total] = useState(platinum ? 222 : 2000)
+  const [total] = useState(platinum ? 222 : 1337)
   const [price] = useState(0.22)
 
   const [count, setCount] = useState(1)
