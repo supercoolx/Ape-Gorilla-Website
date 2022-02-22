@@ -1,4 +1,10 @@
-import SpinnerCirc from "assets/img/spinner_circ.png"
+import PartnerDc from "assets/img/partners/dc.png"
+import PartnerElite from "assets/img/partners/elite.png"
+import PartnerJw from "assets/img/partners/jw.png"
+import PartnerLoa from "assets/img/partners/loa.png"
+import PartnerSchwarz from "assets/img/partners/schwarz.png"
+import PartnerTge from "assets/img/partners/tge.png"
+import PartnerW from "assets/img/partners/w.png"
 import React, { useEffect, useRef, useState } from "react"
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md"
 import { useSwipeable } from "react-swipeable"
@@ -13,14 +19,13 @@ const HomePartners = () => {
   const [widthWrapper, setWidthWrapper] = useState(440)
 
   const [roadmap] = useState([
-    SpinnerCirc,
-    SpinnerCirc,
-    SpinnerCirc,
-    SpinnerCirc,
-    SpinnerCirc,
-    SpinnerCirc,
-    SpinnerCirc,
-    SpinnerCirc
+    PartnerDc,
+    PartnerElite,
+    PartnerJw,
+    PartnerLoa,
+    PartnerSchwarz,
+    PartnerTge,
+    PartnerW
   ])
 
   useEffect(() => {
@@ -73,10 +78,7 @@ const HomePartners = () => {
 
   return (
     <>
-      <div
-        {...swipeable}
-        className="relative z-10 mb-40 mt-[-130px] w-full lg:mt-[-230px] xl:mt-[-240px]"
-      >
+      <div {...swipeable} className="relative z-10 mb-40 w-full">
         <div className="absolute top-0 bottom-0 left-[50%] w-screen translate-x-[-50%] transform bg-orange"></div>
         <div className="relative grid w-full grid-cols-1 gap-100 bg-orange py-40 sm:py-60 md:py-100">
           <div className="grid w-full grid-cols-1 gap-40 sm:gap-60 lg:grid-cols-[1fr,auto]">
@@ -125,7 +127,7 @@ const HomePartners = () => {
                       key={key}
                     >
                       <div className="flex w-full items-center justify-center rounded-4 bg-white-20 p-30">
-                        <img src={entry} alt="" />
+                        <img src={entry} alt="" className="h-[140px]" />
                       </div>
                     </div>
                   ))}

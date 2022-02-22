@@ -2,6 +2,7 @@ import Footer from "components/footer/Footer"
 import HomeButhan from "components/home/HomeButhan"
 import HomeFaq from "components/home/HomeFaq"
 import HomeLuck from "components/home/HomeLuck"
+import HomePartners from "components/home/HomePartners"
 import HomeRevenue from "components/home/HomeRevenue"
 import HomeRoadmap from "components/home/HomeRoadmap"
 import HomeTeam from "components/home/HomeTeam"
@@ -24,7 +25,7 @@ const Home = () => {
             <HomeLuck />
             <HomeTeam />
             <HomeRevenue />
-            {/* <HomePartners /> */}
+            <HomePartners />
             <HomeFaq />
           </div>
         </div>
