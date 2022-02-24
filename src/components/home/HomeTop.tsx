@@ -2,7 +2,7 @@ import BannerGiant from "assets/img/banner_giant.png"
 import BannerTop from "assets/img/banner_top.png"
 import SpinnerCirc from "assets/img/spinner_circ.png"
 import { ReactComponent as SpinnerText } from "assets/img/spinner_text.svg"
-import Video from "assets/img/thumbnail.png"
+//import Video from "assets/img/thumbnail.png"
 import HomeTimer from "components/home/HomeTimer"
 import HomeTopSlider from "components/home/HomeTopSlider"
 import { useProps } from "contexts/PropsContext"
@@ -81,7 +81,7 @@ const HomeTop = () => {
                 video={"https://www.youtube.com/watch?v=Avy-NFTQVRM"}
                 pre={true}
                 clean={true}
-                thumbnail={Video}
+                thumbnail={""}
               />
             </div>
           </div>
