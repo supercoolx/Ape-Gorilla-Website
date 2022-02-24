@@ -56,7 +56,7 @@ const Footer = () => {
                       <div className="grid w-[210px] grid-cols-1 gap-20">
                         <FooterButton
                           url={SOCIAL.DISCORD}
-                          title={"WHITELIST SIGNUP"}
+                          title={"JOIN DISCORD"}
                         />
                         <Wrapper open={ready}>
                           <FooterLink url={URL.MINT} title={"MINT"} />
