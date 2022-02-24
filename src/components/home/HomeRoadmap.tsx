@@ -20,11 +20,23 @@ const HomeRoadmap = () => {
   const [roadmap] = useState<RoadmapInterface[]>([
     {
       title: "SOFTWARE",
-      text: "We HAVE LAUNCHED Gorilla Build! Get 100% lifetime off for pre-sale buyers! This is a Software as Service to easily build Website, Sales Funnels, Email Marketing Campaigns, Booking Appointment system, Landing pages and more via drag-and-drop functionalities. This software tool serves as a utility to empower the community to create and build online businesses easily, at cost price or free where possible for the community. This software is ready to be launched soon and already exists with a huge proven track record of thousands of successful entrepreneurs using the platform."
+      text: "We HAVE LAUNCHED Gorilla Build! Get 100% lifetime off for pre-sale buyers! This is a Software as Service to easily build Website, Sales Funnels, Email Marketing Campaigns, Booking Appointment system, Landing pages and more via drag-and-drop functionalities. This software tool serves as a utility to empower the community to create and build online businesses easily, at cost price or free where possible for the community. This software is ready to use at GorillaBuild.com"
+    },
+    {
+      title: "BUSINESS AND CHARITY GRANTS",
+      text: "From the Ape Gorilla NFT sale collection, we will reserve 20% of the public sale revenue to fund business or charity proposals, as long as its aimed to help other people, or make a postive impact. We are working on creating a decentralized Go-Fund Me webapp to allow the community and public to directly send funds to businesses or charities with out a middle-man."
+    },
+    {
+      title: "SOCIAL GOOD",
+      text: "Additionally we have partnered with the People of Kingdom of Bhutan and received support from the Ministers via the Happy Gorilla Community Based Organization, which will serve as creating an incubator in the Kingdom of Bhutan to create a Web3.0 Academic Framework, and Pipline facilitation to enable the citizens of Bhutan to create longterm businesses and jobs. Our goal is to affect 200,000 people with Web3.0 Education and Job opportunities via this incubator in the Kingdom of Bhutan to serve as an example to implement in other cities and towns."
     },
     {
       title: "COMMUNITY",
-      text: "Ape Gorilla Kick-Off networking meetings will be organized worldwide locations in Europe, Asia, the Caribbean, and North & South America exclusively held for Ape Gorilla NFT holders. The events will be dedicated to community networking and masterminds to learn about Web3.0 online business opportunities, education on crypto, NFT’s, DeFi, and blockchain technology, supported by influential leading speakers in the crypto and NFT space."
+      text: "Ape Gorilla Kick-Off networking meetings have started, with our founders first event at SLS Beverly Hills at the Family Office Experiences, followed by the launch party event of Phase 1 pre-sale on 2/22/2022 at Johna's Kitchen in Santa Monica for Taco Tuesday. We plan to curate more events surrounded around networking and building relationships."
+    },
+    {
+      title: "ACADEMY",
+      text: "As we jump into the new world of blockchains, cryptocurrencies, NFT’s, Decentralized Apps and Decentralized Finance, we want to ensure the community has the right support, resources, and knowledge to learn everything there is to know about these cutting edge technologies including an ecommerce academy. This will be free for the public, as we believe education is free"
     },
     {
       title: "PHYSICAL ACCESS",
@@ -33,10 +45,6 @@ const HomeRoadmap = () => {
     {
       title: "MASTERMINDS",
       text: "We will hold mastermind events for our loyal holders, rare NFT’s, and VIP members of the Ape Gorilla Club for exclusive mastermind experiences. These events will be incredible luxurious experiences around the world, held at amazing locations like beachfront villas, yachts, and mansions, accessible only to our VIP holders. We want to give our community the opportunity to network and brainstorm with other VIP guests, as well as high net-worth and influential individuals."
-    },
-    {
-      title: "ACADEMY",
-      text: "As we jump into the new world of blockchains, cryptocurrencies, NFT’s, Decentralized Apps and Decentralized Finance, we want to ensure the community has the right support, resources, and knowledge to learn everything there is to know about these cutting edge technologies."
     },
     {
       title: "MERCH MARKETPLACE",
@@ -48,15 +56,7 @@ const HomeRoadmap = () => {
     },
     {
       title: "GAMIFICATION",
-      text: "Our team will be launching a (FPS) First Person Shooter Multiplayer game with play to earn capabilities. Along with the community, and in parallel, we will build a MMORPG 3D Game to interact with the community in a virtual environment."
-    },
-    {
-      title: "BUSINESS AND CHARITY GRANTS",
-      text: "From the Ape Gorilla NFT sale collection, we will reserve funds to fund business or charity proposals to Ape Gorilla NFT holders requests. We are willing to contribute and fund as many businesses or charities in 2022 as possible, that have a positive impact around the NFT holders community. We will create an open accounting for the business proposals, to allow the community to fund charities, or businesses that help other people to make positive impacts in their communities. The idea to create the framework behind this is to empower the community to bring awareness to assist in their local causes."
-    },
-    {
-      title: "SOCIAL GOOD",
-      text: "Additionally from the NFT public sale collection, we will also be donating 10% to the Kingdom of Bhutan for the Bhutanese Community Based Organization that is organized by The Ape Gorilla Kingdom of Bhutan's Ambassador’s, and our Partners from the Kingdom of Bhutan, Leon Rabten and Leona Choden Wangchuk, also our Ape Gorilla core founding members. These funds will help with increasing the Happiness Index of Bhutan and its development into the new world and youth development."
+      text: "Our team will be launching an Ape Gorilla Magical/Laser Combat Multiplayer game, 3D Runner Game and with live to earn capabilities. Along with the community, and in parallel, we will build a MMORPG 3D Game to interact with the community in a virtual environment using Atavism Online and Unreal Engine."
     }
   ])
 
@@ -128,11 +128,8 @@ const HomeRoadmap = () => {
                   Club”, allowing holders to participate in networking events,
                   high level masterminds, meetup parties, Meta Gorilla rewards,
                   business and charity grant opportunities, software tools, as
-                  well as Blockchains and Web3.0 academy. Ape Gorilla will also
-                  give each Ape Gorilla NFT holder exclusive privilege access
-                  and benefits to Physical Clubs, Restaurants and Villas
-                  acquired by us and our partners or leased over the years for
-                  our community.
+                  well as Blockchains and Web3.0 academy. Become a part of this revolutionary
+                  change of providing Academic and and the Pipline Frameworks for Web3.0, and simply by doing more good. 
                 </div>
               </div>
             </div>

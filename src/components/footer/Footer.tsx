@@ -64,7 +64,7 @@ const Footer = () => {
                         <FooterLink url={URL.CONTACT} title={"CONTACT"} />
                         <FooterButton
                           url={SOCIAL.TERMS}
-                          title={"TERMS AND CONDITIONS"}
+                          title={"TERMS AND CONDITIONS "}
                         />
                       </div>
                     </div>
