@@ -26,7 +26,7 @@ const HomeLuck = () => {
               <div className="mt-[30px] flex w-full justify-center xl:mt-[40px]">
                 <div className="w-[900px] max-w-full">
                   <VideoPlayer
-                    video={"https://www.youtube.com/watch?v=Avy-NFTQVRM"}
+                    video={"https://www.youtube.com/watch?v=G_arcFqb0Os"}
                     pre={true}
                     clean={true}
                     thumbnail={""}
