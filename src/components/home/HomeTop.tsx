@@ -57,7 +57,7 @@ const HomeTop = () => {
                     </div>
                   </Link>
                 ) : (
-                  <ButtonOrange title={" WHITELIST ME"} link={SOCIAL.JOTFORM} />
+                  <ButtonOrange title={"JOIN DISCORD"} link={SOCIAL.DISCORD} />
                 )}
               </div>
               <div className="relative mt-40 hidden w-full items-center justify-center lg:justify-start xl:flex">

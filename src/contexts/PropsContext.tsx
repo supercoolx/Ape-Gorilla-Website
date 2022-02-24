@@ -52,7 +52,7 @@ export const PropsProvider = ({ children }: { children: React.ReactNode }) => {
   const [interval] = useState(1000)
 
   const [date] = useState(
-    moment.tz("2021/02/022 19:22", "America/New_York").valueOf()
+    moment.tz("2022/03/08 19:22", "America/New_York").valueOf()
   )
   const [diff, setDiff] = useState(date - moment().valueOf())
   const [ready, setReady] = useState(Math.floor(diff / 1000) < 0)
