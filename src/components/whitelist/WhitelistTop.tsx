@@ -17,7 +17,8 @@ const WhitelistTop = () => {
               On a mission to building a community surrounded around helping and
               empowering each other with access to high-level events, web3.0
               training, software, and games. Join the Ape Gorilla discord
-              channel and join the community to get Whitelisted!
+              channel and join the community! Phase 2 sale is being launched on March 8th for 48
+              hours! Dont miss out on this great opportunty!
             </div>
             <div className="flex w-full justify-start gap-20">
               <ButtonOrange title={"JOIN DISCORD!"} link={SOCIAL.DISCORD} />
@@ -37,8 +38,7 @@ const WhitelistTop = () => {
               avenues including academic education in NFTs, web3.0 and
               blockchains, Meta Gorilla token rewards, business assistance tool,
               networking opportunities, as well as opportunity for receiving
-              business or charity grants. Checkout the whitelist for more
-              information, all of the team members are documented!
+              business or charity grants from the project funds and the public!
             </div>
             <div className="flex w-full justify-start gap-20">
               <ButtonOrange title={"JOIN DISCORD"} link={SOCIAL.DISCORD} />
