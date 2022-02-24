@@ -50,7 +50,7 @@ const HomeTop = () => {
               <HomeTimer />
               <div className="flex w-full flex-wrap justify-center gap-20 xl:justify-start">
                 {ready ? (
-                  <Link to={URL.MINT} className="relative w-full sm:w-auto">
+                  <Link to={URL.PLATINUM} className="relative w-full sm:w-auto">
                     <div className="absolute top-0 left-0 h-60 w-full -skew-x-12 transform bg-orange "></div>
                     <div className="font-azo relative flex h-60 w-full items-center justify-center px-28 text-14 text-white sm:text-16 md:text-18">
                       MINT NOW
