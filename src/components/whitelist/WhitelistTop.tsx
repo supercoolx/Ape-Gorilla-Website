@@ -20,7 +20,7 @@ const WhitelistTop = () => {
               channel and join the community to get Whitelisted!
             </div>
             <div className="flex w-full justify-start gap-20">
-              <ButtonOrange title={"WHITELIST ME"} link={SOCIAL.JOTFORM} />
+              <ButtonOrange title={"JOIN DISCORD!"} link={SOCIAL.DISCORD} />
             </div>
           </div>
         </div>

@@ -53,7 +53,7 @@ const NavOpen = ({ open, handler }: { open: boolean; handler: any }) => {
                   <div className="grid w-full grid-cols-1 gap-50 sm:gap-80">
                     <div className="grid w-full grid-cols-1 gap-30">
                       <NavLink url={URL.HOME} title={"HOME"} />
-                      <NavLink url={URL.WHITELIST} title={"WHITELIST"} />
+                      <NavLink url={URL.WHITELIST} title={"DISCORD"} />
                       <Wrapper open={ready}>
                         <NavLink url={URL.MINT} title={"MINT"} />
                       </Wrapper>
