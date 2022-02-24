@@ -129,7 +129,7 @@ const HomeRoadmap = () => {
                   high level masterminds, meetup parties, Meta Gorilla rewards,
                   business and charity grant opportunities, software tools, as
                   well as Blockchains and Web3.0 academy. Become a part of this revolutionary
-                  change of providing Academic and and the Pipline Frameworks for Web3.0, and simply by doing more good. 
+                  change of providing Academic and and the Pipline Frameworks for Web3.0, and simply by doing more good.
                 </div>
               </div>
             </div>

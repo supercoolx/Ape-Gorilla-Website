@@ -79,12 +79,8 @@ const Contact = () => {
                 <div className="flex w-full justify-start">
                   <div className="w-[700px] max-w-full text-white-60">
                     Our mission is to empower our community through multiple
-                    avenues – including academic education in web3.0 and
-                    blockchains, Meta Gorilla token rewards, business assistance
-                    tool, networking opportunities, as well as opportunity for
-                    receiving business or charity grants. Checkout the whitelist
-                    for more information, all of the team members are
-                    documented!
+                    avenues – ensuring a longterm solution via Academy, SaaS Tools, Networking Events,
+                    Grants for Businesses or Charities and participate in creating real-life changing opportunities.
                   </div>
                 </div>
               </div>
