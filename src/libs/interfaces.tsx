@@ -43,7 +43,17 @@ export interface QuestionInterface {
 
 export interface RoadmapInterface {
   title: string
-  text: string
+  text: JSX.Element
+}
+
+export interface ChartWhitelistInterface {
+  id: string
+  value: number
+}
+
+export interface ChartPublicDropInterface {
+  id: string
+  value: number
 }
 
 export interface SocialInterface {

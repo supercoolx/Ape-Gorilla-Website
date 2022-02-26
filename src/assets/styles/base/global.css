@@ -15,7 +15,7 @@ body {
   -webkit-app-region: no-drag;
   font-family: "Causten", Arial, Helvetica, sans-serif;
 
-  @apply text-16;
+  /* @apply text-16; */
   @apply select-none;
 }
 

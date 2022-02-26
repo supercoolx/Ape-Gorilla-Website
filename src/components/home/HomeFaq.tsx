@@ -80,7 +80,7 @@ const HomeFaq = () => {
         <>
           The best way to promote the project is by inviting people to the
           Discord channel. If you are an influencer and would like to work with
-          us, write to us at support@apegorilla.com
+          us, write to us at <a href="mailto: support@apegorilla.com" className="text-16 text-orange">support@apegorilla.com</a>
         </>
       )
     }
@@ -89,7 +89,7 @@ const HomeFaq = () => {
   return (
     <>
       <div className="grid w-full grid-cols-1 gap-40 sm:gap-60 md:gap-100">
-        <div className="flex w-full justify-center">
+        <div className="flex justify-center w-full">
           <div className="grid w-[700px] max-w-full grid-cols-1 gap-30">
             <div className="font-azo md:text-56 w-full text-center text-24 leading-[110%] text-white sm:text-36">
               FREQUENTLY ASKED QUESTIONS
