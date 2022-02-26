@@ -55,7 +55,7 @@ const NavOpen = ({ open, handler }: { open: boolean; handler: any }) => {
                       <NavLink url={URL.HOME} title={"HOME"} />
                       <NavLink url={URL.WHITELIST} title={"DISCORD"} />
                       <Wrapper open={ready}>
-                        <NavLink url={URL.MINT} title={"MINT"} />
+                        <NavLink url={URL.PLATINUM} title={"MINT"} />
                       </Wrapper>
                     </div>
                     <div className="grid w-full grid-cols-1">

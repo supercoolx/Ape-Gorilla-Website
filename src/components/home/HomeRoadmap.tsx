@@ -175,7 +175,7 @@ const HomeRoadmap = () => {
                           className="absolute top-0 left-0 w-full"
                         ></div>
                       </Wrapper>
-                      <div className="mb-60 flex w-full justify-start sm:mb-80">
+                      <div className="mb-60 flex w-full justify-start sm:mb-40">
                         <div
                           className={`relative flex h-36 w-36 items-center justify-center rounded-full border-2 bg-white ${
                             step >= key ? "border-orange" : "border-brown-60"

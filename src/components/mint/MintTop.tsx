@@ -407,7 +407,7 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
                     <div className="grid w-full grid-cols-1 gap-20">
                       <div className="w-full text-center text-16 text-white-60">
                         Make sure to switch to the Ethereum Mainnet to be able
-                        to Mint an Ape Gorilla.
+                        to Mint an Ape Gorilla NFT.
                       </div>
                       <div className="flex w-full justify-center">
                         <MetaMask className="h-80 w-80" />
@@ -416,16 +416,11 @@ const MintTop = ({ platinum }: { platinum: boolean }) => {
                   ) : (
                     <div className="grid w-full grid-cols-1 gap-20">
                       <div className="w-full text-center text-16 text-white-60">
-                        Minting with a Mobile phone functionality is only
-                        available through metamask browser.
+                        Ensure to have MetaMask plugin downloaded on Google Chrome or
+                        using the MetaMask App on your smart phone.
                       </div>
                       <div className="w-full text-center text-16 text-white-60">
-                        To Mint an Ape Gorilla please Click on the FOX ICON
-                        BELOW
-                      </div>
-                      <div className="w-full text-center text-16 text-white-60">
-                        Ensure to download Metamask and have minimum of 0.22
-                        ETH.
+                      Click on the FOX ICON BELOW if you are on your Mobile and have MetaMask App installed.
                       </div>
                       <div className="flex w-full justify-center">
                         <button

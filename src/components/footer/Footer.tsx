@@ -59,7 +59,7 @@ const Footer = () => {
                           title={"JOIN DISCORD"}
                         />
                         <Wrapper open={ready}>
-                          <FooterLink url={URL.MINT} title={"MINT"} />
+                          <FooterLink url={URL.PLATINUM} title={"MINT"} />
                         </Wrapper>
                         <FooterLink url={URL.CONTACT} title={"CONTACT"} />
                         <FooterButton
