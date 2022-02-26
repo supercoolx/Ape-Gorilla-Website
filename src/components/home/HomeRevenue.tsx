@@ -1,5 +1,5 @@
-import Revenue1 from "assets/img/revenue/1.png"
-import Revenue2 from "assets/img/revenue/2.png"
+import Revenue1 from "assets/img/revenue/pie1.png"
+import Revenue2 from "assets/img/revenue/pie2.png"
 import React from "react"
 
 const HomeRevenue = () => {
