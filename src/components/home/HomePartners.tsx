@@ -21,13 +21,13 @@ const HomePartners = () => {
   const [widthWrapper, setWidthWrapper] = useState(440)
 
   const [partners] = useState<PartnerInterface[]>([
-    { image: PartnerDc, link: "https://www.yuurewards.com" },
-    { image: PartnerElite, link: "https://www.aybazar.com" },
-    { image: PartnerJw, link: "https://formahoof.com/" },
-    { image: PartnerLoa, link: "http://www.shenannz.com/" },
-    { image: PartnerSchwarz, link: "https://www.sportyfriends.com" },
-    { image: PartnerTge, link: "https://abracadabra.money" },
-    { image: PartnerW, link: "https://www.yuurewards.com" }
+    { image: PartnerDc, link: "http://digitalcurrensy.io/" },
+    { image: PartnerSchwarz, link: "https://www.schwarzenterprise.com" },
+    { image: PartnerTge, link: "https://www.tgeglobalent.com" },
+    { image: PartnerW, link: "" },
+    { image: PartnerElite, link: "" },
+    { image: PartnerJw, link: "" },
+    { image: PartnerLoa, link: "" }
   ])
 
   useEffect(() => {

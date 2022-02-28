@@ -1,12 +1,12 @@
-import Revenue1 from "assets/img/revenue/pie1.png"
-import Revenue2 from "assets/img/revenue/pie2.png"
+import Revenue3 from "assets/img/revenue/pie_public_drop.svg"
+import Revenue1 from "assets/img/revenue/pie_revenue_nft.svg"
 import React from "react"
 
 const HomeRevenue = () => {
   return (
     <>
       <div className="grid w-full grid-cols-1 gap-40 sm:gap-60 md:gap-100">
-        <div className="flex w-full justify-center">
+        <div className="flex justify-center w-full">
           <div className="grid w-[700px] max-w-full grid-cols-1 gap-30">
             <div className="font-azo md:text-56 w-full text-center text-24 leading-[110%] text-white sm:text-36">
               REVENUE DISTRIBUTION
@@ -18,11 +18,11 @@ const HomeRevenue = () => {
           </div>
         </div>
         <div className="grid w-full grid-cols-1 gap-60 lg:grid-cols-2">
-          <div className="flex w-full items-center rounded-6 bg-white">
-            <img src={Revenue1} alt="" className="rounded-6 object-cover" />
+          <div className="flex items-center w-full">
+            <img src={Revenue1} alt="" className="object-cover" />
           </div>
-          <div className="flex w-full items-center rounded-6 bg-white">
-            <img src={Revenue2} alt="" className="rounded-6 object-cover" />
+          <div className="flex flex-col items-center w-full h-[60px]">
+            <img src={Revenue3} alt="" className="" />
           </div>
         </div>
       </div>
